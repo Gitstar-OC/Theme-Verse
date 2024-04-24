@@ -15,7 +15,7 @@
 - ### [Jest](https://jestjs.io/)
 - ### [Formik](https://formik.org/)
 - ### [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
-- ###
+- ### [Redux](https://redux.js.org/)
 - ### 
 
 
