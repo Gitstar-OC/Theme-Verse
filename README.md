@@ -1,4 +1,2 @@
 # Theme-Verse
-This is website that will be used to help companies with the main template or front-end of their choice, This is a cool [React](https://react.dev) project made with [Vite](https://vitejs.dev) along with some cool css libraries like [Tailwind CSS](https://tailwindcss.com) and [Bootstrap](https://getbootstrap.com) .
-
-
+- This is a website that will be selling the theme of main home page sections of their desired choice. This is an open source project, so anyone can contribute just make sure you follow the [Code Of Conduct](Code_Of_Conduct.md)!
