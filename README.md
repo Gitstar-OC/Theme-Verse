@@ -5,17 +5,15 @@
 ### Hello, I am Om, I will be leading the front end of this project. If anyone is a intermidiate or skilled back end developer, I would like to collaborate with them to work with me on this project.  Feel free to contact me by [Gmail](https://mail.google.com/mail/?view=cm&fs=1&to=chandankarom07@gmail.com)
 
 
-## Technologies in use for this project ⚙️👨🏻‍💻 
->  Make sure to add the back end technologies you are using.
+## Technologies in use for this project ⚙️👨🏻‍💻
 
-- ### [Vite](https://vitejs.dev/)
-- ### [React](https://react.dev/)
-- ### [Tailwind CSS](https://tailwindcss.com/)
-- ### [Bootstrap](https://getbootstrap.com/)
-- ### [Jest](https://jestjs.io/)
-- ### [Formik](https://formik.org/)
-- ### [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
-- ### [Redux](https://redux.js.org/)
+> Make sure to add the back end technologies you are using.
+
+- ### [Vite](https://vitejs.dev/) &bull; [React](https://react.dev/)<br><br>
+- ### [Tailwind CSS](https://tailwindcss.com/) &bull; [Bootstrap](https://getbootstrap.com/)<br><br>
+- ### [Jest](https://jestjs.io/) &bull; [Formik](https://formik.org/)<br><br>
+- ### [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) &bull; [Redux](https://redux.js.org/)<br><br>
 - ### [React Router](https://reactrouter.com/)
+
 
 
