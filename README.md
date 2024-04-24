@@ -9,10 +9,14 @@
 
 > Make sure to add the back end technologies you are using.
 
-- ### [Vite](https://vitejs.dev/) &nbsp; &nbsp; [React](https://react.dev/) <br></br> 
-- ### [Tailwind CSS](https://tailwindcss.com/) &nbsp; &nbsp; [Bootstrap](https://getbootstrap.com/) <br></br>
-- ### [Jest](https://jestjs.io/) &nbsp; &nbsp; [Formik](https://formik.org/) <br></br>
-- ### [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) &nbsp; &nbsp; [Redux](https://redux.js.org/) <br></br>
+- ### [Vite](https://vitejs.dev/)
+- ### [React](https://react.dev/)
+- ### [Tailwind CSS](https://tailwindcss.com/)
+- ### [Bootstrap](https://getbootstrap.com/) 
+- ### [Jest](https://jestjs.io/)
+- ### [Formik](https://formik.org/) 
+- ### [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
+- ### [Redux](https://redux.js.org/) 
 - ### [React Router](https://reactrouter.com/) 
 
 
