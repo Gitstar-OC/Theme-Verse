@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.2.3",
     "@testing-library/react": "^15.0.4",
     "bootstrap": "^5.3.3",
     "formik": "^2.4.5",
