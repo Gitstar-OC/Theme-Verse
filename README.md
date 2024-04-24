@@ -5,4 +5,9 @@
 ### Hello, I am Om, I will be leading the front end of this project. If anyone is a intermidiate or skilled back end developer, I would like to collaborate with them to work with me on this project.  Feel free to contact me by [Gmail](https://mail.google.com/mail/?view=cm&fs=1&to=chandankarom07@gmail.com)
 
 
-## Technologies in use for this project ⚙️👨🏻‍💻
+## Technologies in use for this project ⚙️👨🏻‍💻 
+>  Make sure to add the back end technologies you are using.
+
+
+
+
