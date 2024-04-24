@@ -8,9 +8,9 @@
 ## Technologies in use for this project ⚙️👨🏻‍💻 
 >  Make sure to add the back end technologies you are using.
 
-[Vite](https://vitejs.dev/)
-[React](https://react.dev/)
-[Tailwind CSS](https://tailwindcss.com/)
+- ### [Vite](https://vitejs.dev/)
+- ### [React](https://react.dev/)
+- ### [Tailwind CSS](https://tailwindcss.com/)
 
 
 
