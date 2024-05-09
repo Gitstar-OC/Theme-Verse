@@ -7,6 +7,8 @@ const Navigation = () => {
     <header className='bg-slate-400 flex'>
     <img className="w-[160px] h-[120px]" src={TV1} alt="logo" />
     <nav className="font-bold font-mono text-4xl bg-black text-white flex"> 
+
+    {/* Soon adding other navigation paths and completing the figma filew */}
     </nav>
     </header>
     </>
