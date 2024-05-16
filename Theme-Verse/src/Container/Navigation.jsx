@@ -1,14 +1,18 @@
 import React from 'react'
 import { FaOpencart } from "react-icons/fa";
+import BG from "../assets/Rectangle 4150.png"
+
 
 const Navigation = () => {
   return (
     <>
-    <header className='bg-slate-400 flex bg-gradient-to-b from-blue-200 via-blue-700 to-blue-200'>
-        <FaOpencart />
-    <nav className="font-bold font-mono text-4xl bg-black text-white flex"> 
+    <header style={{backgroundImage = BG}}  className='bg-cover bg-fixed bg bg-[BG]' >
+      {/* <img src={BG} alt="Image" />  */}
+        {/* <FaOpencart  */}
+    <nav className="font-bold font-mono text-4xl bg-black text-white flex">
 
     {/* Soon adding other navigation paths and completing the figma filew */}
+    This is navigation bar
     </nav>
     </header>
     </>
