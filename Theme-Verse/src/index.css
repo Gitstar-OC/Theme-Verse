@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: 'CF';
+    src: url('./Fonts/Akaya_Telivigala/AkayaTelivigala-Regular.ttf') format('truetype');
+}
+
+.navItem {
+    @apply text-white font-cF text-[30px] font-normal leading-normal;
+}
+
 html{
     background-color: black;
     scroll-snap-type: y mandatory;

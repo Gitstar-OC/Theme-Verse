@@ -6,6 +6,12 @@ export default {
       backgroundImage: {
         'hero': "url('./assets/NavbarBackground.png')",
       },
+      fontFamily: {
+        'cF': ['CF', 'sans-serif'],
+      },
+      navItem: {
+        base: 'text-white font-cF text-[30px] font-normal leading-normal'
+      }
     },
   },
   plugins: [],
