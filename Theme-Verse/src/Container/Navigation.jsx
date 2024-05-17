@@ -36,7 +36,7 @@ const Navigation = () => {
                 <span>Cart</span>
               </div>
             </Link>
-            <button onClick={toggleTheme} className='navItem theme-text flex items-center'>
+            <button onClick={toggleTheme} className='navItem theme-text'>
               <div className={`toggle-circle ${theme}`}>
                 {theme === 'light' ? <FaSun /> : <FaMoon />}
               </div>
@@ -49,7 +49,6 @@ const Navigation = () => {
 }
 
 export default Navigation;
-
 
 
 /*        <div className="flex flex-wrap gap-10 mb-10">
