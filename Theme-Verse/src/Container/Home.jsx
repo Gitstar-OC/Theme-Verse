@@ -1,11 +1,13 @@
-import React from 'react'
+// Home.jsx
+import React from 'react';
 
 const Home = () => {
   return (
-    <section className=' h-[100vh] bg-black' id='section'>
-      <p className='text-white'> Hello</p>
+    <section className='h-[100vh] theme-bg' id='section'>
+      <p className='theme-text'>Hello</p>
     </section>
-  )
+  );
 }
 
-export default Home
+export default Home;
+

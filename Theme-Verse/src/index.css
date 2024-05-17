@@ -3,48 +3,69 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: 'CF';
-    src: url('./Fonts/Akaya_Telivigala/AkayaTelivigala-Regular.ttf') format('truetype');
+  font-family: 'CF';
+  src: url('./Fonts/Akaya_Telivigala/AkayaTelivigala-Regular.ttf') format('truetype');
 }
 
-.navItem {
-    @apply text-white font-cF text-[30px] font-normal leading-normal;
-}
-
-html{
-    background-color: black;
-    scroll-snap-type: y mandatory;
+html {
+  background-color: black;
+  scroll-snap-type: y mandatory;
 }
 
 #section {
-    scroll-snap-align: start;
+  scroll-snap-align: start;
 }
 
-::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar {
+  width: 10px;
+}
 
-::-webkit-scrollbar-track { background-color: rgba(0, 0, 0, 0); }
+::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0);
+}
 
-::-webkit-scrollbar-thumb { background-color: #A6D2EA }
+::-webkit-scrollbar-thumb {
+  background-color: #A6D2EA;
+}
 
-
-.navItem::before {
-    content: '';
-    display: block;
-    height: 2px;
-    background-color: #09FFB5; /* Secondary color */
-    transform: scaleX(0);
-    transition: transform 0.3s ease-in-out;
-  }
-
-.navItem:hover::before {
-    transform: scaleX(1);
+.navItem {
+  @apply text-primary font-cF text-[30px] font-normal leading-normal relative;
 }
 
 .navItem::after {
   content: '';
-  @apply block h-1 bg-secondary absolute bottom-0 left-0 transform scale-x-0 transition-transform duration-300;
+  display: block;
+  height: 2px;
+  background-color: #09FFB5; /* Secondary color */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
 }
 
 .navItem:hover::after {
-  @apply scale-x-100;
+  transform: scaleX(1);
+}
+
+.navItem:hover {
+  color: #09FFB5; /* Change text color on hover */
+}
+
+/* Dark and light theme */
+.dark .theme-bg {
+  @apply bg-dark-bg;
+}
+
+.light .theme-bg {
+  @apply bg-light-bg;
+}
+
+.dark .theme-text {
+  @apply text-dark-text;
+}
+
+.light .theme-text {
+  @apply text-light-text;
 }

@@ -1,8 +1,24 @@
 import { FaOpencart } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import Logo from "../assets/Theme-Verse.svg";
+// import './styles.css';
+import { useState, useEffect } from 'react';
 
 const Navigation = () => {
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
+
+  useEffect(() => {
+    document.documentElement.classList.add(theme);
+    localStorage.setItem('theme', theme);
+    return () => {
+      document.documentElement.classList.remove(theme);
+    };
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light');
+  };
+
   return (
     <>
       <header className='bg-hero w-full h-[55px] bg-cover flex items-center px-4' id="section">
@@ -11,21 +27,24 @@ const Navigation = () => {
             <img src={Logo} alt="Logo" className='h-8' />
           </div>
           <nav className='flex space-x-8'>
-            <Link to="/" className='navItem'>Home</Link>
-            <Link to="/themes" className='navItem'>Themes</Link>
-            <Link to="/about" className='navItem'>About</Link>
-            <Link to="/contact" className='navItem'>Contact</Link>
-            <Link to="/cart" className='navItem'>
+            <Link to="/" className='navItem theme-text'>Home</Link>
+            <Link to="/themes" className='navItem theme-text'>Themes</Link>
+            <Link to="/about" className='navItem theme-text'>About</Link>
+            <Link to="/contact" className='navItem theme-text'>Contact</Link>
+            <Link to="/cart" className='navItem theme-text'>
               <div className='flex items-center space-x-1'>
                 <FaOpencart />
                 <span>Cart</span>
               </div>
             </Link>
+            <button onClick={toggleTheme} className='navItem theme-text'>
+              {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
+            </button>
           </nav>
         </div>
       </header>
     </>
-  )
+  );
 }
 
 export default Navigation;
