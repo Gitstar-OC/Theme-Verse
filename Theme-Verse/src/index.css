@@ -8,6 +8,12 @@
   src: url('./Fonts/Akaya_Telivigala/AkayaTelivigala-Regular.ttf') format('truetype');
 }
 
+@layer utilities {
+  .bg-secondary {
+    background-color: #09FFB5;
+  }
+}
+
 /* Default background color (light mode) */
 html {
   scroll-snap-type: y mandatory;
@@ -40,6 +46,14 @@ html.dark {
 
 .navItem {
   @apply text-primary font-cF text-[30px] font-normal leading-normal relative;
+  position: relative; /* Ensure position is relative for pseudo-elements */
+  display: inline-block; /* Ensure it's an inline-block for the hover effect */
+  color: inherit; /* Inherit color from parent */
+  transition: color 0.3s ease; /* Smooth transition for text color */
+}
+
+.navItem:hover {
+  color: #09FFB5; /* Change text color on hover */
 }
 
 .navItem::after {
@@ -48,7 +62,7 @@ html.dark {
   height: 2px;
   background-color: #09FFB5; /* Secondary color */
   position: absolute;
-  bottom: 0;
+  bottom: -2px; /* Adjusted to show below the text */
   left: 0;
   width: 100%;
   transform: scaleX(0);
@@ -57,10 +71,6 @@ html.dark {
 
 .navItem:hover::after {
   transform: scaleX(1);
-}
-
-.navItem:hover {
-  color: #09FFB5; /* Change text color on hover */
 }
 
 /* Dark and light theme */
@@ -92,7 +102,7 @@ html.dark {
 }
 
 .toggle-circle.light {
-  background-color: #ffd700; /* Sun color */
+  background-color: #fff; /* Sun color */
 }
 
 .toggle-circle.dark {
@@ -106,9 +116,10 @@ html.dark {
 }
 
 .toggle-circle.light > svg {
-  color: #FFA500; /* Sun icon color */
+  color: #000000; /* Sun icon color */
 }
 
 .toggle-circle.dark > svg {
   color: #FFF; /* Moon icon color */
 }
+

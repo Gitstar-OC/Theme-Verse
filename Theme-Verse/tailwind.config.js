@@ -11,14 +11,20 @@ export default {
         'cF': ['CF', 'sans-serif'],
       },
       colors: {
-        'primary': '#ffffff',
-        'secondary': '#09FFB5',
-        'dark-bg': '#000000', // Dark theme background
-        'light-bg': '#ffffff', // Light theme background
-        'dark-text': '#ffffff', // Dark theme text
-        'light-text': '#000000', // Light theme text
+        primary: '#000000', // Example primary color
+        'dark-bg': '#000000', // Dark background color
+        'light-bg': '#ffffff', // Light background color
+        'dark-text': '#ffffff', // Dark theme text color
+        'light-text': '#000000', // Light theme text color
+        secondary: '#09FFB5', // Secondary color for hover
+      },
+      fontFamily: {
+        cF: ['CF', 'sans-serif'], // Custom font family
       },
     },
   },
+  variants: {
+    extend: {},
+  },
   plugins: [],
-}
+};
