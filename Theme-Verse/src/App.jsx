@@ -6,12 +6,14 @@ function App() {
 
   return (
     <>
+    
     <Navigation />
-    This is the main app
     <Home /> 
     <Projects /> 
     <Footer />
     </>
+    
+
   )
 }
 
