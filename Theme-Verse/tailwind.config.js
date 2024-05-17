@@ -9,11 +9,29 @@ export default {
       fontFamily: {
         'cF': ['CF', 'sans-serif'],
       },
-      navItem: {
-        base: 'text-white font-cF text-[30px] font-normal leading-normal'
+      // Custom utility class
+      textColor: {
+        'white': '#ffffff',
+      },
+      fontSize: {
+        '30px': '30px',
+      },
+      leading: {
+        'normal': 'normal',
+      },
+      fontWeight: {
+        'normal': '400',
       }
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      const newUtilities = {
+        '.navItem': {
+          '@apply text-white font-cF text-30px font-normal leading-normal': {},
+        },
+      }
+      addUtilities(newUtilities)
+    }
+  ],
 }
-

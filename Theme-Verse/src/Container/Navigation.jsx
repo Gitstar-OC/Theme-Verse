@@ -1,33 +1,30 @@
-// import {navigation} from "../Constants/index"
-// import React from 'react'
 import { FaOpencart } from "react-icons/fa";
 import { Link } from 'react-router-dom';
-import Logo from "../assets/Theme-Verse.svg"
-//import BG from "../assets/Rectangle 4150.png"
-
+import Logo from "../assets/Theme-Verse.svg";
 
 const Navigation = () => {
   return (
-<>
-  <header className='bg-hero w-[100%] h-[55px] bg-cover ' id='section'>
-  <img src={Logo} alt="Logo" />  
-    
-    <nav className='font-cF flex flex-row items-center justify-center space-x-[20px] shrink-0'>
-      {/* {navigation.map((item) => (
-      ))} */}
-      <Link to="/" className='navItem'>Home</Link>
-      <Link to="/themes" className='navItem'>Themes</Link>
-      <Link to="/about" className='navItem'>About</Link>
-      <Link to="/contact" className='navItem'>Contact</Link>
-      <Link to="/cart" className='navItem'>
-        <div className='flex items-center space-x-1'>
-          <FaOpencart />
-          <span>Cart</span>
+    <>
+      <header className='bg-hero w-full h-[55px] bg-cover flex items-center px-4' id="section">
+        <div className='flex justify-between items-center w-full max-w-screen-xl mx-auto'>
+          <div className='flex items-center space-x-8'>
+            <img src={Logo} alt="Logo" className='h-8' />
+          </div>
+          <nav className='flex space-x-8'>
+            <Link to="/" className='navItem'>Home</Link>
+            <Link to="/themes" className='navItem'>Themes</Link>
+            <Link to="/about" className='navItem'>About</Link>
+            <Link to="/contact" className='navItem'>Contact</Link>
+            <Link to="/cart" className='navItem'>
+              <div className='flex items-center space-x-1'>
+                <FaOpencart />
+                <span>Cart</span>
+              </div>
+            </Link>
+          </nav>
         </div>
-      </Link>
-    </nav>
-  </header>
-</>
+      </header>
+    </>
   )
 }
 
