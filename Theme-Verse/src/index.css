@@ -46,23 +46,23 @@ html.dark {
 
 .navItem {
   @apply text-primary font-cF text-[30px] font-normal leading-normal relative;
-  position: relative; /* Ensure position is relative for pseudo-elements */
-  display: inline-block; /* Ensure it's an inline-block for the hover effect */
-  color: inherit; /* Inherit color from parent */
-  transition: color 0.3s ease; /* Smooth transition for text color */
+  position: relative;
+  display: inline-block;
+  color: inherit;
+  transition: color 0.3s ease;
 }
 
 .navItem:hover {
-  color: #09FFB5; /* Change text color on hover */
+  color: #09FFB5;
 }
 
 .navItem::after {
   content: '';
   display: block;
   height: 2px;
-  background-color: #09FFB5; /* Secondary color */
+  background-color: #09FFB5;
   position: absolute;
-  bottom: -2px; /* Adjusted to show below the text */
+  bottom: -2px;
   left: 0;
   width: 100%;
   transform: scaleX(0);
@@ -102,11 +102,11 @@ html.dark {
 }
 
 .toggle-circle.light {
-  background-color: #fff; /* Sun color */
+  background-color: #fff;
 }
 
 .toggle-circle.dark {
-  background-color: #4b4b4b; /* Moon color */
+  background-color: #4b4b4b;
 }
 
 .toggle-circle > svg {
@@ -116,10 +116,9 @@ html.dark {
 }
 
 .toggle-circle.light > svg {
-  color: #000000; /* Sun icon color */
+  color: #000000;
 }
 
 .toggle-circle.dark > svg {
-  color: #FFF; /* Moon icon color */
+  color: #FFF;
 }
-
