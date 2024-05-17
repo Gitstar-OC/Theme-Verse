@@ -1,7 +1,8 @@
 // import {navigation} from "../Constants/index"
-import React from 'react'
+// import React from 'react'
 import { FaOpencart } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import Logo from "../assets/Theme-Verse.svg"
 //import BG from "../assets/Rectangle 4150.png"
 
 
@@ -9,6 +10,8 @@ const Navigation = () => {
   return (
 <>
   <header className='bg-hero w-[100%] h-[55px] bg-cover ' id='section'>
+  <img src={Logo} alt="Logo" />  
+    
     <nav className='font-cF flex flex-row items-center justify-center space-x-[20px] shrink-0'>
       {/* {navigation.map((item) => (
       ))} */}
