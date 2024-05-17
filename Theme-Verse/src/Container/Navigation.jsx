@@ -1,7 +1,6 @@
-import { FaOpencart } from "react-icons/fa";
+import { FaOpencart, FaSun, FaMoon } from "react-icons/fa";
 import { Link } from 'react-router-dom';
-import Logo from "../assets/Theme-Verse.svg";
-// import './styles.css';
+import Logo from "../assets/Theme-Verse.svg"
 import { useState, useEffect } from 'react';
 
 const Navigation = () => {
@@ -37,8 +36,10 @@ const Navigation = () => {
                 <span>Cart</span>
               </div>
             </Link>
-            <button onClick={toggleTheme} className='navItem theme-text'>
-              {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
+            <button onClick={toggleTheme} className='navItem theme-text flex items-center'>
+              <div className={`toggle-circle ${theme}`}>
+                {theme === 'light' ? <FaSun /> : <FaMoon />}
+              </div>
             </button>
           </nav>
         </div>
@@ -48,6 +49,8 @@ const Navigation = () => {
 }
 
 export default Navigation;
+
+
 
 /*        <div className="flex flex-wrap gap-10 mb-10">
           {benefits.map((item) => (
