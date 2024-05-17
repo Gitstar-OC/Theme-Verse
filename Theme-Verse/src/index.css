@@ -1,3 +1,4 @@
+/* Base styles */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,9 +8,18 @@
   src: url('./Fonts/Akaya_Telivigala/AkayaTelivigala-Regular.ttf') format('truetype');
 }
 
+/* Default background color (light mode) */
 html {
-  background-color: black;
   scroll-snap-type: y mandatory;
+  transition: background-color 1s ease;
+}
+
+html.light {
+  background-color: #ffffff;
+}
+
+html.dark {
+  background-color: #000000;
 }
 
 #section {
@@ -78,7 +88,7 @@ html {
   height: 40px;
   border-radius: 50%;
   background-color: #f0f0f0;
-  transition: background-color 1.0s ease, transform 1.0s ease;
+  transition: background-color 1s ease, transform 1s ease;
 }
 
 .toggle-circle.light {
@@ -92,6 +102,13 @@ html {
 .toggle-circle > svg {
   width: 20px;
   height: 20px;
-  color: #fff;
-  transition: color 0.6s ease;
+  transition: color 1s ease;
+}
+
+.toggle-circle.light > svg {
+  color: #FFA500; /* Sun icon color */
+}
+
+.toggle-circle.dark > svg {
+  color: #FFF; /* Moon icon color */
 }
