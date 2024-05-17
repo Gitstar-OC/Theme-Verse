@@ -16,8 +16,9 @@
 
 /* Default background color (light mode) */
 html {
-  scroll-snap-type: y mandatory;
+  /* scroll-snap-type: y mandatory; */
   transition: background-color 1s ease;
+  scroll-behavior: smooth;
 }
 
 html.light {
@@ -28,12 +29,12 @@ html.dark {
   background-color: #000000;
 }
 
-#section {
+/* #section {
   scroll-snap-align: start;
-}
+} */
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -41,7 +42,7 @@ html.dark {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #A6D2EA;
+  background-color: #1A3DF8;
 }
 
 .navItem {
@@ -122,3 +123,11 @@ html.dark {
 .toggle-circle.dark > svg {
   color: #FFF;
 }
+
+/* html.light ::-webkit-scrollbar-thumb {
+  background-color: #1A3DF8;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background-color: #09FFB5;
+} */
