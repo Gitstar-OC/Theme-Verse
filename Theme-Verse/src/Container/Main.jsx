@@ -21,7 +21,9 @@ const Main = () => {
     };
     document.addEventListener('mousemove', onMouseMove);
 
-    // Initialize particles.js
+    const isDarkMode = document.documentElement.classList.contains('dark');
+    const particleColor = isDarkMode ? '#A6D2EA' : '#000000';
+
     if (window.particlesJS) {
       window.particlesJS('particles-js', {
         particles: {
@@ -39,7 +41,10 @@ const Main = () => {
           line_linked: {
             enable: true,
             distance: 150,
-            color: '#0F94B2',
+            color: particleColor,
+          },
+          color: {
+            value: particleColor,
           },
         },
         interactivity: {
