@@ -21,6 +21,42 @@ const Main = () => {
     };
     document.addEventListener('mousemove', onMouseMove);
 
+    // Initialize particles.js
+    if (window.particlesJS) {
+      window.particlesJS('particles-js', {
+        particles: {
+          number: {
+            value: 100,
+          },
+          size: {
+            value: 3,
+          },
+          move: {
+            enable: true,
+            speed: 1,
+            out_mode: 'bounce',
+          },
+          line_linked: {
+            enable: true,
+            distance: 150,
+            color: '#0F94B2',
+          },
+        },
+        interactivity: {
+          events: {
+            onhover: {
+              enable: true,
+              mode: 'repulse',
+            },
+            onclick: {
+              enable: true,
+              mode: 'push',
+            },
+          },
+        },
+      });
+    }
+
     return () => {
       document.removeEventListener('mousemove', onMouseMove);
     };
