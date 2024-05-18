@@ -129,8 +129,6 @@ html.dark {
   color: #FFF;
 }
 
-/* styles.css */
-/* styles.css */
 .hover-word {
   display: inline-block;
   transition: transform 0.2s ease-in-out, color 0.2s ease-in-out, background-color 0.2s ease-in-out;
@@ -152,6 +150,7 @@ html.dark {
   background-color: #dc71cc;
   transform: scale(1.1);
 }
+
 
 
 /* html.light ::-webkit-scrollbar-thumb {
