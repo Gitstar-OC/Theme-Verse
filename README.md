@@ -12,6 +12,10 @@ Hello, I am OC, I will be leading the front end of this project. If anyone is a 
 <!--
 > Make sure to add the back end technologies you are using.
 -->
+- Things too add
+   - Create navbar animation on scrolling both up and down
+   - Add event listener and small dots to make it useful
+   - Add hover effects on the main section
 
 -  [Vite](https://vitejs.dev/)
 -  [React](https://react.dev/)
