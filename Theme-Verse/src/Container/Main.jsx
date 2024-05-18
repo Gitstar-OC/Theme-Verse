@@ -1,5 +1,7 @@
+import React, { useEffect } from "react";
+import Particles from "react-tsparticles";
+import { loadFull } from "tsparticles";
 import HomeLogo from "../assets/HomeLogo.svg";
-import { useEffect } from "react";
 import { Tilt } from 'react-tilt'; // Import Tilt using named export
 
 const Main = () => {
@@ -30,12 +32,112 @@ const Main = () => {
     };
   }, []);
 
+  const particlesInit = async (main) => {
+    await loadFull(main);
+  };
+
+  const particlesLoaded = (container) => {
+    console.log(container);
+  };
+
   return (
     <section
       className="h-[100vh] bg-light-bg dark:bg-dark-bg flex items-center w-full max-w-screen-xl mx-auto px-4 relative overflow-hidden"
       id="section"
     >
-      <div className="parallax-container absolute inset-0 overflow-hidden">
+      <Particles
+        id="tsparticles"
+        init={particlesInit}
+        loaded={particlesLoaded}
+        options={{
+          background: {
+            color: {
+              value: "#f0f0f0", // Background color for light theme
+            },
+            position: "50% 50%",
+            repeat: "no-repeat",
+            size: "cover",
+            opacity: 0.1, // Background opacity
+          },
+          backgroundMode: {
+            enable: true,
+            zIndex: 1,
+          },
+          particles: {
+            number: {
+              value: 50,
+              density: {
+                enable: true,
+                value_area: 800,
+              },
+            },
+            color: {
+              value: ["#ff0000", "#00ff00", "#0000ff"],
+            },
+            shape: {
+              type: "circle",
+            },
+            opacity: {
+              value: 0.5,
+              random: true,
+              anim: {
+                enable: false,
+              },
+            },
+            size: {
+              value: 3,
+              random: true,
+              anim: {
+                enable: false,
+              },
+            },
+            line_linked: {
+              enable: true,
+              distance: 150,
+              color: "#ffffff",
+              opacity: 0.4,
+              width: 1,
+            },
+            move: {
+              enable: true,
+              speed: 2,
+              direction: "none",
+              random: false,
+              straight: false,
+              out_mode: "out",
+              bounce: false,
+              attract: {
+                enable: false,
+              },
+            },
+          },
+          interactivity: {
+            detect_on: "canvas",
+            events: {
+              onhover: {
+                enable: true,
+                mode: "repulse",
+              },
+              onclick: {
+                enable: true,
+                mode: "push",
+              },
+              resize: true,
+            },
+            modes: {
+              repulse: {
+                distance: 100,
+                duration: 0.4,
+              },
+              push: {
+                particles_nb: 4,
+              },
+            },
+          },
+          retina_detect: true,
+        }}
+      />
+      <div className="parallax-container absolute inset-0 overflow-hidden z-0">
         <div className="parallax-layer layer1" data-speed="2"></div>
         <div className="parallax-layer layer2" data-speed="4"></div>
       </div>
@@ -83,6 +185,7 @@ const Main = () => {
 };
 
 export default Main;
+
 
 
 
