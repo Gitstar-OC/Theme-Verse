@@ -19,13 +19,19 @@ export default {
         'light-text': '#000000',
         secondary: '#09FFB5',
         third: "#A6D2EA",
-        heading: "#1A3DF8",
-        border: "#0F94B2" /* for the border */
+        heading : "#1A3DF8",
+        border: "#0F94B2", // for the border
       },
+      fontSize: {
+        'hover-lg': '40px',
+      }
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      fontSize: ['hover'],
+      textColor: ['hover'],
+    },
   },
   plugins: [],
 };
