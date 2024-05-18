@@ -1,4 +1,4 @@
-import HomeLogo from "../assets/HomeLogo.svg";
+ import HomeLogo from "../assets/HomeLogo.svg";
 import { useEffect } from "react";
 import { Tilt } from 'react-tilt'; // Import Tilt using named export
 
@@ -83,6 +83,30 @@ const Main = () => {
 };
 
 export default Main;
+
+// const Main = () => {
+//   return (
+// <div className="bg-[#000000] relative p-[166px_143px_162px_143px] w-[fit-content] box-sizing-border">
+// <div className="relative flex flex-row box-sizing-border">
+//   <div className="m-[0_109.7px_0_0] flex flex-col box-sizing-border">
+//     <div className="m-[0_0_27px_0] inline-block self-start break-words font-cF font-normal text-[64px] text-[#1A3DF8]">
+//       Theme Verse
+//     </div>
+//     <span className="break-words font-cL font-normal text-[32px] text-[#A6D2EA]">
+//             Welcome to our website! Explore our services, discover our work, and get inspired. Whether you’re a designer, developer, or entrepreneur, you can share your Figma design with us by providing a link. Contact us today to turn your vision into reality! Our team of experts will transform your Figma files into a stunning, fully functional website that reflects your unique style and brand.
+//     </span>
+//   </div>
+//   <div className="rounded-[25px] bg-[#000000] m-[14px_0_100px_0] w-[380px] h-[340px]">
+//   </div>
+// </div>
+// <div className="rounded-[25px] border-[3px_solid_#A6D2EA] absolute top-[180px] right-[191px] w-[373px] h-[335px]">
+//   <img src={HomeLogo} alt="Logo" />
+// </div>
+// </div>
+//   )
+// }
+
+// export default Main;
 
 
 
