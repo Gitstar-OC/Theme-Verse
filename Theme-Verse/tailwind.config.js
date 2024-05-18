@@ -8,8 +8,8 @@ export default {
         'hero': "url('./assets/NavbarBackground.png')",
       },
       fontFamily: {
-        'cL': ['cL', 'mono']
-        'cF': ['CF', 'sans-serif'],
+        'cL': ['CL', 'mono'],
+        'cF': ['CF', 'sans-serif']
       },
       colors: {
         primary: '#000000', // Example primary color
