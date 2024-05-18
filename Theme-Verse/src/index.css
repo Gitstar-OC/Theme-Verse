@@ -8,6 +8,11 @@
   src: url('./Fonts/Akaya_Telivigala/AkayaTelivigala-Regular.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'CL';
+  src: url("./Fonts/Chilanka/Chilanka-Regular.ttf") format("truetype");
+}
+
 @layer utilities {
   .bg-secondary {
     background-color: #09FFB5;
