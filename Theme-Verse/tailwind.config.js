@@ -18,9 +18,8 @@ export default {
         'dark-text': '#ffffff', // Dark theme text color
         'light-text': '#000000', // Light theme text color
         secondary: '#09FFB5', // Secondary color for hover
-      },
-      fontFamily: {
-        cF: ['CF', 'sans-serif'], // Custom font family
+        third: "#A6D2EA",
+        heading : "#1A3DF8"
       },
     },
   },
