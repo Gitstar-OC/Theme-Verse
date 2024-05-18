@@ -1,6 +1,13 @@
 import HomeLogo from "../assets/HomeLogo.svg";
+import { useEffect } from 'react';
 
 const Main = () => {
+  useEffect(() => {
+    const paragraph = document.getElementById('hover-paragraph');
+    const words = paragraph.innerText.split(' ');
+    paragraph.innerHTML = words.map(word => `<span class='hover-word'>${word}</span>`).join(' ');
+  }, []);
+
   return (
     <section
       className="h-[100vh] theme-bg flex items-center w-full max-w-screen-xl mx-auto px-4"
@@ -14,7 +21,7 @@ const Main = () => {
           <h1 className="font-cF text-[64px] font-normal leading-normal text-heading mb-4">
             Theme Verse
           </h1>
-          <p className="font-cL text-[32px] font-normal leading-normal mb-8 text-border dark:text-third light:text-[#0F94B2] hover:text-primary hover:text-hover-lg">
+          <p id="hover-paragraph" className="font-cL text-[32px] font-normal leading-normal mb-8 text-border dark:text-third light:text-[#0F94B2]">
             Welcome to our website! Explore our services, discover our work, and
             get inspired. Whether you’re a designer, developer, or entrepreneur,
             you can share your Figma design with us by providing a link. Contact
@@ -36,5 +43,6 @@ const Main = () => {
 };
 
 export default Main;
+
 
 
