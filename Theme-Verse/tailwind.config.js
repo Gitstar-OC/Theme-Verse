@@ -20,7 +20,7 @@ export default {
         secondary: '#09FFB5',
         third: "#A6D2EA",
         heading : "#1A3DF8",
-        customLightText: "#0F94B2"
+        border: "#0F94B2" /* for the border */
       },
     },
   },
