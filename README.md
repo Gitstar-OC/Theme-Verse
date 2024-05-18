@@ -16,14 +16,13 @@ Hello, I am OC, I will be leading the front end of this project. If anyone is a 
 -  [Vite](https://vitejs.dev/)
 -  [React](https://react.dev/)
 -  [Tailwind CSS](https://tailwindcss.com/)
--  [Bootstrap](https://getbootstrap.com/) 
 -  [Jest](https://jestjs.io/)
 -  [Formik](https://formik.org/) 
 -  [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
--  [Redux](https://redux.js.org/) 
 -  [React Router](https://reactrouter.com/)
-
-
+<!--
+-  [Redux](https://redux.js.org/)
+-  [Bootstrap](https://getbootstrap.com/) 
 
 
 
