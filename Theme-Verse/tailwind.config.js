@@ -8,6 +8,7 @@ export default {
         'hero': "url('./assets/NavbarBackground.png')",
       },
       fontFamily: {
+        'cL': ['cL', 'mono']
         'cF': ['CF', 'sans-serif'],
       },
       colors: {
