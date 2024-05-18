@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useCallback, useEffect } from "react";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import HomeLogo from "../assets/HomeLogo.svg";
@@ -32,13 +32,13 @@ const Main = () => {
     };
   }, []);
 
-  const particlesInit = async (main) => {
+  const particlesInit = useCallback(async (main) => {
     await loadFull(main);
-  };
+  }, []);
 
-  const particlesLoaded = (container) => {
+  const particlesLoaded = useCallback((container) => {
     console.log(container);
-  };
+  }, []);
 
   return (
     <section
@@ -91,7 +91,7 @@ const Main = () => {
                 enable: false,
               },
             },
-            line_linked: {
+            links: {
               enable: true,
               distance: 150,
               color: "#ffffff",
@@ -104,7 +104,9 @@ const Main = () => {
               direction: "none",
               random: false,
               straight: false,
-              out_mode: "out",
+              outModes: {
+                default: "out",
+              },
               bounce: false,
               attract: {
                 enable: false,
@@ -112,13 +114,13 @@ const Main = () => {
             },
           },
           interactivity: {
-            detect_on: "canvas",
+            detectsOn: "canvas",
             events: {
-              onhover: {
+              onHover: {
                 enable: true,
                 mode: "repulse",
               },
-              onclick: {
+              onClick: {
                 enable: true,
                 mode: "push",
               },
@@ -130,7 +132,7 @@ const Main = () => {
                 duration: 0.4,
               },
               push: {
-                particles_nb: 4,
+                quantity: 4,
               },
             },
           },
