@@ -12,7 +12,7 @@ function App() {
 
 }
 
-export defualt App;
+export default App;
 
 {/* <Routes>
           <Route path="/" element={<Home />} /> */}
