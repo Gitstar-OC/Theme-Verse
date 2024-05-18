@@ -129,6 +129,24 @@ html.dark {
   color: #FFF;
 }
 
+/* styles.css */
+.hover-word {
+  display: inline-block;
+  transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.hover-word:hover {
+  transform: scale(1.1);
+  color: #A6D2EA; /* or any other color for light theme */
+  background-color: #dc71cc;
+}
+
+.dark .hover-word:hover {
+  color: #A6D2EA; /* or any other color for dark theme */
+  background-color: #dc71cc;
+}
+
+
 /* html.light ::-webkit-scrollbar-thumb {
   background-color: #1A3DF8;
 }
