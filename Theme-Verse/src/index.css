@@ -130,9 +130,10 @@ html.dark {
 }
 
 /* styles.css */
+/* styles.css */
 .hover-word {
   display: inline-block;
-  transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
 .hover-word:hover {
@@ -144,6 +145,12 @@ html.dark {
 .dark .hover-word:hover {
   color: #A6D2EA; /* or any other color for dark theme */
   background-color: #dc71cc;
+}
+
+.special-word {
+  color: #A6D2EA;
+  background-color: #dc71cc;
+  transform: scale(1.1);
 }
 
 

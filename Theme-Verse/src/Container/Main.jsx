@@ -5,7 +5,12 @@ const Main = () => {
   useEffect(() => {
     const paragraph = document.getElementById('hover-paragraph');
     const words = paragraph.innerText.split(' ');
-    paragraph.innerHTML = words.map(word => `<span class='hover-word'>${word}</span>`).join(' ');
+    paragraph.innerHTML = words.map(word => {
+      if (['designer', 'developer', 'entrepreneur'].includes(word.toLowerCase().replace(/[.,!]/g, ''))) {
+        return `<span class='hover-word special-word'>${word}</span>`;
+      }
+      return `<span class='hover-word'>${word}</span>`;
+    }).join(' ');
   }, []);
 
   return (
@@ -43,5 +48,6 @@ const Main = () => {
 };
 
 export default Main;
+
 
 
