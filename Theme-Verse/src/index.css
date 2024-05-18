@@ -160,3 +160,38 @@ html.dark {
 html.dark ::-webkit-scrollbar-thumb {
   background-color: #09FFB5;
 } */
+
+.parallax-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.parallax-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+}
+
+.layer1 {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0)),
+              linear-gradient(45deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
+}
+
+.layer2 {
+  background: linear-gradient(225deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)),
+              linear-gradient(315deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+}
+
+.bg-light-bg {
+  background-color: #f0f0f0;
+}
+
+.bg-dark-bg {
+  background-color: #1e1e1e;
+}
+
+/*.text-heading {
+*/
