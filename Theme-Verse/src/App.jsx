@@ -6,17 +6,18 @@ import {Home} from "./Container/Exports"
 function App() {
   return (
       <>
-      <Home /> 
-        {/* <Routes>
+      <Home />
+        </>
+  );
+
+}
+
+export defualt App;
+
+{/* <Routes>
           <Route path="/" element={<Home />} /> */}
           {/* <Route path="/themes" element={<Projects />} />
           <Route path="/about" element={<Projects />} />
           <Route path="/contact" element={<Projects />} />
           <Route path="/cart" element={<Projects />} /> */}
         {/* </Routes> */}
-      </>
-  );
-}
-
-export default App;
-
