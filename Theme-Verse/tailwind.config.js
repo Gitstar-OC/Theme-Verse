@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./src/**/*.{html,js,jsx}"],
-  darkMode: 'class', // Enable dark mode support
+  darkMode: 'class',
   theme: {
     extend: {
       backgroundImage: {
@@ -12,14 +12,15 @@ export default {
         'cF': ['CF', 'sans-serif']
       },
       colors: {
-        primary: '#000000', // Example primary color
-        'dark-bg': '#000000', // Dark background color
-        'light-bg': '#ffffff', // Light background color
-        'dark-text': '#ffffff', // Dark theme text color
-        'light-text': '#000000', // Light theme text color
-        secondary: '#09FFB5', // Secondary color for hover
+        primary: '#000000',
+        'dark-bg': '#000000',
+        'light-bg': '#ffffff',
+        'dark-text': '#ffffff',
+        'light-text': '#000000',
+        secondary: '#09FFB5',
         third: "#A6D2EA",
-        heading : "#1A3DF8"
+        heading : "#1A3DF8",
+        customLightText: "#0F94B2"
       },
     },
   },
