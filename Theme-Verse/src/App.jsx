@@ -1,11 +1,10 @@
 // import { BrowserRouter as Route, Routes } from 'react-router-dom';
-import { Navigation, Home, Projects, Footer } from './Container/Exports'
+// import { Navigation, Home, Projects, Footer } from './Container/Exports'
 import './index.css';
 
 function App() {
   return (
       <>
-        <Navigation />
         {/* <Routes>
           <Route path="/" element={<Home />} /> */}
           {/* <Route path="/themes" element={<Projects />} />
@@ -13,9 +12,6 @@ function App() {
           <Route path="/contact" element={<Projects />} />
           <Route path="/cart" element={<Projects />} /> */}
         {/* </Routes> */}
-        <Home /> 
-        <Projects /> 
-        <Footer />
       </>
   );
 }

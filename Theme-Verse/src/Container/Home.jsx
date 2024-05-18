@@ -1,13 +1,21 @@
-// Home.jsx
-import React from 'react';
+// import React from "react";
+import { Navigation, Projects, Main, Footer } from './Exports'
 
 const Home = () => {
   return (
-    <section className='h-[100vh] theme-bg' id='section'>
-      <p className='theme-text'>Hello</p>
-    </section>
+    <>
+      <Navigation />
+      {/* <Routes>
+  <Route path="/" element={<Home />} /> */}
+      {/* <Route path="/themes" element={<Projects />} />
+  <Route path="/about" element={<Projects />} />
+  <Route path="/contact" element={<Projects />} />
+  <Route path="/cart" element={<Projects />} /> */}
+      {/* </Routes> */}
+      <Main />
+      <Projects />
+      <Footer />
+    </>
   );
-}
-
+};
 export default Home;
-
