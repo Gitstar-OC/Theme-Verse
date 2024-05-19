@@ -39,7 +39,7 @@ const Main = () => {
 
   return (
     <section
-      className="pt-[55px] h-[calc(100vh-55px)] bg-light-bg dark:bg-dark-bg flex items-center w-full max-w-screen-xl mx-auto px-4 relative mb-10"
+      className="pt-[55px] h-[calc(100vh-55px)] bg-light-bg dark:bg-dark-bg flex items-center w-full max-w-screen-xl mx-auto px-4 relative mb-0"  // Reduced margin-bottom
       id="section"
     >
       <div className="parallax-container absolute inset-0 overflow-hidden">
@@ -47,7 +47,7 @@ const Main = () => {
         <div className="parallax-layer layer2" data-speed="5"></div>
       </div>
       <div className="parallax-content flex flex-col sm:flex-row items-center w-full z-10 relative">
-        <div id="content" className="text-center sm:text-left w-full sm:w-1/2 mb-8 sm:mb-0 sm:mr-4 flex flex-col">
+        <div id="content" className="text-center sm:text-left w-full sm:w-1/2 mb-0 sm:mb-0 sm:mr-4 flex flex-col">
           <h1 className="font-cF text-[32px] md:text-[48px] lg:text-[64px] font-normal leading-normal text-heading mb-4 relative inline-block self-start break-words text-[#1A3DF8]">
             Theme Verse
             <svg className="absolute bottom-[-10px] left-0 w-[100%] h-5" viewBox="0 0 50 20" preserveAspectRatio="none">
@@ -69,9 +69,9 @@ const Main = () => {
             Welcome !! Explore our services, discover our work, and get inspired. Whether you’re a designer, developer, or entrepreneur, you can share your Figma design with us by providing a link. Contact us today to turn your vision into reality! Our team of experts will transform your Figma files into a stunning, fully functional website that reflects your unique style and brand.
           </p>
         </div>
-        <div id="image-container" className="w-full sm:w-1/2 flex justify-center sm:justify-end mt-8 sm:mt-0">
+        <div id="image-container" className="w-full sm:w-1/2 flex justify-center sm:justify-end mt-0 sm:mt-0">
           <Tilt className="Tilt" options={{ max: 25 }}>
-            <div className="relative w-[400px] h-[360px] rounded-[25px] m-[14px_0_50px_0] bg-light-image-bg dark:bg-dark-image-bg transition-colors duration-300">
+            <div className="relative w-[400px] h-[360px] rounded-[25px] bg-light-image-bg dark:bg-dark-image-bg transition-colors duration-300">
               <img
                 src={HomeLogo}
                 alt="Logo"
@@ -87,6 +87,7 @@ const Main = () => {
 };
 
 export default Main;
+
 
 
 

@@ -38,7 +38,7 @@ const Projects = () => {
   }, []);
 
   return (
-    <div className='h-[100vh] theme-bg flex flex-col items-center justify-center space-y-6' id='section'>
+    <div className='h-[calc(100vh-55px)] theme-bg flex flex-col items-center justify-center space-y-6' id='section'>
       <div
         ref={sectionRef}
         className={`rectangleDiv transition-all duration-1000 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
@@ -60,3 +60,4 @@ const Projects = () => {
 };
 
 export default Projects;
+
