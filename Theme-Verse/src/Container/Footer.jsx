@@ -1,6 +1,6 @@
 // Footer.jsx
 // import React from 'react';
-import IG2 from "../assets/Rectangle4155.svg"
+import IG2 from "../assets/FooterLogo.svg"
 
 const Footer = () => {
   return (
