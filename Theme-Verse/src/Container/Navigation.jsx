@@ -6,28 +6,36 @@ import { useState, useEffect, useRef } from "react";
 const Navigation = () => {
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
   const headerRef = useRef(null);
+  const scrollTimeoutRef = useRef(null);
 
   useEffect(() => {
-    let prevScrollPos = window.scrollY;
-
     const handleScroll = () => {
-      const currentScrollPos = window.scrollY;
       const headerElement = headerRef.current;
       if (!headerElement) {
         return;
       }
-      if (prevScrollPos > currentScrollPos) {
-        headerElement.style.transform = "translateY(0)";
-      } else {
-        headerElement.style.transform = "translateY(-200px)";
+
+      // Show the header on scroll
+      headerElement.style.transform = "translateY(0)";
+
+      // Clear the previous timeout if it's still running
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current);
       }
-      prevScrollPos = currentScrollPos;
+
+      // Set a timeout to hide the header if scrolling stops for 2 seconds
+      scrollTimeoutRef.current = setTimeout(() => {
+        headerElement.style.transform = "translateY(-200px)";
+      }, 2000);
     };
 
     window.addEventListener("scroll", handleScroll);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current);
+      }
     };
   }, []);
 
@@ -50,6 +58,7 @@ const Navigation = () => {
         transitionProperty: "transform",
         transitionDuration: ".3s",
         transitionTimingFunction: "ease-in-out",
+        transform: "translateY(0)",
       }}
       ref={headerRef}
     >
@@ -97,4 +106,3 @@ const Navigation = () => {
 };
 
 export default Navigation;
-
