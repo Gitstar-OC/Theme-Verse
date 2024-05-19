@@ -5,7 +5,9 @@ import { useState, useEffect, useRef } from "react";
 
 const Navigation = () => {
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
-  const headerRef = useRef(null);
+  const headerRef = useRef(null); //The useRef hook is used to keep a reference to the navigation bar DOM element. This allows direct manipulation of the DOM element within the component.
+  // const contentRef = useRef(null);
+  // const imageRef = useRef(null);
 
   useEffect(() => {
     let prevScrollPos = window.scrollY;
@@ -39,8 +41,33 @@ const Navigation = () => {
     };
   }, [theme]);
 
+  const triggerReflow = (element) => {
+    element.offsetHeight; // This forces a reflow
+  };
+
+  const replayAnimations = () => { //  Temporarily removes and then re-adds the animation classes to force the animations to replay.
+    const headerElement = headerRef.current;
+    const contentElement = document.getElementById('content');
+    const imageElement = document.getElementById('image-container');
+
+    if (headerElement && contentElement && imageElement) {
+      headerElement.classList.remove('header-animation');
+      contentElement.classList.remove('content-slide-in');
+      imageElement.classList.remove('image-slide-in');
+
+      triggerReflow(headerElement);
+      triggerReflow(contentElement);
+      triggerReflow(imageElement);
+
+      headerElement.classList.add('header-animation');
+      contentElement.classList.add('content-slide-in');
+      imageElement.classList.add('image-slide-in');
+    }
+  };
+
   const toggleTheme = () => {
     setTheme(theme === "light" ? "dark" : "light");
+    replayAnimations();
   };
 
   useEffect(() => {
