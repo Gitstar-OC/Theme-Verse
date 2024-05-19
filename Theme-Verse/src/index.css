@@ -266,3 +266,43 @@ body {
   color: black;
 }
 
+/* Updated bouncing animation with reduced jump height and slower speed */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px); /* Reduced jump height */
+  }
+  60% {
+    transform: translateY(-5px); /* Reduced jump height */
+  }
+}
+
+.icon-bounce {
+  animation: bounce 3s infinite; /* Slowed down the animation */
+  font-size: 25px; /* Increased icon size */
+}
+
+/* Color transition for icons */
+.icon {
+  transition: color 0.3s ease;
+}
+
+.icon:hover {
+  color: #09FFB5 !important;
+}
+
+/* Border thickness and color change */
+.border-b-[3px] {
+  border-bottom-width: 3px;
+}
+
+.border-black {
+  border-color: black;
+}
+
+/* Adjusting icon color based on theme */
+.text-theme {
+  color: var(--icon-color);
+}

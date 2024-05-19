@@ -9,13 +9,11 @@ import { Link } from "react-router-dom";
 import FooterLogo from "../assets/FooterLogo.svg";
 
 const Footer = ({ theme }) => {
+  const iconColor = theme === "dark" ? "white" : "black";
+
   return (
     <footer
-      className={`relative flex flex-col items-center p-10 w-full ${
-        theme === "dark"
-          ? "bg-[#001724] bg-opacity-100"
-          : "bg-[#A6D2EA] bg-opacity-50"
-      }`}
+      className={`relative flex flex-col items-center p-10 w-full bg-footer bg-cover bg-fixed`}
     >
       <div className="flex flex-row justify-between w-full max-w-screen-xl mx-auto mb-8">
         <div className="flex flex-col items-center space-y-8">
@@ -63,33 +61,33 @@ const Footer = ({ theme }) => {
           className="w-48 h-48 rounded-2xl border-3 border-[#A6D2EA]"
         />
       </div>
-      <div className="w-full border-b-2 border-[#1A3DF8] mb-4"></div>
+      <div className="w-full border-b-[3px] border-black mb-4"></div>
       <div className="flex flex-row justify-between items-center w-full max-w-screen-xl mx-auto">
-        <div className="font-cL text-30 bg-gradient-to-r from-[#45D0C9] to-[#00FFF3] text-transparent bg-clip-text">
+        <div className="font-cL text-[36px] bg-gradient-to-r from-[#45D0C9] to-[#00FFF3] text-transparent bg-clip-text">
           © 2024 Om Chandankar. All rights reserved
         </div>
         <div className="flex space-x-4">
           <a
             href="https://github.com/Gitstar-OC"
-            className={`w-10 h-10 ${theme === "dark" ? "text-white" : "text-current"} hover:text-[#09FFB5]`}
+            className={`w-10 h-10 icon icon-bounce text-${iconColor} hover:text-[#09FFB5]`}
           >
             <FaGithubSquare className="w-full h-full" />
           </a>
           <a
             href="https://www.instagram.com/oc__coder/"
-            className={`w-10 h-10 ${theme === "dark" ? "text-white" : "text-current"} hover:text-[#09FFB5]`}
+            className={`w-10 h-10 icon icon-bounce text-${iconColor} hover:text-[#09FFB5]`}
           >
             <FaInstagram className="w-full h-full" />
           </a>
           <a
             href="https://www.linkedin.com/in/om-chandankar/"
-            className={`w-10 h-10 ${theme === "dark" ? "text-white" : "text-current"} hover:text-[#09FFB5]`}
+            className={`w-10 h-10 icon icon-bounce text-${iconColor} hover:text-[#09FFB5]`}
           >
             <FaLinkedin className="w-full h-full" />
           </a>
           <a
             href="https://x.com/Om_Chandankar"
-            className={`w-10 h-10 ${theme === "dark" ? "text-white" : "text-current"} hover:text-[#09FFB5]`}
+            className={`w-10 h-10 icon icon-bounce text-${iconColor} hover:text-[#09FFB5]`}
           >
             <FaSquareXTwitter className="w-full h-full" />
           </a>
