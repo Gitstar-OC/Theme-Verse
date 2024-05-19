@@ -104,7 +104,7 @@ html.dark {
   height: 40px;
   border-radius: 50%;
   background-color: #f0f0f0;
-  transition: background-color 1s ease, transform 1s ease;
+  transition: /**background-color 1s ease*/ transform 1s ease;
 }
 
 .toggle-circle.light {
