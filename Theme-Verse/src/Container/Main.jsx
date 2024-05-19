@@ -32,7 +32,7 @@ const Main = () => {
 
   return (
     <section
-      className="h-[100vh] bg-light-bg dark:bg-dark-bg flex items-center w-full max-w-screen-xl mx-[18.75rem] px-4 relative box-sizing-border p-[166px_143px_162px_143px]"
+      className="pt-[55px] h-[calc(100vh-55px)] bg-light-bg dark:bg-dark-bg flex items-center w-full max-w-screen-xl mx-auto px-4 relative"
       id="section"
     >
       <div className="parallax-container absolute inset-0 overflow-hidden">
@@ -40,7 +40,7 @@ const Main = () => {
         <div className="parallax-layer layer2" data-speed="5"></div>
       </div>
       <div className="parallax-content flex flex-col sm:flex-row items-center w-full z-10 relative">
-        <div className="text-center sm:text-left w-full sm:w-1/2 mb-8 sm:mb-0 sm:mr-4 flex flex-col box-sizing-border">
+        <div className="text-center sm:text-left w-full sm:w-1/2 mb-8 sm:mb-0 sm:mr-4 flex flex-col">
           <h1 className="font-cF text-[32px] md:text-[48px] lg:text-[64px] font-normal leading-normal text-heading mb-4 relative inline-block self-start break-words text-[#1A3DF8]">
             Theme Verse
             <svg className="absolute bottom-[-10px] left-0 w-[100%] h-5" viewBox="0 0 50 20" preserveAspectRatio="none">
@@ -80,6 +80,7 @@ const Main = () => {
 };
 
 export default Main;
+
 
 
 
