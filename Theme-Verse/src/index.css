@@ -1,4 +1,3 @@
-/* Base styles */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -18,6 +17,39 @@
     background-color: #09FFB5;
   }
 }
+
+/* Navbar slide down animation */
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Content slide up animation */
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Apply animation to the header */
+.header-animation {
+  animation: slideDown 1s ease-in-out;
+}
+
+/* Apply animation to the content */
+.content-animation {
+  animation: slideUp 1s ease-in-out;
+}
+
+/* Base styles */
+
 
 /* Default background color (light mode) */
 html {
@@ -151,7 +183,6 @@ html.dark {
   transform: scale(1.1);
   text-decoration: underline;
 }
-
 
 
 /* html.light ::-webkit-scrollbar-thumb {

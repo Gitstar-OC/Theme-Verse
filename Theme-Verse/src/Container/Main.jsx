@@ -30,6 +30,11 @@ const Main = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const contentElement = document.getElementById('section');
+    contentElement.classList.add('content-animation');
+  }, []);
+
   return (
     <section
       className="pt-[55px] h-[calc(100vh-55px)] bg-light-bg dark:bg-dark-bg flex items-center w-full max-w-screen-xl mx-auto px-4 relative"
@@ -73,6 +78,7 @@ const Main = () => {
               />
             </div>
           </Tilt>
+
         </div>
       </div>
     </section>
