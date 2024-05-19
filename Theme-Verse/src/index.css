@@ -48,8 +48,39 @@
   animation: slideUp 1s ease-in-out;
 }
 
-/* Base styles */
 
+/* Content slide in from the left animation */
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Image slide in from the right animation */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Apply animation to the content */
+.content-slide-in {
+  animation: slideInLeft 1s ease-in-out;
+}
+
+/* Apply animation to the image */
+.image-slide-in {
+  animation: slideInRight 1s ease-in-out;
+}
+
+
+/* Base styles */
 
 /* Default background color (light mode) */
 html {

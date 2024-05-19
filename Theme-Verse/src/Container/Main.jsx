@@ -1,6 +1,6 @@
 import HomeLogo from "../assets/HomeLogo.svg";
 import { useEffect } from "react";
-import { Tilt } from 'react-tilt'; // Import Tilt using named export
+import { Tilt } from 'react-tilt';
 
 const Main = () => {
   useEffect(() => {
@@ -31,8 +31,10 @@ const Main = () => {
   }, []);
 
   useEffect(() => {
-    const contentElement = document.getElementById('section');
-    contentElement.classList.add('content-animation');
+    const contentElement = document.getElementById('content');
+    const imageElement = document.getElementById('image-container');
+    contentElement.classList.add('content-slide-in');
+    imageElement.classList.add('image-slide-in');
   }, []);
 
   return (
@@ -45,7 +47,7 @@ const Main = () => {
         <div className="parallax-layer layer2" data-speed="5"></div>
       </div>
       <div className="parallax-content flex flex-col sm:flex-row items-center w-full z-10 relative">
-        <div className="text-center sm:text-left w-full sm:w-1/2 mb-8 sm:mb-0 sm:mr-4 flex flex-col">
+        <div id="content" className="text-center sm:text-left w-full sm:w-1/2 mb-8 sm:mb-0 sm:mr-4 flex flex-col">
           <h1 className="font-cF text-[32px] md:text-[48px] lg:text-[64px] font-normal leading-normal text-heading mb-4 relative inline-block self-start break-words text-[#1A3DF8]">
             Theme Verse
             <svg className="absolute bottom-[-10px] left-0 w-[100%] h-5" viewBox="0 0 50 20" preserveAspectRatio="none">
@@ -67,7 +69,7 @@ const Main = () => {
             Welcome !! Explore our services, discover our work, and get inspired. Whether you’re a designer, developer, or entrepreneur, you can share your Figma design with us by providing a link. Contact us today to turn your vision into reality! Our team of experts will transform your Figma files into a stunning, fully functional website that reflects your unique style and brand.
           </p>
         </div>
-        <div className="w-full sm:w-1/2 flex justify-center sm:justify-end mt-8 sm:mt-0">
+        <div id="image-container" className="w-full sm:w-1/2 flex justify-center sm:justify-end mt-8 sm:mt-0">
           <Tilt className="Tilt" options={{ max: 25 }}>
             <div className="relative w-[400px] h-[360px] rounded-[25px] m-[14px_0_100px_0] bg-light-image-bg dark:bg-dark-image-bg transition-colors duration-300">
               <img
@@ -78,7 +80,6 @@ const Main = () => {
               />
             </div>
           </Tilt>
-
         </div>
       </div>
     </section>
@@ -86,6 +87,7 @@ const Main = () => {
 };
 
 export default Main;
+
 
 
 
