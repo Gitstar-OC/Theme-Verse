@@ -306,3 +306,12 @@ body {
 .text-theme {
   color: var(--icon-color);
 }
+
+/* Custom class for dark and light theme icon colors */
+.icon-dark {
+  @apply text-white;
+}
+
+.icon-light {
+  @apply text-black;
+}
