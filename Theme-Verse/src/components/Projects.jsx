@@ -4,6 +4,7 @@ import { FaArrowCircleRight } from 'react-icons/fa';
 const Projects = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
+  const seeAllRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -22,9 +23,16 @@ const Projects = () => {
       observer.observe(sectionRef.current);
     }
 
+    if (seeAllRef.current) {
+      observer.observe(seeAllRef.current);
+    }
+
     return () => {
       if (sectionRef.current) {
         observer.unobserve(sectionRef.current);
+      }
+      if (seeAllRef.current) {
+        observer.unobserve(seeAllRef.current);
       }
     };
   }, []);
@@ -39,8 +47,11 @@ const Projects = () => {
           Themes
         </div>
       </div>
-      <div className='smallDiv flex items-center justify-center'>
-        <div className='font-cL text-border text-[40px] flex items-center'>
+      <div
+        ref={seeAllRef}
+        className={`smallDiv transition-all duration-1000 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+      >
+        <div className='font-cL text-border text-[40px] flex items-center justify-center h-full'>
           see all <FaArrowCircleRight className='ml-2' />
         </div>
       </div>
