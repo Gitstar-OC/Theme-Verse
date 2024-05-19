@@ -103,8 +103,6 @@ const Navigation = () => {
 
 export default Navigation;
 
-
-
 { /** import { FaOpencart, FaSun, FaMoon } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Logo from "../assets/Theme-Verse.svg";
