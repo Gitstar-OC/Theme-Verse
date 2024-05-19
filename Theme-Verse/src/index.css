@@ -149,6 +149,7 @@ html.dark {
   color: #A6D2EA;
   background-color: #dc71cc;
   transform: scale(1.1);
+  text-decoration: underline;
 }
 
 
