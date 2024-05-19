@@ -260,10 +260,12 @@ body {
 
 .dark .navItem {
   color: white;
+  border-color: white;
 }
 
 .light .navItem {
   color: black;
+  border-color: black;
 }
 
 /* Updated bouncing animation with reduced jump height and slower speed */

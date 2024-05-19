@@ -31,7 +31,7 @@ const Footer = ({ theme }) => {
         </div>
         <img src={FooterLogo} alt="Footer Logo" className="w-48 h-48 rounded-2xl border-3 border-[#A6D2EA]" />
       </div>
-      <div className="w-full border-b-[3px] border-black mb-4"></div>
+      <div className="w-full border-b-[3px] navItem mb-4"></div>
       <div className="flex flex-row justify-between items-center w-full max-w-screen-xl mx-auto">
         <div className="font-cL text-[36px] bg-gradient-to-r from-[#45D0C9] to-[#00FFF3] text-transparent bg-clip-text">
           © 2024 Om Chandankar. All rights reserved
