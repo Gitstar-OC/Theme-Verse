@@ -97,6 +97,20 @@ html.dark {
   background-color: #000000;
 }
 
+/* html.light ::-webkit-scrollbar-thumb {
+  background-color: #1A3DF8;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background-color: #09FFB5;
+} */
+
+/* Hide the horizontal scrollbar */
+body {
+  overflow-x: hidden;
+}
+
+
 /* #section {
   scroll-snap-align: start;
 } */
@@ -216,11 +230,5 @@ html.dark {
 }
 
 
-/* html.light ::-webkit-scrollbar-thumb {
-  background-color: #1A3DF8;
-}
 
-html.dark ::-webkit-scrollbar-thumb {
-  background-color: #09FFB5;
-} */
 
