@@ -229,6 +229,40 @@ body {
   text-decoration: underline;
 }
 
+.navItem {
+  @apply text-primary font-cF text-[36px] font-normal leading-normal relative;
+  position: relative;
+  display: inline-block;
+  color: inherit;
+  transition: color 0.3s ease;
+}
 
+.navItem:hover {
+  color: #09FFB5;
+}
 
+.navItem::after {
+  content: '';
+  display: block;
+  height: 2px;
+  background-color: #09FFB5;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.navItem:hover::after {
+  transform: scaleX(1);
+}
+
+.dark .navItem {
+  color: white;
+}
+
+.light .navItem {
+  color: black;
+}
 
