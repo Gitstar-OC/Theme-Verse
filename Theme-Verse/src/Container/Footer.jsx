@@ -69,16 +69,16 @@ const Footer = ({ theme }) => {
           © 2024 Om Chandankar. All rights reserved
         </div>
         <div className="flex space-x-4">
-          <Link to="#" className="w-10 h-10">
+          <a href="https://github.com/Gitstar-OC" className="w-10 h-10">
             <FaGithubSquare className="w-full h-full text-current" />
-          </Link>
-          <Link to="#" className="w-10 h-10">
+          </a>
+          <Link to="https://www.instagram.com/oc__coder/" className="w-10 h-10">
             <FaInstagram className="w-full h-full text-current" />
           </Link>
-          <Link to="#" className="w-10 h-10">
+          <Link to="https://www.linkedin.com/in/om-chandankar/" className="w-10 h-10">
             <FaLinkedin className="w-full h-full text-current" />
           </Link>
-          <Link to="#" className="w-10 h-10">
+          <Link to="https://x.com/Om_Chandankar" className="w-10 h-10">
             <FaSquareXTwitter className="w-full h-full text-current" />
           </Link>
         </div>
