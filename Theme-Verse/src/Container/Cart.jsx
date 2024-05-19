@@ -1,12 +1,13 @@
-import React from 'react'
+// import React from 'react'
+import { Navigation, Footer } from '../components/Exports'
 
 const Cart = () => {
   return (
-    <div>
-
-    </div>
+    <>
+      <Navigation />
+      <Footer />
+    </>
   )
 }
 
-export default Cart;
-
+export default Cart

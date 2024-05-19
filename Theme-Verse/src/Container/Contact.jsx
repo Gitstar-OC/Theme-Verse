@@ -1,10 +1,12 @@
-import React from 'react'
+// import React from 'react'
+import { Navigation, Footer } from '../components/Exports'
 
 const Contact = () => {
   return (
-    <div>
-
-    </div>
+    <>
+      <Navigation />
+      <Footer />
+    </>
   )
 }
 
