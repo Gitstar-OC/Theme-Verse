@@ -1,5 +1,5 @@
 // import React from "react";
-import { Navigation, Projects, Main, Footer } from './Exports'
+import { Navigation, Projects, Main, Footer } from '../components/Exports'
 
 const Home = () => {
   return (
