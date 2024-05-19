@@ -1,3 +1,4 @@
+// tailwind.config.js
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./src/**/*.{html,js,jsx}"],
@@ -21,10 +22,19 @@ export default {
         secondary: '#09FFB5',
         third: "#A6D2EA",
         heading : "#1A3DF8",
-        border: "#0F94B2", // for the border
+        border: "#0F94B2", // for the border 
       },
       fontSize: {
         'hover-lg': '40px',
+      },
+      keyframes: {
+        slideUp: {
+          '0%': { transform: 'translateY(100%)' },
+          '100%': { transform: 'translateY(0)' }
+        }
+      },
+      animation: {
+        slideUp: 'slideUp 1s ease-in-out'
       }
     },
   },

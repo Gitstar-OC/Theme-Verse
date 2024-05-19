@@ -317,3 +317,20 @@ body {
 .icon-light {
   @apply text-black;
 }
+
+
+/* Projects section */ 
+.theme-text {
+  @apply text-border;
+}
+
+.rectangleDiv {
+  @apply w-full relative rounded-[25px] border-[3px] box-border h-[106px];
+  border-color: #0f94b2;
+  background-color: #a6d2ea
+}
+
+.dark .rectangleDiv {
+  border-color: #a6d2ea;
+  background-color: #000000;
+}
