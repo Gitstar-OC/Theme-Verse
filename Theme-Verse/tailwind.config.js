@@ -6,6 +6,7 @@ export default {
     extend: {
       backgroundImage: {
         'hero': "url('./assets/NavbarBackground.png')",
+        'footer': "url('./assets/FooterBackground.png')"
       },
       fontFamily: {
         'cL': ['CL', 'mono'],

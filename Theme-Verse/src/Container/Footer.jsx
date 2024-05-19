@@ -69,18 +69,30 @@ const Footer = ({ theme }) => {
           © 2024 Om Chandankar. All rights reserved
         </div>
         <div className="flex space-x-4">
-          <a href="https://github.com/Gitstar-OC" className="w-10 h-10">
-            <FaGithubSquare className="w-full h-full text-current" />
+          <a
+            href="https://github.com/Gitstar-OC"
+            className={`w-10 h-10 ${theme === "dark" ? "text-white" : "text-current"} hover:text-[#09FFB5]`}
+          >
+            <FaGithubSquare className="w-full h-full" />
           </a>
-          <Link to="https://www.instagram.com/oc__coder/" className="w-10 h-10">
-            <FaInstagram className="w-full h-full text-current" />
-          </Link>
-          <Link to="https://www.linkedin.com/in/om-chandankar/" className="w-10 h-10">
-            <FaLinkedin className="w-full h-full text-current" />
-          </Link>
-          <Link to="https://x.com/Om_Chandankar" className="w-10 h-10">
-            <FaSquareXTwitter className="w-full h-full text-current" />
-          </Link>
+          <a
+            href="https://www.instagram.com/oc__coder/"
+            className={`w-10 h-10 ${theme === "dark" ? "text-white" : "text-current"} hover:text-[#09FFB5]`}
+          >
+            <FaInstagram className="w-full h-full" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/om-chandankar/"
+            className={`w-10 h-10 ${theme === "dark" ? "text-white" : "text-current"} hover:text-[#09FFB5]`}
+          >
+            <FaLinkedin className="w-full h-full" />
+          </a>
+          <a
+            href="https://x.com/Om_Chandankar"
+            className={`w-10 h-10 ${theme === "dark" ? "text-white" : "text-current"} hover:text-[#09FFB5]`}
+          >
+            <FaSquareXTwitter className="w-full h-full" />
+          </a>
         </div>
       </div>
     </footer>
