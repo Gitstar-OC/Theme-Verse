@@ -1,5 +1,5 @@
-import HomeLogo from "../assets/HomeLogo.svg";
-import { useEffect } from "react";
+import React, { useEffect } from 'react';
+import HomeLogo from '../assets/HomeLogo.svg';
 import { Tilt } from 'react-tilt';
 
 const Main = () => {
@@ -39,7 +39,7 @@ const Main = () => {
 
   return (
     <section
-      className="pt-[55px] h-[calc(100vh-55px)] bg-light-bg dark:bg-dark-bg flex items-center w-full max-w-screen-xl mx-auto px-4 relative"
+      className="pt-[55px] h-[calc(100vh-55px)] bg-light-bg dark:bg-dark-bg flex items-center w-full max-w-screen-xl mx-auto px-4 relative mb-10"
       id="section"
     >
       <div className="parallax-container absolute inset-0 overflow-hidden">
@@ -71,7 +71,7 @@ const Main = () => {
         </div>
         <div id="image-container" className="w-full sm:w-1/2 flex justify-center sm:justify-end mt-8 sm:mt-0">
           <Tilt className="Tilt" options={{ max: 25 }}>
-            <div className="relative w-[400px] h-[360px] rounded-[25px] m-[14px_0_100px_0] bg-light-image-bg dark:bg-dark-image-bg transition-colors duration-300">
+            <div className="relative w-[400px] h-[360px] rounded-[25px] m-[14px_0_50px_0] bg-light-image-bg dark:bg-dark-image-bg transition-colors duration-300">
               <img
                 src={HomeLogo}
                 alt="Logo"
