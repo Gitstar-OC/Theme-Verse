@@ -43,7 +43,7 @@ const Projects = () => {
         ref={sectionRef}
         className={`rectangleDiv transition-all duration-1000 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
       >
-        <div className='font-cL text-border text-[48px] text-center flex items-center justify-center h-full'>
+        <div className='projectItem text-[48px]'>
           Themes
         </div>
       </div>
@@ -51,7 +51,7 @@ const Projects = () => {
         ref={seeAllRef}
         className={`smallDiv transition-all duration-1000 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
       >
-        <div className='projectItem items-center '>
+        <div className='projectItem text-[40px]  cursor-pointer'>
           See all <FaArrowCircleRight className='ml-4' />
         </div>
       </div>

@@ -359,7 +359,7 @@ body {
 }
 
 .projectItem {
-  @apply text-border text-[40px] flex justify-center h-full  cursor-pointer font-cL;
+  @apply text-border flex justify-center items-center h-full text-center font-cL;
   position: relative;
   color: inherit;
   transition: color 0.3s ease;
