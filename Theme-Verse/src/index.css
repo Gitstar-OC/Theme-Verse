@@ -229,35 +229,6 @@ body {
   text-decoration: underline;
 }
 
-.navItem {
-  @apply text-primary font-cF text-[36px] font-normal leading-normal relative;
-  position: relative;
-  display: inline-block;
-  color: inherit;
-  transition: color 0.3s ease;
-}
-
-.navItem:hover {
-  color: #09FFB5;
-}
-
-.navItem::after {
-  content: '';
-  display: block;
-  height: 2px;
-  background-color: #09FFB5;
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 100%;
-  transform: scaleX(0);
-  transition: transform 0.3s ease-in-out;
-}
-
-.navItem:hover::after {
-  transform: scaleX(1);
-}
-
 .dark .navItem {
   color: white;
   border-color: white;
@@ -385,4 +356,36 @@ body {
 .smallDiv {
   margin-top: 0;
   margin-bottom: 0;
+}
+
+.projectItem {
+  @apply text-border text-[40px] flex justify-center h-full hover:text-secondary cursor-pointer font-cL;
+  position: relative;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+.projectItem::after {
+  content: '';
+  display: block; /* Changed from inline to block */
+  height: 2px;
+  background-color: #09FFB5;
+  position: absolute;
+  bottom: 10px; /* Adjusted to 10 to bring the line closer */
+  left: 0;
+  width: 100%;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.projectItem:hover::after {
+  transform: scaleX(1);
+}
+
+.dark .projectItem {
+  @apply text-border;
+}
+
+.light .projectItem {
+  @apply text-border;
 }
