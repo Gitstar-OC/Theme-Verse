@@ -1,3 +1,4 @@
+import React, { useEffect, useRef, useState } from 'react';
 import {
   FaGithubSquare,
   FaInstagram,
@@ -9,8 +10,40 @@ import { Link } from "react-router-dom";
 import FooterLogo from "../assets/FooterLogo.svg";
 
 const Footer = ({ theme }) => {
+  const footerRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target); // Unobserve after animation triggers
+        }
+      },
+      {
+        threshold: 0.75, // Trigger when 50% of the footer is in view
+      }
+    );
+
+    if (footerRef.current) {
+      observer.observe(footerRef.current);
+    }
+
+    return () => {
+      if (footerRef.current) {
+        observer.unobserve(footerRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <footer className={`relative flex flex-col items-center p-10 w-full bg-footer bg-cover bg-fixed`}>
+    <footer
+      ref={footerRef}
+      className={`relative flex flex-col items-center p-10 w-full bg-footer bg-cover bg-fixed transition-opacity duration-300 ease-in-out ${
+        isVisible ? 'opacity-100 animate-slideUpFadeIn' : 'opacity-0'
+      }`}
+    >
       <div className="flex flex-row justify-between w-full max-w-screen-xl mx-auto mb-8">
         <div className="flex flex-col items-center space-y-8">
           <Link to="/" className="navItem text-[36px] hover:text-[#09FFB5]">Home</Link>
@@ -56,5 +89,4 @@ const Footer = ({ theme }) => {
 };
 
 export default Footer;
-
 
