@@ -359,7 +359,7 @@ body {
 }
 
 .projectItem {
-  @apply text-border text-[40px] flex justify-center h-full hover:text-secondary cursor-pointer font-cL;
+  @apply text-border text-[40px] flex justify-center h-full  cursor-pointer font-cL;
   position: relative;
   color: inherit;
   transition: color 0.3s ease;
@@ -383,9 +383,9 @@ body {
 }
 
 .dark .projectItem {
-  @apply text-border;
+  @apply text-border hover:text-secondary;
 }
 
 .light .projectItem {
-  @apply text-border;
+  @apply text-border hover:text-secondary;
 }
