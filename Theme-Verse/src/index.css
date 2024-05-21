@@ -409,6 +409,19 @@ body {
     justify-content: center;
 }
 
+.filter-text {
+  @apply font-cF text-[32px]; 
+  color: var(--text-color)
+}
+
+.dark .filter-text {
+  @apply text-dark-text;
+}
+
+.light .filter-text {
+  @apply text-light-text;
+}
+
 /* Scroll behavior */
 .main-content {
   height: 2000px; /* Increase height for scrolling demo */
