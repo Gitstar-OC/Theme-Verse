@@ -290,6 +290,8 @@ body {
 }
 
 
+
+
 /* Projects section */
 .theme-text {
   @apply text-border;
@@ -397,7 +399,6 @@ body {
 
 
 /* Themes Section */
-/* Themes Section */
 .filter-sidebar {
   background-color: var(--bg-color);
   color: var(--text-color);
@@ -411,46 +412,51 @@ body {
 }
 
 .filter-text {
-@apply font-cF text-[32px];
-color: var(--text-color);
-cursor: pointer;
+  @apply font-cF text-[40px];
+  color: var(--text-color);
+  cursor: pointer;
 }
 
 .dark .filter-text {
-@apply text-dark-text;
+  @apply text-dark-text;
 }
 
 .light .filter-text {
-@apply text-light-text;
+  @apply text-light-text;
 }
 
 /* Scroll behavior */
 .main-content {
-height: 2000px; /* Increase height for scrolling demo */
+  height: 2000px; /* Increase height for scrolling demo */
 }
 
 .filter-sidebar {
-position: sticky;
-top: 0;
-height: 100vh;
-overflow-y: auto;
-scroll-behavior: smooth; /* Enable smooth scrolling */
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  scroll-behavior: smooth; /* Enable smooth scrolling */
 }
 
 .custom-checkbox {
-cursor: pointer;
+  cursor: pointer;
+}
+
+.custom-checkbox:checked {
+  background-color: #09FFB5; /* Change checkbox color when checked */
+  border-color: #09FFB5;
 }
 
 .custom-checkbox:checked + .filter-text,
 .custom-checkbox:hover + .filter-text {
-color: #09FFB5; /* Change color when checkbox is checked or hovered */
+  color: #09FFB5; /* Change color when checkbox is checked or hovered */
 }
 
 /* Line styles */
 .border-b-3 {
-border-bottom-width: 3px;
+  border-bottom-width: 3px;
 }
 
 .border-heading {
-border-color: #1A3DF8;
+  border-color: #1A3DF8;
 }
