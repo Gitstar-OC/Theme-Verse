@@ -462,6 +462,30 @@ body {
   border-color: #1A3DF8;
 }
 
+.filter-text {
+  @apply  flex justify-center items-center h-full text-center ;
+  position: relative;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+.filter-text::after {
+  content: '';
+  display: block;
+  height: 2px;
+  background-color: #1A3DF8;
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.filter-text:hover::after {
+  transform: scaleX(1);
+}
+
 /* Footer Styles */
 footer {
   @apply relative flex flex-col items-center p-10 w-full bg-footer bg-cover bg-fixed;
