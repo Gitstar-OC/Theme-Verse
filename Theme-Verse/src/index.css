@@ -290,7 +290,7 @@ body {
 }
 
 
-/* Projects section */ 
+/* Projects section */
 .theme-text {
   @apply text-border;
 }
@@ -398,11 +398,15 @@ body {
 
 /* Themes Section */
 .filter-sidebar {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  margin-top: 1rem; /* Added margin-top for space below the navbar */
-  margin-left: 1rem; /* Added margin-left for space on the left */
-  margin-bottom: 1rem; /* Reduced margin-bottom for less space at the bottom */
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin-top: 4rem; /* Increased margin-top for space below the navbar */
+    margin-left: 4rem; /* Added margin-left for space on the left */
+    margin-bottom: 1rem; /* Reduced margin-bottom for less space at the bottom */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    justify-content: center;
 }
 
 /* Scroll behavior */
