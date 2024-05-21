@@ -48,7 +48,6 @@
   animation: slideUp 1s ease-in-out;
 }
 
-
 /* Content slide in from the left animation */
 @keyframes slideInLeft {
   from {
@@ -79,12 +78,10 @@
   animation: slideInRight 1s ease-in-out;
 }
 
-
 /* Base styles */
 
 /* Default background color (light mode) */
 html {
-  /* scroll-snap-type: y mandatory; */
   transition: background-color 0.2s ease;
   scroll-behavior: smooth;
 }
@@ -97,23 +94,9 @@ html.dark {
   background-color: #000000;
 }
 
-/* html.light ::-webkit-scrollbar-thumb {
-  background-color: #1A3DF8;
-}
-
-html.dark ::-webkit-scrollbar-thumb {
-  background-color: #09FFB5;
-} */
-
-/* Hide the horizontal scrollbar */
 body {
   overflow-x: hidden;
 }
-
-
-/* #section {
-  scroll-snap-align: start;
-} */
 
 ::-webkit-scrollbar {
   width: 8px;
@@ -127,6 +110,7 @@ body {
   background-color: #1A3DF8;
 }
 
+/* Navigation Styles */
 .navItem {
   @apply text-primary font-cF text-[30px] font-normal leading-normal relative;
   position: relative;
@@ -154,6 +138,16 @@ body {
 
 .navItem:hover::after {
   transform: scaleX(1);
+}
+
+.dark .navItem {
+  color: white;
+  border-color: white;
+}
+
+.light .navItem {
+  color: black;
+  border-color: black;
 }
 
 /* Dark and light theme */
@@ -213,12 +207,12 @@ body {
 
 .hover-word:hover {
   transform: scale(1.1);
-  color: #A6D2EA; /* or any other color for light theme */
+  color: #A6D2EA;
   background-color: #dc71cc;
 }
 
 .dark .hover-word:hover {
-  color: #A6D2EA; /* or any other color for dark theme */
+  color: #A6D2EA;
   background-color: #dc71cc;
 }
 
@@ -229,32 +223,22 @@ body {
   text-decoration: underline;
 }
 
-.dark .navItem {
-  color: white;
-  border-color: white;
-}
-
-.light .navItem {
-  color: black;
-  border-color: black;
-}
-
 /* Updated bouncing animation with reduced jump height and slower speed */
 @keyframes bounce {
   0%, 20%, 50%, 80%, 100% {
     transform: translateY(0);
   }
-  40% {
-    transform: translateY(-10px); /* Reduced jump height */
+  50% {
+    transform: translateY(-10px);
   }
-  60% {
-    transform: translateY(-5px); /* Reduced jump height */
+  100% {
+    transform: translateY(-5px);
   }
 }
 
 .icon-bounce {
-  animation: bounce 3s infinite; /* Slowed down the animation */
-  font-size: 25px; /* Increased icon size */
+  animation: bounce 3s infinite;
+  font-size: 25px;
 }
 
 /* Color transition for icons */
@@ -280,7 +264,6 @@ body {
   color: var(--icon-color);
 }
 
-/* Custom class for dark and light theme icon colors */
 .icon-dark {
   @apply text-white;
 }
@@ -289,10 +272,15 @@ body {
   @apply text-black;
 }
 
+/* Projects Section */
+.projects-section {
+  @apply flex flex-col items-center p-4;
+}
 
+.project-card {
+  @apply bg-white p-4 rounded shadow-md m-4;
+}
 
-
-/* Projects section */
 .theme-text {
   @apply text-border;
 }
@@ -314,7 +302,7 @@ body {
   @apply relative rounded-[15px] border-[3px] box-border h-[83px];
   width: 315px;
   border-color: #0f94b2;
-  background-color: #a6d2ea
+  background-color: #a6d2ea;
 }
 
 .dark .smallDiv {
@@ -369,11 +357,11 @@ body {
 
 .projectItem::after {
   content: '';
-  display: block; /* Changed from inline to block */
+  display: block;
   height: 2px;
   background-color: #09FFB5;
   position: absolute;
-  bottom: 10px; /* Adjusted to 10 to bring the line closer */
+  bottom: 10px;
   left: 0;
   width: 100%;
   transform: scaleX(0);
@@ -392,27 +380,31 @@ body {
   @apply text-border hover:text-secondary;
 }
 
+/* Main Section */
+.main-content {
+  height: 2000px;
+}
 
-
-
-
-
-
-/* Themes Section */
+/* Filter Sidebar */
 .filter-sidebar {
   background-color: var(--bg-color);
   color: var(--text-color);
-  margin-top: 2rem; /* Increased margin-top for space below the navbar */
-  margin-left: 4rem; /* Added margin-left for space on the left */
-  margin-bottom: 1rem; /* Reduced margin-bottom for less space at the bottom */
+  margin-top: 2rem;
+  margin-left: 4rem;
+  margin-bottom: 1rem;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center content horizontally */
+  align-items: center;
   justify-content: center;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  scroll-behavior: smooth;
 }
 
 .filter-text {
-  @apply font-cF text-[40px];
+  @apply font-cF text-[32px];
   color: var(--text-color);
   cursor: pointer;
 }
@@ -425,31 +417,35 @@ body {
   @apply text-light-text;
 }
 
-/* Scroll behavior */
-.main-content {
-  height: 2000px; /* Increase height for scrolling demo */
-}
-
-.filter-sidebar {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  overflow-y: auto;
-  scroll-behavior: smooth; /* Enable smooth scrolling */
-}
-
+/* Custom Checkbox Styles */
 .custom-checkbox {
   cursor: pointer;
+  width: 20px;
+  height: 20px;
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid var(--text-color);
+  border-radius: 4px;
+  position: relative;
 }
 
 .custom-checkbox:checked {
-  background-color: #09FFB5; /* Change checkbox color when checked */
+  background-color: #09FFB5;
   border-color: #09FFB5;
 }
 
-.custom-checkbox:checked + .filter-text,
+.custom-checkbox:checked::before {
+  content: '✓';
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16px;
+}
+
 .custom-checkbox:hover + .filter-text {
-  color: #09FFB5; /* Change color when checkbox is checked or hovered */
+  color: #09FFB5;
 }
 
 /* Line styles */
@@ -459,4 +455,19 @@ body {
 
 .border-heading {
   border-color: #1A3DF8;
+}
+
+/* Footer Styles */
+footer {
+  @apply relative flex flex-col items-center p-10 w-full bg-footer bg-cover bg-fixed;
+  transition: duration-300 ease-in-out;
+}
+
+.footer-item {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.footer-item-visible {
+  opacity: 1;
 }
