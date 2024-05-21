@@ -409,6 +409,12 @@ body {
   cursor: pointer;
 }
 
+
+.filter-text:hover {
+  @apply text-[#1A3DF8]
+}
+
+
 .dark .filter-text {
   @apply text-dark-text;
 }
@@ -430,8 +436,7 @@ body {
 }
 
 .custom-checkbox:checked {
-  background-color: #09FFB5;
-  border-color: #09FFB5;
+  background-color: #1A3DF8;
 }
 
 .custom-checkbox:checked::before {
@@ -445,7 +450,7 @@ body {
 }
 
 .custom-checkbox:hover + .filter-text {
-  color: #09FFB5;
+  color: #1A3DF8;
 }
 
 /* Line styles */
