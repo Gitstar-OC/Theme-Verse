@@ -397,48 +397,60 @@ body {
 
 
 /* Themes Section */
+/* Themes Section */
 .filter-sidebar {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    margin-top: 4rem; /* Increased margin-top for space below the navbar */
-    margin-left: 4rem; /* Added margin-left for space on the left */
-    margin-bottom: 1rem; /* Reduced margin-bottom for less space at the bottom */
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center content horizontally */
-    justify-content: center;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin-top: 2rem; /* Increased margin-top for space below the navbar */
+  margin-left: 4rem; /* Added margin-left for space on the left */
+  margin-bottom: 1rem; /* Reduced margin-bottom for less space at the bottom */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  justify-content: center;
 }
 
 .filter-text {
-  @apply font-cF text-[32px]; 
-  color: var(--text-color)
+@apply font-cF text-[32px];
+color: var(--text-color);
+cursor: pointer;
 }
 
 .dark .filter-text {
-  @apply text-dark-text;
+@apply text-dark-text;
 }
 
 .light .filter-text {
-  @apply text-light-text;
+@apply text-light-text;
 }
 
 /* Scroll behavior */
 .main-content {
-  height: 2000px; /* Increase height for scrolling demo */
+height: 2000px; /* Increase height for scrolling demo */
 }
 
 .filter-sidebar {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  overflow-y: auto;
+position: sticky;
+top: 0;
+height: 100vh;
+overflow-y: auto;
+scroll-behavior: smooth; /* Enable smooth scrolling */
+}
+
+.custom-checkbox {
+cursor: pointer;
+}
+
+.custom-checkbox:checked + .filter-text,
+.custom-checkbox:hover + .filter-text {
+color: #09FFB5; /* Change color when checkbox is checked or hovered */
 }
 
 /* Line styles */
 .border-b-3 {
-  border-bottom-width: 3px;
+border-bottom-width: 3px;
 }
 
 .border-heading {
-  border-color: #1A3DF8;
+border-color: #1A3DF8;
 }
