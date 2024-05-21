@@ -65,7 +65,7 @@ const Main = () => {
               </defs>
             </svg>
           </h1>
-          <p id="hover-paragraph" className="font-cL text-[16px] md:text-[24px] lg:text-[32px] font-normal leading-normal mb-8 text-border dark:text-third light:text-[#0F94B2] break-words text-[#A6D2EA]">
+          <p id="hover-paragraph" className="font-cL text-[16px] md:text-[24px] lg:text-[32px] font-normal leading-normal mb-8 text-black dark:text-white light:text-[#0F94B2] break-words text-[#A6D2EA]">
             Welcome !! Explore our services, discover our work, and get inspired. Whether you’re a designer, developer, or entrepreneur, you can share your Figma design with us by providing a link. Contact us today to turn your vision into reality! Our team of experts will transform your Figma files into a stunning, fully functional website that reflects your unique style and brand.
           </p>
         </div>
