@@ -594,22 +594,22 @@ footer {
 
 .backgroundAnim2 {
   top: 20%;
-  animation-delay: 2s; /* Stagger animation */
+  animation-delay: 1s; /* Stagger animation */
 }
 
 .backgroundAnim3 {
   top: 40%;
-  animation-delay: 4s; /* Stagger animation */
+  animation-delay: 2s; /* Stagger animation */
 }
 
 .backgroundAnim4 {
   top: 60%;
-  animation-delay: 6s; /* Stagger animation */
+  animation-delay: 3s; /* Stagger animation */
 }
 
 .backgroundAnim5 {
   top: 80%;
-  animation-delay: 8s; /* Stagger animation */
+  animation-delay: 1s; /* Stagger animation */
 }
 
 .container {
