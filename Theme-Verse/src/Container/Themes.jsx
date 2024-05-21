@@ -1,7 +1,6 @@
 // Themes.js
 import React from 'react';
-import { Navigation, Footer } from '../components/Exports';
-import FilterSidebar from './FilterSidebar';
+import {FilterSidebar, Navigation, Footer } from '../components/Exports';
 
 const Themes = () => {
   return (

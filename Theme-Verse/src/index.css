@@ -400,6 +400,9 @@ body {
 .filter-sidebar {
   background-color: var(--bg-color);
   color: var(--text-color);
+  margin-top: 1rem; /* Added margin-top for space below the navbar */
+  margin-left: 1rem; /* Added margin-left for space on the left */
+  margin-bottom: 1rem; /* Reduced margin-bottom for less space at the bottom */
 }
 
 /* Scroll behavior */
@@ -412,4 +415,13 @@ body {
   top: 0;
   height: 100vh;
   overflow-y: auto;
+}
+
+/* Line styles */
+.border-b-3 {
+  border-bottom-width: 3px;
+}
+
+.border-heading {
+  border-color: #1A3DF8;
 }
