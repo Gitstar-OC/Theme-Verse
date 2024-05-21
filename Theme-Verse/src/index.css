@@ -389,3 +389,27 @@ body {
 .light .projectItem {
   @apply text-border hover:text-secondary;
 }
+
+
+
+
+
+
+
+/* Themes Section */
+.filter-sidebar {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* Scroll behavior */
+.main-content {
+  height: 2000px; /* Increase height for scrolling demo */
+}
+
+.filter-sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
