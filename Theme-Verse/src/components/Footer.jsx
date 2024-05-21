@@ -46,7 +46,7 @@ const Footer = ({ theme }) => {
       <div className="flex flex-row justify-between w-full max-w-screen-xl mx-auto mb-8">
         <div className={`flex flex-col items-center space-y-8 ${isVisible ? 'animate-slideUpFadeIn' : 'opacity-0'}`}>
           <Link to="/" className="navItem text-[36px] hover:text-[#09FFB5]">Home</Link>
-          <Link to="/developer" className="navItem text-[36px] hover:text-[#09FFB5]">Developer</Link>
+          <Link to="/about" className="navItem text-[36px] hover:text-[#09FFB5]">Developer</Link>
         </div>
         <div className={`flex flex-col items-center space-y-8 ${isVisible ? 'animate-slideUpFadeIn' : 'opacity-0'}`}>
           <Link to="/about" className="navItem text-[36px] hover:text-[#09FFB5]">About</Link>
