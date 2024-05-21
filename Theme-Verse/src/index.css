@@ -574,12 +574,19 @@ footer {
   position: absolute;
   left: 0;
   width: 100%;
-  height: 50px;
+  height: 80px;
   background: linear-gradient(45deg, #A6D2EA, #1A3DF8, #3F44C4, #A6D2EA);
-  filter: blur(50px);
+  filter: blur(80px);
   animation: animBack 3s linear infinite;
-  opacity: 0.9; /* Increase visibility */
+  opacity: 1; /* Increase visibility */
 }
+
+.dark .backgroundAnim {
+  height: 40px;
+  filter: blur(100px);
+}
+
+
 
 .backgroundAnim1 {
   top: 0;
