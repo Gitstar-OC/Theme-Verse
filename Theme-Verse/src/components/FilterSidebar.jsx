@@ -3,7 +3,7 @@ import React from 'react';
 
 const FilterSidebar = () => {
   return (
-    <div className="filter-sidebar relative p-4 theme-bg text-theme">
+    <div className="filter-sidebar relative p-4 mt-4 ml-4 theme-bg text-theme">
       <h2 className="font-cL text-2xl theme-text">Filter</h2>
       <div className="border-b-3 border-heading my-4"></div>
       <div className="space-y-4">
@@ -24,7 +24,7 @@ const FilterSidebar = () => {
           <label htmlFor="restaurant" className="font-cF text-xl theme-text">Restaurant</label>
         </div>
       </div>
-      <div className="my-6"></div>
+      <div className="border-b-3 border-heading my-4"></div>
       <div className="space-y-4">
         <div>
           <input type="checkbox" id="chakra-ui" className="mr-2" />
@@ -43,6 +43,7 @@ const FilterSidebar = () => {
           <label htmlFor="vite" className="font-cF text-xl theme-text">Vite</label>
         </div>
       </div>
+      <div className="border-b-3 border-heading my-4"></div>
     </div>
   );
 }
