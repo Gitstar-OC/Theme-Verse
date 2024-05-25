@@ -1,13 +1,13 @@
-import { FaOpencart, FaSun, FaMoon } from "react-icons/fa";
-import { Link } from "react-router-dom";
-import Logo from "../assets/Theme-Verse.svg";
+import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
+import { FaOpencart, FaSun, FaMoon } from "react-icons/fa";
+import Logo from "../assets/Theme-Verse.svg";
+import '../index.css'; // Assuming you have a CSS file for additional styles
 
 const Navigation = () => {
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
-  const headerRef = useRef(null); //The useRef hook is used to keep a reference to the navigation bar DOM element. This allows direct manipulation of the DOM element within the component.
-  // const contentRef = useRef(null);
-  // const imageRef = useRef(null);
+  const headerRef = useRef(null);
+  const { pathname } = useLocation(); // Get the current path
 
   useEffect(() => {
     let prevScrollPos = window.scrollY;
@@ -45,7 +45,7 @@ const Navigation = () => {
     element.offsetHeight; // This forces a reflow
   };
 
-  const replayAnimations = () => { //  Temporarily removes and then re-adds the animation classes to force the animations to replay.
+  const replayAnimations = () => {
     const headerElement = headerRef.current;
     const contentElement = document.getElementById('content');
     const imageElement = document.getElementById('image-container');
@@ -75,6 +75,8 @@ const Navigation = () => {
     headerElement.classList.add('header-animation');
   }, []);
 
+  const isActive = (path) => pathname === path;
+
   return (
     <header
       className="bg-hero w-full h-[55px] bg-cover flex items-center px-4 fixed top-0 left-0 right-0 z-50"
@@ -90,34 +92,25 @@ const Navigation = () => {
           <img src={Logo} alt="Logo" className="h-8" />
         </div>
         <nav className="flex space-x-8">
-          <Link to="/" className="navItem theme-text hover:text-[#09FFB5]">
+          <Link to="/" className={`navItem theme-text ${isActive('/') ? 'current-location' : ''}`}>
             Home
           </Link>
-          <Link
-            to="/themes"
-            className="navItem theme-text hover:text-[#09FFB5]"
-          >
+          <Link to="/themes" className={`navItem theme-text ${isActive('/themes') ? 'current-location' : ''}`}>
             Themes
           </Link>
-          <Link
-            to="/about"
-            className="navItem theme-text hover:text-[#09FFB5]"
-          >
+          <Link to="/about" className={`navItem theme-text ${isActive('/about') ? 'current-location' : ''}`}>
             About
           </Link>
-          <Link
-            to="/contact"
-            className="navItem theme-text hover:text-[#09FFB5]"
-          >
+          <Link to="/contact" className={`navItem theme-text ${isActive('/contact') ? 'current-location' : ''}`}>
             Contact
           </Link>
-          <Link to="/cart" className="navItem theme-text hover:text-[#09FFB5]">
-            <div className="flex items-center space-x-1 hover:text-[#09FFB5]">
+          <Link to="/cart" className={`navItem theme-text ${isActive('/cart') ? 'current-location' : ''}`}>
+            <div className="flex items-center space-x-1">
               <FaOpencart />
               <span>Cart</span>
             </div>
           </Link>
-          <button onClick={toggleTheme} className="navItem theme-text">
+          <button onClick={toggleTheme} className="theme-text">
             <div className={`toggle-circle ${theme}`}>
               {theme === "light" ? <FaSun /> : <FaMoon />}
             </div>
@@ -129,6 +122,8 @@ const Navigation = () => {
 };
 
 export default Navigation;
+
+
 
 { /** import { FaOpencart, FaSun, FaMoon } from "react-icons/fa";
 import { Link } from "react-router-dom";

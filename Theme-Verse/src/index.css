@@ -111,6 +111,7 @@ body {
 }
 
 /* Navigation Styles */
+
 .navItem {
   @apply text-primary font-cF text-[30px] font-normal leading-normal relative;
   position: relative;
@@ -119,26 +120,58 @@ body {
   transition: color 0.3s ease;
 }
 
-.navItem:hover {
-  color: #09FFB5;
-}
-
 .navItem::after {
   content: '';
   display: block;
   height: 2px;
   background-color: #09FFB5;
   position: absolute;
-  bottom: -2px;
+  bottom: 0; /* Adjust the position to bottom: 0 to prevent layout shift */
   left: 0;
   width: 100%;
   transform: scaleX(0);
   transition: transform 0.3s ease-in-out;
 }
 
-.navItem:hover::after {
+.navItem:hover::after,
+.navItem:focus::after {
   transform: scaleX(1);
 }
+
+.current-location:active {
+  @apply text-[#09FFB5];
+}
+
+.navItem:hover,
+.navItem:focus {
+  @apply hover:text-[#09FFB5]
+}
+
+.navItem:hover::after,
+.navItem:focus::after {
+  transform: scaleX(1);
+}
+
+.current-location {
+  color: #09FFB5;
+  text-decoration: underline;
+}
+
+.current-location::after {
+  transform: scaleX(1);
+}
+
+.navItem {
+  @apply text-primary font-cF text-[30px] font-normal leading-normal relative;
+  position: relative;
+  display: inline-block;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+
+
+/*   */ 
 
 .dark .navItem {
   color: white;
