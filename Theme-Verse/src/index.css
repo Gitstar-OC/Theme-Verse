@@ -138,11 +138,6 @@ body {
   transform: scaleX(1);
 }
 
-.navItem:hover,
-.navItem:focus {
-  color: #09FFB5;
-}
-
 #current-location {
   color: #09FFB5;
 }
@@ -150,8 +145,6 @@ body {
 #current-location::after {
   transform: scaleX(1);
 }
-
-/*   */ 
 
 .dark .navItem {
   color: white;
