@@ -138,38 +138,18 @@ body {
   transform: scaleX(1);
 }
 
-.current-location:active {
-  @apply text-[#09FFB5];
-}
-
 .navItem:hover,
 .navItem:focus {
-  @apply hover:text-[#09FFB5]
-}
-
-.navItem:hover::after,
-.navItem:focus::after {
-  transform: scaleX(1);
-}
-
-.current-location {
   color: #09FFB5;
-  text-decoration: underline;
 }
 
-.current-location::after {
+#current-location {
+  color: #09FFB5;
+}
+
+#current-location::after {
   transform: scaleX(1);
 }
-
-.navItem {
-  @apply text-primary font-cF text-[30px] font-normal leading-normal relative;
-  position: relative;
-  display: inline-block;
-  color: inherit;
-  transition: color 0.3s ease;
-}
-
-
 
 /*   */ 
 
