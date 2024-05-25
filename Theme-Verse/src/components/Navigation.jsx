@@ -92,19 +92,19 @@ const Navigation = () => {
           <img src={Logo} alt="Logo" className="h-8" />
         </div>
         <nav className="flex space-x-8">
-          <Link to="/" className="navItem theme-text" id={isActive('/') ? 'current-location' : undefined}>
+          <Link to="/" className="navItem theme-text hover:text-[#09FFB5]" id={isActive('/') ? 'current-location' : undefined}>
             Home
           </Link>
-          <Link to="/themes" className="navItem theme-text" id={isActive('/themes') ? 'current-location' : undefined}>
+          <Link to="/themes" className="navItem theme-text hover:text-[#09FFB5]" id={isActive('/themes') ? 'current-location' : undefined}>
             Themes
           </Link>
-          <Link to="/about" className="navItem theme-text" id={isActive('/about') ? 'current-location' : undefined}>
+          <Link to="/about" className="navItem theme-text hover:text-[#09FFB5]" id={isActive('/about') ? 'current-location' : undefined}>
             About
           </Link>
-          <Link to="/contact" className="navItem theme-text" id={isActive('/contact') ? 'current-location' : undefined}>
+          <Link to="/contact" className="navItem theme-text hover:text-[#09FFB5]" id={isActive('/contact') ? 'current-location' : undefined}>
             Contact
           </Link>
-          <Link to="/cart" className="navItem theme-text" id={isActive('/cart') ? 'current-location' : undefined}>
+          <Link to="/cart" className="navItem theme-text hover:text-[#09FFB5]" id={isActive('/cart') ? 'current-location' : undefined}>
             <div className="flex items-center space-x-1">
               <FaOpencart />
               <span>Cart</span>
