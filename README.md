@@ -24,7 +24,11 @@ Hello, I am OC, I will be leading the front end of this project. If anyone is a 
 -  [Formik](https://formik.org/) 
 -  [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
 -  [React Router](https://reactrouter.com/)
+
 <!--
+-  [Flask]
+-  [Three JS]
+-  [Other react packages]
 -  [Redux](https://redux.js.org/)
 -  [Bootstrap](https://getbootstrap.com/) 
 
