@@ -260,10 +260,10 @@ body {
   color: #09FFB5 !important;
 }
 
-/* Border thickness and color change */
+/* Border thickness and color change 
 .border-b-[3px] {
   border-bottom-width: 3px;
-}
+} */
 
 .border-black {
   border-color: black;
@@ -693,21 +693,21 @@ footer {
   -ms-overflow-style: none;  /* Internet Explorer 10+ */
 }
 
-.projectIframe iframe.no-scrollbar::-webkit-scrollbar { 
+.projectIframe iframe.no-scrollbar::-webkit-scrollbar {
   display: none;  /* Safari and Chrome */
 }
 
 /* .projectIframeContainer {
   overflow: hidden;
-  height: 20rem; /* Adjust height as needed */
-  width: 36rem; /* Increase width as needed 
+  height: 20rem; /* Adjust height as needed 
+  width: 36rem; /* Increase width as needed
   position: relative;
   border-radius: 1rem;
 }
 
 .projectIframe {
   width: 100%;
-  height: 200%; /* Double the container height for scrolling effect 
+  height: 200%; /* Double the container height for scrolling effect
   border: 0;
   transition: transform 0.3s ease-in-out;
 }
@@ -729,10 +729,10 @@ footer {
 }
 
 .no-scrollbar::-webkit-scrollbar {
-  display: none; /* Hide the scrollbar for WebKit browsers 
+  display: none; /* Hide the scrollbar for WebKit browsers
 }
 
 .no-scrollbar {
-  -ms-overflow-style: none;  /* Hide the scrollbar for Internet Explorer and Edge 
-  scrollbar-width: none;  /* Hide the scrollbar for Firefox 
+  -ms-overflow-style: none;  /* Hide the scrollbar for Internet Explorer and Edge
+  scrollbar-width: none;  /* Hide the scrollbar for Firefox
 } */
