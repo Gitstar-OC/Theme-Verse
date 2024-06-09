@@ -7,7 +7,10 @@ const Home = () => {
       <Navigation />
       <Main />
       <Projects />
+      <span>
       <Footer />
+      </span>
+      
     </>
   );
 };

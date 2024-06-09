@@ -1,11 +1,24 @@
-grilli/
-jad/
-brainware_ai/
-gpt4/
-business-website/
-nike_landing_page/
-project_html_css_website/
-React-Notes/
-developer-portfolio/
-Little-Lemon-Coursera/
-AdvancedReactCode/
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

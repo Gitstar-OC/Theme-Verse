@@ -111,6 +111,7 @@ body {
 }
 
 /* Navigation Styles */
+
 .navItem {
   @apply text-primary font-cF text-[30px] font-normal leading-normal relative;
   position: relative;
@@ -119,24 +120,29 @@ body {
   transition: color 0.3s ease;
 }
 
-.navItem:hover {
-  color: #09FFB5;
-}
-
 .navItem::after {
   content: '';
   display: block;
   height: 2px;
   background-color: #09FFB5;
   position: absolute;
-  bottom: -2px;
+  bottom: 0; /* Adjust the position to bottom: 0 to prevent layout shift */
   left: 0;
   width: 100%;
   transform: scaleX(0);
   transition: transform 0.3s ease-in-out;
 }
 
-.navItem:hover::after {
+.navItem:hover::after,
+.navItem:focus::after {
+  transform: scaleX(1);
+}
+
+#current-location {
+  color: #09FFB5;
+}
+
+#current-location::after {
   transform: scaleX(1);
 }
 
@@ -403,9 +409,9 @@ body {
 }
 
 /* Main Section */
-.main-content {
+/* .main-content {
   height: 2000px;
-}
+} */
 
 /* Filter Sidebar */
 @keyframes filterSlideIn {
@@ -530,21 +536,6 @@ body {
   }
 }
 
-footer {
-  @apply relative flex flex-col items-center p-10 w-full bg-footer bg-cover bg-fixed;
-  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
-}
-
-.footer-item {
-  opacity: 0;
-  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
-  animation: fadeIn 3s ease-in-out;
-}
-
-.footer-item-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
 
 /* Adjusting icon color based on theme */
 .text-theme {
@@ -582,7 +573,7 @@ footer {
 }
 
 .dark .backgroundAnim {
-  height: 40px;
+height: 40px;
   filter: blur(100px);
 }
 
@@ -619,3 +610,129 @@ footer {
   pointer-events: none;
   position: relative; /* Contain the background animation */
 }
+
+/* Add these styles to your CSS file */
+
+.projectCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.projectCard:hover {
+  transform: scale(1.05);
+}
+
+.projectIframe {
+  width: 600px;
+  height: 400px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.projectIframe iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.projectDetails {
+  max-width: 600px;
+  margin-left: 32px;
+}
+
+.projectDetails h3 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.projectDetails p {
+  font-size: 18px;
+  color: #555;
+}
+
+footer {
+  @apply relative flex flex-col items-center p-10 w-full bg-footer bg-cover bg-fixed;
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+/* Footer animation */
+.footer-item {
+  opacity: 0;
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+  animation: fadeIn 3s ease-in-out;
+}
+
+.footer-item-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.projects-section {
+  @apply flex flex-col items-center p-4;
+}
+
+.project-card {
+  @apply bg-white p-4 rounded shadow-md m-4;
+}
+
+.projectIframe iframe {
+  overflow: hidden;
+}
+
+.projectIframe iframe.no-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+
+.projectIframe iframe.no-scrollbar::-webkit-scrollbar { 
+  display: none;  /* Safari and Chrome */
+}
+
+/* .projectIframeContainer {
+  overflow: hidden;
+  height: 20rem; /* Adjust height as needed */
+  width: 36rem; /* Increase width as needed 
+  position: relative;
+  border-radius: 1rem;
+}
+
+.projectIframe {
+  width: 100%;
+  height: 200%; /* Double the container height for scrolling effect 
+  border: 0;
+  transition: transform 0.3s ease-in-out;
+}
+
+.projectIframe:hover {
+  animation: scrollIframe 10s linear infinite;
+}
+
+@keyframes scrollIframe {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Hide the scrollbar for WebKit browsers 
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;  /* Hide the scrollbar for Internet Explorer and Edge 
+  scrollbar-width: none;  /* Hide the scrollbar for Firefox 
+} */

@@ -1,10 +1,15 @@
-import React, { useEffect, useRef, useState } from 'react';
+// Components/Projects.js
+
+import { useEffect, useRef, useState } from 'react';
 import { FaArrowCircleRight } from 'react-icons/fa';
+import { projects } from '../Constants/index';
+import { useNavigate } from 'react-router-dom';
 
 const Projects = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
   const seeAllRef = useRef(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -37,8 +42,35 @@ const Projects = () => {
     };
   }, []);
 
+  const handleSeeAllClick = () => {
+    navigate('/themes');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const renderProject = (project, index) => {
+    const isEven = index % 2 === 1;
+    return (
+      <div
+        key={project.name}
+        className={`projectCard flex ${isEven ? 'flex-row-reverse' : ''} items-center space-x-6 my-6`}
+      >
+        <div className='projectIframeContainer'>
+          <iframe
+            src={project.url}
+            title={project.name}
+            className='projectIframe no-scrollbar'
+          />
+        </div>
+        <div className='projectDetails'>
+          <h3 className='text-xl font-bold font-cF dark:text-white'>{project.name}</h3>
+          <p className='text-md'>{project.description}</p>
+        </div>
+      </div>
+    );
+  };
+
   return (
-    <div className='h-[calc(100vh-55px)] theme-bg flex flex-col items-center justify-start space-y-6' id='section'>
+    <div className=' theme-bg flex flex-col items-center justify-start space-y-6 mb-4' id='section'>
       <div
         ref={sectionRef}
         className={`rectangleDiv transition-all duration-1000 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
@@ -47,11 +79,14 @@ const Projects = () => {
           Themes
         </div>
       </div>
+      <div className='space-y-10'>
+        {projects.slice(0, 3).map((project, index) => renderProject(project, index))}
+      </div>
       <div
         ref={seeAllRef}
         className={`smallDiv transition-all duration-1000 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
       >
-        <div className={`projectItem text-[40px]  cursor-pointer  ${isVisible ? 'animate-bounce' : ''}`}>
+        <div className={`projectItem text-[40px] cursor-pointer ${isVisible ? 'animate-bounce' : ''}`} onClick={handleSeeAllClick}>
           See all <FaArrowCircleRight className='ml-4' />
         </div>
       </div>
@@ -60,4 +95,3 @@ const Projects = () => {
 };
 
 export default Projects;
-

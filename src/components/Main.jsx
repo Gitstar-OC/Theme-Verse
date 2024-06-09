@@ -195,7 +195,7 @@ const Main = () => {
     const paragraph = document.getElementById('hover-paragraph');
     const words = paragraph.innerText.split(' ');
     paragraph.innerHTML = words.map(word => {
-      if (['designer', 'developer', 'entrepreneur'].includes(word.toLowerCase().replace(/[.,!]/g, ''))) {
+      if (['theme', 'verse'].includes(word.toLowerCase().replace(/[.,!]/g, ''))) {
         return `<span class='hover-word special-word'>${word}</span>`;
       }
       return `<span class='hover-word'>${word}</span>`;
@@ -259,7 +259,7 @@ const Main = () => {
             </svg>
           </h1>
           <p id="hover-paragraph" className="font-cL text-[16px] md:text-[24px] lg:text-[32px] font-normal leading-normal mb-8 text-black dark:text-white light:text-[#0F94B2] break-words text-[#A6D2EA]">
-            Welcome !! Explore our services, discover our work, and get inspired. Whether you’re a designer, developer, or entrepreneur, you can share your Figma design with us by providing a link. Contact us today to turn your vision into reality! Our team of experts will transform your Figma files into a stunning, fully functional website that reflects your unique style and brand.
+            Welcome !! theme - verse is a platform where you can share your Figma design with us by providing a link our team will see it, and provide you it's complete code <b> Contact us Today</b>.
           </p>
         </div>
         <div id="image-container" className="w-full sm:w-1/2 flex justify-center sm:justify-end mt-0 sm:mt-0">
