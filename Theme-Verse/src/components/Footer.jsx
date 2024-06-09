@@ -1,5 +1,6 @@
 // Footer.js
-import React, { useEffect, useRef, useState } from 'react';
+
+import { useEffect, useRef, useState } from 'react';
 import {
   FaGithubSquare,
   FaInstagram,
@@ -19,12 +20,10 @@ const Footer = ({ theme }) => {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          observer.unobserve(entry.target); // Unobserve after animation triggers
+          observer.unobserve(entry.target);
         }
       },
-      {
-        threshold: 0.75, // Trigger when 75% of the footer is in view
-      }
+      { threshold: 0.75 }
     );
 
     if (footerRef.current) {
@@ -41,7 +40,7 @@ const Footer = ({ theme }) => {
   return (
     <footer
       ref={footerRef}
-      className="relative flex flex-col items-center p-10 w-full bg-footer bg-cover bg-fixed transition-opacity duration-300 ease-in-out"
+      className="relative  justify-end items-center flex flex-col  p-10 w-full bg-footer bg-cover bg-fixed transition-opacity duration-300 ease-in-out"
     >
       <div className="flex flex-row justify-between w-full max-w-screen-xl mx-auto mb-8">
         <div className={`flex flex-col items-center space-y-8 ${isVisible ? 'animate-slideUpFadeIn' : 'opacity-0'}`}>
@@ -88,5 +87,3 @@ const Footer = ({ theme }) => {
 };
 
 export default Footer;
-
-
