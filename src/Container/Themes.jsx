@@ -8,8 +8,8 @@ const Themes = () => {
       <Navigation />
       <div className="flex mt-16"> {/* Added margin-top to avoid overlap with navbar */}
         <FilterSidebar />
-        <div className="main-content flex-1 p-4">
-          <AllProjectSection /> 
+        <div className="flex-1  p-4">
+          <AllProjectSection />
         </div>
       </div>
       <Footer />

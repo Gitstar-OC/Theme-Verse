@@ -52,15 +52,13 @@ const Projects = () => {
     return (
       <div
         key={project.name}
-        className={`projectCard flex ${
-          isEven ? "flex-row-reverse" : ""
-        } items-center space-x-6 my-6`}
+        className={`projectCard flex ${isEven ? 'flex-row-reverse' : ''} items-center justify-between  my-6 p-4 rounded-2xl  m-0 max-w-[1000px] border-solid border-dark-bg border-2 dark:border-white  `}
       >
         <div className="projectIframeContainer">
           <iframe
             src={project.url}
             title={project.name}
-            className="projectIframe no-scrollbar"
+            className="projectIframe "
           />
         </div>
         <div className="projectDetails">
