@@ -59,7 +59,7 @@ Hello, I am OC, I will be leading the front end of this project. If anyone is a 
 -  [Formik](https://formik.org/) 
 -  [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
 -  [React Router](https://reactrouter.com/)
--  [Yup]
+-  [Yup](https://github.com/jquense/yup)
 
 <!--
 -  [Flask]
