@@ -1,19 +1,43 @@
 # Theme-Verse 🌌 ( Work in Progress)
 - This is a digital marketplace that provides a variety of unique themes for the main sections of your homepage, all customizable to suit your specific needs.
 
+
+### Tasks in progress
+
+- Add animation to everytime a new frame or theme loads
+- Add load more option for both homepage and themes, for home page there should be 1 theme at first and later there should be a load more button which will load 2 more themes, after the themes are loaded there should be see all button which will lead to themes button
+- For the thems section, there shoud be 5 themes ( 1 shoe, 1 Ai, 1 payment, 2 restaurant) and the 3 load more will load 1 ai, and 2 restaurnat website
+
+- There should also be a contact us button to know more or send you file in both the themes section and the home page
+
+- Implement add to cart button
+- Implement various filter
+- design the theme for cart section and about section
+- Implement see preview on the click of which will at first load the website as mobile and there will be option to change the view along with three icon, one of tab, one of mobile and one of pc
+
+
+- Add a random border color which will move continously across the whole iframe that is embedded to make that look cool unless remove it
+
+
+
+
+
+
+
 <!--
 This is an open source project, so anyone can contribute just make sure you follow the [Code Of Conduct](Code_Of_Conduct.md)!
 -->
-
+<!--
 Hello, I am OC, I will be leading the front end of this project. If anyone is a intermidiate or skilled back end developer, I would like to collaborate with them to work with me on this project.  Feel free to contact me by [Gmail](https://mail.google.com/mail/?view=cm&fs=1&to=chandankarom07@gmail.com)
 
 ### Projects Added --> 
-
+<!--
 --- 
 ## Technologies in use for this project ⚙️👨🏻‍💻
 <!--
 > Make sure to add the back end technologies you are using.
 -->
+<!--
 - Things too add
    - Create navbar animation on scrolling both up and down
    - Add event listener and small dots to make it useful
