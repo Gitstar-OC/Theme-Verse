@@ -185,7 +185,7 @@ const Main = () => {
 
 export default Main; */ }
 
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import HomeLogo from '../assets/HomeLogo.svg';
 import { Tilt } from 'react-tilt';
 import '../index.css'; // Ensure you import the CSS file

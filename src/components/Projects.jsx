@@ -1,9 +1,9 @@
 // Components/Projects.js
 
-import { useEffect, useRef, useState } from 'react';
-import { FaArrowCircleRight } from 'react-icons/fa';
-import { projects } from '../Constants/index';
-import { useNavigate } from 'react-router-dom';
+import { useEffect, useRef, useState } from "react";
+import { FaArrowCircleRight } from "react-icons/fa";
+import { projects } from "../Constants/index";
+import { useNavigate } from "react-router-dom";
 
 const Projects = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -43,8 +43,8 @@ const Projects = () => {
   }, []);
 
   const handleSeeAllClick = () => {
-    navigate('/themes');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    navigate("/themes");
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const renderProject = (project, index) => {
@@ -52,46 +52,64 @@ const Projects = () => {
     return (
       <div
         key={project.name}
-        className={`projectCard flex ${isEven ? 'flex-row-reverse' : ''} items-center space-x-6 my-6`}
+        className={`projectCard flex ${
+          isEven ? "flex-row-reverse" : ""
+        } items-center space-x-6 my-6`}
       >
-        <div className='projectIframeContainer'>
+        <div className="projectIframeContainer">
           <iframe
             src={project.url}
             title={project.name}
-            className='projectIframe no-scrollbar'
+            className="projectIframe no-scrollbar"
           />
         </div>
-        <div className='projectDetails'>
-          <h3 className='text-xl font-bold font-cF dark:text-white'>{project.name}</h3>
-          <p className='text-md'>{project.description}</p>
+        <div className="projectDetails">
+          <h3 className="text-xl font-bold font-cF dark:text-white">
+            {project.name}
+          </h3>
+          <p className="text-md font-cL dark:text-slate-400">
+            {project.description}
+          </p>
         </div>
       </div>
     );
   };
 
   return (
-    <div className=' theme-bg flex flex-col items-center justify-start space-y-6 mb-4' id='section'>
+    <div
+      className=" theme-bg flex flex-col items-center justify-start  mb-20 gap-12"
+      id="section"
+    >
       <div
         ref={sectionRef}
-        className={`rectangleDiv transition-all duration-1000 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+        className={`rectangleDiv transition-all duration-1000 transform ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        } mb-8`}
       >
-        <div className='projectItem text-[48px]'>
-          Themes
-        </div>
+        <div className="projectItem text-[48px] ">Themes</div>
       </div>
-      <div className='space-y-10'>
-        {projects.slice(0, 3).map((project, index) => renderProject(project, index))}
+      <div className="space-y-10 mb-4">
+        {projects
+          .slice(0, 3)
+          .map((project, index) => renderProject(project, index))}
       </div>
       <div
         ref={seeAllRef}
-        className={`smallDiv transition-all duration-1000 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+        className={`smallDiv mt-10 transition-all duration-1000 transform ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        } `}
       >
-        <div className={`projectItem text-[40px] cursor-pointer ${isVisible ? 'animate-bounce' : ''}`} onClick={handleSeeAllClick}>
-          See all <FaArrowCircleRight className='ml-4' />
+        <div
+          className={`projectItem text-[40px] cursor-pointer ${
+            isVisible ? "animate-bounce" : ""
+          }`}
+          onClick={handleSeeAllClick}
+        >
+          See all <FaArrowCircleRight className="ml-4" />
         </div>
       </div>
     </div>
   );
-};
+}
 
 export default Projects;
