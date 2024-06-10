@@ -207,6 +207,8 @@ body {
 }
 
 .hover-word {
+  margin-left: 0.2rem;
+  margin-right: 0.2rem;
   display: inline-block;
   transition: transform 0.2s ease-in-out, color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
@@ -227,6 +229,9 @@ body {
   background-color: #a6d2ea;
   transform: scale(1.1);
   text-decoration: underline;
+  margin-left: 0.4rem;
+  margin-right: 0.4rem;
+  border-radius: 10%;
 }
 
 /* .dark .special-word {
