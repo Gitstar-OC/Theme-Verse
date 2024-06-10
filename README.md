@@ -10,7 +10,8 @@
 
 - There should also be a contact us button to know more or send you file in both the themes section and the home page
 
-- 
+- Implement add to cart button
+- Implement various filter
 <!--
 This is an open source project, so anyone can contribute just make sure you follow the [Code Of Conduct](Code_Of_Conduct.md)!
 -->
