@@ -26,6 +26,8 @@
 5. For the preview function import the mobile, tab, and pc icon from react-icons and implement it like a card
 6. if user goes to the path that is not defined there should be a big sad emoji, that will show "ops you discovered a page that does not exist"
 
+7. Design various pop ups that will give the app more website like featuer like accept cookies and many more
+
 
 
 
