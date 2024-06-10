@@ -1,10 +1,11 @@
 // import React from 'react'
-import { Navigation, Footer } from '../components/Exports'
+import { Navigation, Footer, ContactForm } from '../components/Exports'
 
 const Contact = () => {
   return (
     <>
       <Navigation />
+      <ContactForm />
       <Footer />
     </>
   )
