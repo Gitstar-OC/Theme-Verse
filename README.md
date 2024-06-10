@@ -12,6 +12,7 @@
 
 - Implement add to cart button
 - Implement various filter
+- design the theme for cart section and about section
 - Implement see preview on the click of which will at first load the website as mobile and there will be option to change the view along with three icon, one of tab, one of mobile and one of pc
 <!--
 This is an open source project, so anyone can contribute just make sure you follow the [Code Of Conduct](Code_Of_Conduct.md)!
