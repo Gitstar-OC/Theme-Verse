@@ -19,6 +19,9 @@
 - Add a random border color which will move continously across the whole iframe that is embedded to make that look cool unless remove it
 
 
+1. Add background to the contact section, make the contact form using bootstarp and shadcn along with some tailwind properties.
+2. When a user goes to the cart the cart should show at most 3 items in the cart if there are, and if there are more than 3 there should be an option of go to cart, if there are none then none should be
+
 
 
 
