@@ -1,17 +1,15 @@
-// Components/AllProjectsSection.js
-// import { FaOpenCart, FaRegEye } from "react-icons/fa"
-
 import { useEffect, useState, useRef } from 'react';
 import { projects } from '../Constants/index';
 import { useNavigate } from 'react-router-dom';
 import { IoMdMail } from "react-icons/io";
 import { FaOpencart, FaRegEye } from 'react-icons/fa';
 
-const AllProjectsSection = () => {
-  const sectionRef = useRef(null)
-  const seeAllRef = useRef(null)
+const AllProjectsSection = ({ filters }) => {
+  const sectionRef = useRef(null);
+  const seeAllRef = useRef(null);
   const navigate = useNavigate();
   const [isVisible, setIsVisible] = useState(false);
+  const [filteredProjects, setFilteredProjects] = useState(projects);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -44,6 +42,30 @@ const AllProjectsSection = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const filterProjects = () => {
+      let filtered = projects;
+
+      const activeFilters = Object.keys(filters).filter(key => filters[key]);
+
+      if (activeFilters.length > 0) {
+        filtered = projects.filter(project => {
+          const matchesDescription = activeFilters.some(filter => 
+            project.description.toLowerCase().includes(filter.toLowerCase())
+          );
+          const matchesTechnologies = activeFilters.some(filter => 
+            project.technologies.includes(filter)
+          );
+          return matchesDescription || matchesTechnologies;
+        });
+      }
+
+      setFilteredProjects(filtered);
+    };
+
+    filterProjects();
+  }, [filters]);
+
   const handleSeeAllClick = () => {
     navigate("/contact");
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -54,35 +76,35 @@ const AllProjectsSection = () => {
     return (
       <div
         key={project.name}
-        className={` flex ${isEven ? 'flex-row-reverse' : ''}  projectCard items-start justify-start my-6 p-4` /*  rounded-2xl border-2  border-solid border-dark-bg border-2 border-black dark:border-white */}
-        style={{ marginLeft: '4rem', marginBottom: '2rem', marginRight: "4rem" }} // Adjust left, right, and bottom margins
+        className={`flex ${isEven ? 'flex-row-reverse' : ''} projectCard items-start justify-start my-6 p-4`}
+        style={{ marginLeft: '4rem', marginBottom: '2rem', marginRight: "4rem" }}
       >
         <div className='projectIframeContainer'>
           <iframe
             src={project.url}
             title={project.name}
-            className='projectIframe border-heading border-2 dark:border-heading ' 
+            className='projectIframe border-heading border-2 dark:border-heading'
           />
         </div>
-        <div className='ml-20 mt-4 max-w-160 mr-20'> {/* projectDetails Add left margin for the project details */}
-          <div className='mt-4  mr-8  border-heading border-solid border-2 dark:border-heading'> </div>
+        <div className='ml-20 mt-4 max-w-160 mr-20'>
+          <div className='mt-4 mr-8 border-heading border-solid border-2 dark:border-heading'></div>
           <h3 className='mt-10 text-[2.5rem] font-cF dark:text-white'>{project.name}</h3>
           <p className='mt-4 text-[1.5rem] font-cL dark:text-slate-300 mb-20'>{project.description}</p>
 
-          <div className=' mr-8 border-heading border-solid border-2 dark:border-heading ' ></div> 
+          <div className='mr-8 border-heading border-solid border-2 dark:border-heading'></div>
           <div className="mt-20 mb-10 flex items-center space-x-1 font-cL justify-center text-[2.5rem] dark:text-white cursor-pointer">
-          <div className="projectItem animate-bounce">
-            <FaRegEye className='mb-3'/> 
-            <span className=""> See Preview</span>
+            <div className="projectItem animate-bounce">
+              <FaRegEye className='mb-3' />
+              <span className=""> See Preview</span>
             </div>
           </div>
-          <div className="  mt-10 mb-20 flex items-center space-x-1 font-cL text-[2.5rem] justify-center cursor-pointer dark:text-white" onClick="">
-          <div className="projectItem animate-bounce">
-              <FaOpencart className=' mb-3'/>
+          <div className="mt-10 mb-20 flex items-center space-x-1 font-cL text-[2.5rem] justify-center cursor-pointer dark:text-white">
+            <div className="projectItem animate-bounce">
+              <FaOpencart className=' mb-3' />
               <span className="">Add to Cart</span>
-              </div>
             </div>
-        <div className='mr-8 mb-4 justify-end  border-heading border-solid border-2 dark:border-heading'></div> 
+          </div>
+          <div className='mr-8 mb-4 justify-end border-heading border-solid border-2 dark:border-heading'></div>
         </div>
       </div>
     );
@@ -98,8 +120,8 @@ const AllProjectsSection = () => {
       >
         <div className="projectItem text-[3rem] text-center">Themes</div>
       </div>
-      <div className='flex flex-col items-start space-y-10 px-4 w-full'> {/* Align projects to the start with padding */}
-        {projects.slice(0, 8).map((project, index) => renderProject(project, index))}
+      <div className='flex flex-col items-start space-y-10 px-4 w-full'>
+        {filteredProjects.slice(0, 8).map((project, index) => renderProject(project, index))}
       </div>
       <div
         ref={seeAllRef}
