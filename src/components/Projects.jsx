@@ -60,15 +60,15 @@ const Projects = () => {
           <iframe
             src={project.url}
             title={project.name}
-            className='projectIframe border-black border-2 dark:border-white'
+            className='projectIframe border-heading border-2 dark:border-heading'
           />
         </div>
         <div className='ml-20 mt-4 max-w-160 mr-20'> {/* projectDetails Add left margin for the project details */}
-          <div className='mt-4  mr-8 border-black border-solid border-2 dark:border-white'> </div>
+          <div className='mt-4  mr-8 border-heading border-solid border-2 dark:border-heading'> </div>
           <h3 className='mt-10 text-[2.5rem] font-cF dark:text-white'>{project.name}</h3>
-          <p className='mt-4 text-[1.5rem] font-cL dark:text-slate-400 mb-20'>{project.description}</p>
+          <p className='mt-4 text-[1.5rem] font-cL dark:text-slate-300 mb-20'>{project.description}</p>
 
-          <div className=' mr-8 border-black border-solid border-2 dark:border-white '></div> 
+          <div className=' mr-8 border-heading border-solid border-2 dark:border-heading'></div> 
           <div className=" mt-20 mb-10 flex items-center space-x-1 font-cL justify-center text-[2.5rem] dark:text-white cursor-pointer">
             <div className="projectItem">
             <FaRegEye className='mb-3'/> 
@@ -81,7 +81,7 @@ const Projects = () => {
               <span className="">Add to Cart</span>
               </div>
             </div>
-        <div className='mr-8 mb-4 justify-end border-black border-solid border-2 dark:border-white'></div> 
+        <div className='mr-8 mb-4 justify-end border-heading border-solid border-2 dark:border-heading'></div> 
         </div>
       </div>
     );

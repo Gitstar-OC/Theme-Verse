@@ -48,7 +48,7 @@ export const projects = [
     description: 'A charming website for a small restaurant, emphasizing a cozy and delightful dining experience.'
   },
   {
-    name: 'GPT3',
+    name: 'GPT ',
     url: 'https://gitstar-oc.github.io/GPT3/',
     description: 'A showcase of the capabilities of GPT-3, demonstrating advanced AI text generation and interaction.'
   },
