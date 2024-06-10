@@ -92,19 +92,19 @@ const AllProjectsSection = ({ filters }) => {
           <p className='mt-4 text-[1.5rem] font-cL dark:text-slate-300 mb-20'>{project.description}</p>
 
           <div className='mr-8 border-heading border-solid border-2 dark:border-heading'></div>
-          <div className="mt-20 mb-10 flex items-center space-x-1 font-cL justify-center text-[2.5rem] dark:text-white cursor-pointer">
+          <div className="mt-10 mb-10 flex items-center space-x-1 font-cL justify-center text-[2.5rem] dark:text-white cursor-pointer">
             <div className="projectItem animate-bounce">
               <FaRegEye className='mb-3' />
               <span className=""> See Preview</span>
             </div>
           </div>
-          <div className="mt-10 mb-20 flex items-center space-x-1 font-cL text-[2.5rem] justify-center cursor-pointer dark:text-white">
+          <div className="mt-10 mb-10 flex items-center space-x-1 font-cL text-[2.5rem] justify-center cursor-pointer dark:text-white">
             <div className="projectItem animate-bounce">
               <FaOpencart className=' mb-3' />
               <span className="">Add to Cart</span>
             </div>
           </div>
-          <div className='mr-8 mb-4 justify-end border-heading border-solid border-2 dark:border-heading'></div>
+          <div className='mr-8  justify-end border-heading border-solid border-2 dark:border-heading'></div>
         </div>
       </div>
     );
@@ -120,7 +120,7 @@ const AllProjectsSection = ({ filters }) => {
       >
         <div className="projectItem text-[3rem] text-center">Themes</div>
       </div>
-      <div className='flex flex-col items-start space-y-10 px-4 w-full'>
+      <div className='flex flex-col items-start space-y-10  w-full'>
         {filteredProjects.slice(0, 8).map((project, index) => renderProject(project, index))}
       </div>
       <div
