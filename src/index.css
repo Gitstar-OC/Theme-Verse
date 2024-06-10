@@ -447,7 +447,7 @@ body {
 }
 
 .filter-text {
-  @apply font-cF text-[32px];
+  @apply font-cF text-[2rem];
   color: var(--text-color);
   cursor: pointer;
 }
@@ -618,31 +618,34 @@ height: 40px;
 
 /* Add these styles to your CSS file */
 
-.projectCard {
-  /* border: 1px solid #ddd; */
+/* .projectCard {
+  /* border: 1px solid #ddd; 
   box-shadow: 0 10px 15px -3px #1A3DF8, 0 4px 6px -4px rgb(0 0 0 / 0.1);
   transition: transform 0.3s ease-in-out;
-}
+} */
 
 .projectCard:hover {
-  transform: scale(1.05);
+  transform: scale(1.0);
+  box-shadow: 0 10px 15px -3px #1A3DF8, 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  border-radius: 16px;
 }
 
 .projectIframe {
-  width: 50rem;
-  height: 31.25rem;
-  border-radius: 16px;
+  width: 60rem;
+  height: 40rem;
+  border-radius: 25px;
   /* overflow: hidden; */
 }
 
 .projectIframe iframe {
-  width: 100%;
-  height: 100%;
+  /* width: 100%; */
+  /* width: 640px; */
+  /* height: 370px; */
   border: 0;
 }
 
 .projectDetails {
-  max-width: 300px;
+  /* max-width: 300px; */
   margin-left: 1rem;
   margin-right: 2rem;
 }
