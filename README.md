@@ -21,7 +21,10 @@
 
 1. Add background to the contact section, make the contact form using bootstarp and shadcn along with some tailwind properties.
 2. When a user goes to the cart the cart should show at most 3 items in the cart if there are, and if there are more than 3 there should be an option of go to cart, if there are none then none should be
-
+3. If a theme is added to cart, the add to cart must show "Added to cart with a thumbs up", and the path should be as same as go to cart
+4. Add the whole background animation to the whole app with some other effects it looks cool and works great!!
+5. For the preview function import the mobile, tab, and pc icon from react-icons and implement it like a card
+6. if user goes to the path that is not defined there should be a big sad emoji, that will show "ops you discovered a page that does not exist"
 
 
 
