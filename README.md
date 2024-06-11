@@ -6,6 +6,7 @@
 
 - Add box shadow on hovering over the contact form, also make to make the radius round
 
+- Add hovering effect to the logos in contact section like message on linkedin, message on gmail, message on instagram, reach on github etc.
 
 - Add animation to everytime a new frame or theme loads
 - Add load more option for both homepage and themes, for home page there should be 1 theme at first and later there should be a load more button which will load 2 more themes, after the themes are loaded there should be see all button which will lead to themes button
