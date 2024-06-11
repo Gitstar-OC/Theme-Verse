@@ -4,6 +4,11 @@
 
 ### Tasks in progress
 
+- Add snap scrolling to the various themes!!
+- Add box shadow on hovering over the contact form, also make to make the radius round
+
+- Add hovering effect to the logos in contact section like message on linkedin, message on gmail, message on instagram, reach on github etc.
+
 - Add animation to everytime a new frame or theme loads
 - Add load more option for both homepage and themes, for home page there should be 1 theme at first and later there should be a load more button which will load 2 more themes, after the themes are loaded there should be see all button which will lead to themes button
 - For the thems section, there shoud be 5 themes ( 1 shoe, 1 Ai, 1 payment, 2 restaurant) and the 3 load more will load 1 ai, and 2 restaurnat website
@@ -19,7 +24,16 @@
 - Add a random border color which will move continously across the whole iframe that is embedded to make that look cool unless remove it
 
 
+1. Add background to the contact section, make the contact form using bootstarp and shadcn along with some tailwind properties.
+2. When a user goes to the cart the cart should show at most 3 items in the cart if there are, and if there are more than 3 there should be an option of go to cart, if there are none then none should be
+3. If a theme is added to cart, the add to cart must show "Added to cart with a thumbs up", and the path should be as same as go to cart
+4. Add the whole background animation to the whole app with some other effects it looks cool and works great!!
+5. For the preview function import the mobile, tab, and pc icon from react-icons and implement it like a card
+6. if user goes to the path that is not defined there should be a big sad emoji, that will show "ops you discovered a page that does not exist"
 
+7. Design various pop ups that will give the app more website like featuer like accept cookies and many more.
+
+8. Design and implement the cart using bootstarp and shadcn too
 
 
 
@@ -50,6 +64,7 @@ Hello, I am OC, I will be leading the front end of this project. If anyone is a 
 -  [Formik](https://formik.org/) 
 -  [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
 -  [React Router](https://reactrouter.com/)
+-  [Yup](https://github.com/jquense/yup)
 
 <!--
 -  [Flask]
