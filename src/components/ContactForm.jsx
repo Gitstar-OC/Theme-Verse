@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
+import { Profile } from "./Exports"
 import { IoMdPerson ,IoMdMail } from "react-icons/io";
-import { FaGithub, FaInstagram,  FaLinkedin, FaSquareXTwitterm, FaLink, FaRegBuilding, FaPersonCircleQuestion } from "react-icons/fa6";
+import { FaGithub, FaInstagram,  FaLinkedin, FaSquareXTwitter, FaLink, FaRegBuilding, FaPersonCircleQuestion } from "react-icons/fa6";
 import { BsFillSendCheckFill, BsFillSendFill } from "react-icons/bs";
 import { TbMessage } from "react-icons/tb";
 import "../index.css"; // Ensure you import the CSS file
@@ -56,6 +57,7 @@ const ContactForm = () => {
       >
         <div className="projectItem text-[3rem] text-center">Contact</div>
       </div>
+      <Profile size="small"/>
     </div>
   );
 };

@@ -5,3 +5,4 @@ export {default as Main} from './Main'
 export {default as FilterSidebar} from './FilterSidebar'
 export {default as AllProjectSection} from "./AllProjectsSection"
 export {default as ContactForm} from "./ContactForm"
+export {default as Profile} from "./Profile"

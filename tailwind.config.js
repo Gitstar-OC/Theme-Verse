@@ -24,12 +24,12 @@ export default {
       },
       colors: {
         primary: "#000000",
+        secondary: "#09FFB5",
+        third: "#A6D2EA",
         "dark-bg": "#000000",
         "light-bg": "#ffffff",
         "dark-text": "#ffffff",
         "light-text": "#000000",
-        secondary: "#09FFB5",
-        third: "#A6D2EA",
         heading: "#1A3DF8",
         border: "#0F94B2", // for the border
       },
@@ -51,10 +51,21 @@ export default {
             transform: "translateY(0%)",
           },
         },
+        morph: {
+          "0%, 100%": {
+            borderRadius: "60% 40% 30% 70% / 60% 30% 70% 40%",
+            background: "linear-gradient(45deg, #09FFB5 0%, #A6D2EA 100%)",
+          },
+          "50%": {
+            borderRadius: "30% 60% 70% 40% / 50% 60% 30% 60%",
+            background: "linear-gradient(45deg, #e27fcb 0%, #A6D2EA 100%)",
+          },
+        },
       },
       animation: {
         slideUp: "slideUp 1s ease-in-out",
         slideUpFadeIn: "slideUpFadeIn 1s ease-in-out forwards",
+        morph: "morph 8s ease-in-out infinite",
       },
     },
   },
