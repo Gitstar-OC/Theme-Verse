@@ -739,3 +739,22 @@ height: 40px;
     background: linear-gradient(45deg, var(--primary) 0%, var(--secondary) 100%);
   } 
 }
+
+/* .navigate-button { it is used for the buttons idea which I had in the projects section but soon I will change the style, the first task is to complete the contact sectiona and the cart functionality by tommorow
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s;
+}
+
+.navigate-button:hover {
+  transform: scale(1.1);
+} */
+
+
+
