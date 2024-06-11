@@ -71,12 +71,39 @@ const AllProjectsSection = ({ filters }) => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add(
+              entry.target.dataset.index % 2 === 0 ? 'slide-in-right' : 'slide-in-left'
+            );
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    const contentElements = document.querySelectorAll('.content');
+    contentElements.forEach((element) => {
+      observer.observe(element);
+    });
+
+    return () => {
+      contentElements.forEach((element) => {
+        observer.unobserve(element);
+      });
+    };
+  }, [filteredProjects]);
+
   const renderProject = (project, index) => {
     const isEven = index % 2 === 1;
     return (
       <div
         key={project.name}
-        className={`flex ${isEven ? 'flex-row-reverse' : ''} projectCard items-start justify-start my-6 p-4`}
+        data-index={index}
+        className={`flex ${isEven ? 'flex-row-reverse' : ''} projectCard items-start justify-start my-6 p-4 content`}
         style={{ marginLeft: '4rem', marginBottom: '2rem', marginRight: "4rem" }}
       >
         <div className='projectIframeContainer'>

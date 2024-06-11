@@ -1,5 +1,3 @@
-// Components/Projects.js
-
 import { useEffect, useRef, useState } from "react";
 import { FaArrowCircleRight } from "react-icons/fa";
 import { projects } from "../Constants/index";
@@ -43,6 +41,33 @@ const Projects = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add(
+              entry.target.dataset.index % 2 === 0 ? 'slide-in-left' : 'slide-in-right'
+            );
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    const contentElements = document.querySelectorAll('.content');
+    contentElements.forEach((element) => {
+      observer.observe(element);
+    });
+
+    return () => {
+      contentElements.forEach((element) => {
+        observer.unobserve(element);
+      });
+    };
+  }, []);
+
   const handleSeeAllClick = () => {
     navigate("/themes");
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -53,8 +78,9 @@ const Projects = () => {
     return (
       <div
         key={project.name}
-        className={` flex ${isEven ? 'flex-row-reverse' : ''}  projectCard items-start justify-start my-6 p-4`}
-        style={{ marginLeft: '8rem', marginBottom: '2rem', marginRight: "8rem" }} // Adjust left, right, and bottom margins
+        data-index={index}
+        className={`flex ${isEven ? 'flex-row-reverse' : ''} projectCard items-start justify-start my-6 p-4 content`}
+        style={{ marginLeft: '8rem', marginBottom: '2rem', marginRight: "8rem" }}
       >
         <div className='projectIframeContainer'>
           <iframe
@@ -63,25 +89,25 @@ const Projects = () => {
             className='projectIframe border-heading border-2 dark:border-heading'
           />
         </div>
-        <div className='ml-20 mt-4 max-w-160 mr-20'> {/* projectDetails Add left margin for the project details */}
-          <div className='mt-4  mr-8 border-heading border-solid border-2 dark:border-heading'> </div>
+        <div className='ml-20 mt-4 max-w-160 mr-20'>
+          <div className='mt-4 mr-8 border-heading border-solid border-2 dark:border-heading'></div>
           <h3 className='mt-10 text-[2.5rem] font-cF dark:text-white'>{project.name}</h3>
           <p className='mt-4 text-[1.5rem] font-cL dark:text-slate-300 mb-20'>{project.description}</p>
 
-          <div className=' mr-8 border-heading border-solid border-2 dark:border-heading'></div> 
-          <div className=" mt-20 mb-10 flex items-center space-x-1 font-cL justify-center text-[2.5rem] dark:text-white cursor-pointer">
-            <div className="projectItem">
-            <FaRegEye className='mb-3'/> 
-            <span className=""> See Preview</span>
+          <div className='mr-8 border-heading border-solid border-2 dark:border-heading'></div>
+          <div className="mt-10 mb-10 flex items-center space-x-1 font-cL justify-center text-[2.5rem] dark:text-white cursor-pointer">
+            <div className="projectItem animate-bounce">
+              <FaRegEye className='mb-3' />
+              <span className=""> See Preview</span>
             </div>
           </div>
-          <div className="  mt-10 mb-20 flex items-center space-x-1 font-cL text-[2.5rem] justify-center cursor-pointer dark:text-white" onClick="">
-              <div className="projectItem">
-              <FaOpencart className=' mb-3'/>
+          <div className="mt-10 mb-10 flex items-center space-x-1 font-cL text-[2.5rem] justify-center cursor-pointer dark:text-white">
+            <div className="projectItem animate-bounce">
+              <FaOpencart className=' mb-3' />
               <span className="">Add to Cart</span>
-              </div>
             </div>
-        <div className='mr-8 mb-4 justify-end border-heading border-solid border-2 dark:border-heading'></div> 
+          </div>
+          <div className='mr-8  justify-end border-heading border-solid border-2 dark:border-heading'></div>
         </div>
       </div>
     );
@@ -97,7 +123,7 @@ const Projects = () => {
       >
         <div className="projectItem text-[3rem] text-center">Themes</div>
       </div>
-      <div className='flex flex-col items-start space-y-10 px-4 w-full'> {/* Align projects to the start with padding */}
+      <div className='flex flex-col items-start space-y-10 px-4 w-full'>
         {projects.slice(0, 3).map((project, index) => renderProject(project, index))}
       </div>
       <div
