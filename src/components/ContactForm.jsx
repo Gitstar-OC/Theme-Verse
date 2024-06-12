@@ -1,8 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { Profile } from "./Exports";
 import { IoMdPerson, IoMdMail } from "react-icons/io";
-import { FaGithub, FaInstagram, FaLinkedin, FaFacebook } from "react-icons/fa";
-import { FaSquareXTwitter } from "react-icons/fa6";
+import { FaGithub, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { BsFillSendFill } from "react-icons/bs";
 // import "../index.css"; // Ensure you import the CSS file
 
@@ -101,28 +100,28 @@ const ContactForm = () => {
           </div>
         </div>
 
-        <div className="shadow-[0px_10px_15px_-3px_#1A3DF8] rounded-r-[25px] bg-[rgba(74,74,74,0.2)] relative flex flex-col p-[31px_0_19.8px_13px] w-[361px]">
-          <div className="self-center w-[200px] h-[196.5px]">
+        <div className="shadow-[0px_10px_15px_-3px_#1A3DF8] rounded-r-[25px] bg-[rgba(74,74,74,0.2)] relative flex flex-col p-8 w-[361px]">
+          <div className="self-center w-[200px] h-[196.5px] flex items-center justify-center">
             <Profile size="small" />
           </div>
           <div className="bg-[#FFFFFF] my-8 w-full h-[1px]"></div>
           <div className="flex flex-col">
-            <div className="mb-4 font-['Akaya_Telivigala'] text-[28px] text-[#FFFFFF] dark:text-black">
+            <div className="mb-4 font-cF text-[28px] text-black dark:text-white">
               Mail Me
             </div>
-            <div className="flex items-center text-[24px] font-['Chilanka'] text-[#FFFFFF] dark:text-black">
+            <div className="flex items-center text-2xl font-cL text-black dark:text-white">
               <IoMdMail className="mr-2" />
               chandankarom07@gmail.com
             </div>
           </div>
           <div className="bg-[#FFFFFF] my-8 w-full h-[1px]"></div>
           <div className="flex flex-col">
-            <div className="mb-4 font-['Akaya_Telivigala'] text-[28px] text-[#FFFFFF] dark:text-black">
+            <div className="mb-4 font-cF text-[1.75rem] text-black dark:text-white">
               Follow On Github
             </div>
             <a
               href="https://github.com/Gitstar-OC"
-              className="flex items-center text-[24px] font-['Chilanka'] text-[#FFFFFF] dark:text-black cursor-pointer"
+              className="flex items-center text-[1.5rem] font-cL text-black dark:text-white cursor-pointer"
             >
               <FaGithub className="mr-2" />
               Gitstar-OC
@@ -130,13 +129,19 @@ const ContactForm = () => {
           </div>
           <div className="bg-[#FFFFFF] my-8 w-full h-[1px]"></div>
           <div className="flex flex-col">
-            <div className="mb-4 font-['Akaya_Telivigala'] text-[28px] text-[#FFFFFF] dark:text-black">
+            <div className="mb-4 font-cF text-[28px] text-black dark:text-white">
               Reach me on Social Media
             </div>
-            <div className="text-[24px] font-['Chilanka'] text-[#FFFFFF] dark:text-black">
-              <FaInstagram className="inline mr-2" /> Instagram<br />
-              <FaLinkedin className="inline mr-2" /> LinkedIn<br />
-              <FaSquareXTwitter className="inline mr-2" /> Twitter
+            <div className="flex flex-col text-[1.5rem] font-cL text-black dark:text-white">
+              <div className="flex items-center">
+                <FaInstagram className="mr-2" /> Instagram
+              </div>
+              <div className="flex items-center mt-2">
+                <FaLinkedin className="mr-2" /> LinkedIn
+              </div>
+              <div className="flex items-center mt-2">
+                <FaTwitter className="mr-2" /> Twitter
+              </div>
             </div>
           </div>
         </div>
