@@ -160,21 +160,21 @@ const ContactForm = () => {
             </div>
             <a
               href="https://www.instagram.com/chandankar_om/"
-              className="flex items-center text-[1.5rem] font-cL text-black dark:text-white cursor-pointer"
+              className="flex items-center text-[1.5rem] font-cL text-black dark:text-white cursor-pointer "
             >
               <FaInstagram className="mr-2 mb-3" />
               Instagram
             </a>
             <a
               href="https://www.linkedin.com/in/om-chandankar"
-              className="flex items-center mt-2 text-[1.5rem] font-cL text-black dark:text-white cursor-pointer"
+              className="flex items-center mt-2 text-[1.5rem] font-cL text-black dark:text-white cursor-pointer "
             >
               <FaLinkedin className="mr-2 mb-3" />
               LinkedIn
             </a>
             <a
               href="https://x.com/Om_Chandankar"
-              className="flex items-center mt-2 text-[1.5rem] font-cL text-black dark:text-white cursor-pointer"
+              className="flex items-center mt-2 text-[1.5rem] font-cL text-black dark:text-white cursor-pointer "
             >
               <FaTwitter className="mr-2 mb-3" />
               Twitter
