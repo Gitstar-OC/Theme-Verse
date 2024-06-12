@@ -756,5 +756,8 @@ height: 40px;
   transform: scale(1.1);
 } */
 
-
-
+.contactDiv:hover,
+.contactDiv:active {
+  box-shadow: 0 10px 15px -3px #1A3DF8, 0 4px 6px -4px rgb(0 0 0 / 0.1), 
+  0 -10px 15px -3px #1A3DF8, 0 -4px 6px -4px rgb(0 0 0 / 0.1);
+}
