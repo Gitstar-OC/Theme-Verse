@@ -33,7 +33,7 @@ export const projects = [
     url: 'https://gitstar-oc.github.io/Payment-website/',
     description: 'A comprehensive payment website with secure transaction features and a user-friendly interface.',
     technologies: ['React', 'Tailwind', 'Vite'],
-    price: 50
+    // price: 50
   },
   {
     id: "1",
@@ -41,7 +41,7 @@ export const projects = [
     url: 'https://gitstar-oc.github.io/Nike/',
     description: 'An e-commerce site for Nike, showcasing the latest products with an intuitive shopping experience.',
     technologies: ['React', 'Tailwind', 'Vite'],
-    price: 100
+    // price: 100
   },
   {
     id: "2",
@@ -49,7 +49,7 @@ export const projects = [
     url: 'https://gitstar-oc.github.io/BrainwareAI/',
     description: 'An AI-based platform that provides intelligent solutions for various industries.',
     technologies: ['React', 'Tailwind', 'Vite'],
-    price: 200
+    // price: 200
   },
   {
     id: "3",
@@ -57,7 +57,7 @@ export const projects = [
     url: 'https://gitstar-oc.github.io/Little-Lemon/',
     description: 'A charming website for a small restaurant, emphasizing a cozy and delightful dining experience.',
     technologies: ['React', 'Chakra UI', 'CSS'],
-    price: 100
+    // price: 100
   },
   {
     id: "4",
@@ -65,7 +65,7 @@ export const projects = [
     url: 'https://gitstar-oc.github.io/GPT3/',
     description: 'A showcase of the capabilities of GPT-3, demonstrating advanced AI text generation and interaction.',
     technologies: ['React', 'CSS'],
-    price: 150
+    // price: 150
   },
   {
     id: "5",
@@ -73,7 +73,7 @@ export const projects = [
     url: 'https://gitstar-oc.github.io/GERICHT/',
     description: 'A modern restaurant website with an elegant design and a focus on fine dining.',
     technologies: ['React', 'Tailwind'],
-    price: 150
+    // price: 150
   },
   {
     id: "6",
@@ -81,7 +81,7 @@ export const projects = [
     url: 'https://gitstar-oc.github.io/Grilli/',
     description: 'A grilling-themed website featuring recipes, tips, and a community for barbecue enthusiasts.',
     technologies: ['Vanilla JavaScript', 'CSS'],
-    price: 200
+    // price: 200
   },
   {
     id: "7",
@@ -89,7 +89,7 @@ export const projects = [
     url: 'https://gitstar-oc.github.io/Sushi_Resto/',
     description: 'A sophisticated sushi restaurant website with beautiful imagery and an easy-to-navigate menu.',
     technologies: ['Vanilla JavaScript', 'CSS'],
-    price: 80
+    // price: 80
   }
 ];
 

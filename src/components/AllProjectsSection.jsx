@@ -3,14 +3,12 @@ import { projects } from '../Constants/index';
 import { useNavigate } from 'react-router-dom';
 import { IoMdMail } from "react-icons/io";
 import { FaOpencart, FaRegEye } from 'react-icons/fa';
-
 const AllProjectsSection = ({ filters }) => {
   const sectionRef = useRef(null);
   const seeAllRef = useRef(null);
   const navigate = useNavigate();
   const [isVisible, setIsVisible] = useState(false);
   const [filteredProjects, setFilteredProjects] = useState(projects);
-
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -23,15 +21,12 @@ const AllProjectsSection = ({ filters }) => {
       },
       { threshold: 0.5 }
     );
-
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
     }
-
     if (seeAllRef.current) {
       observer.observe(seeAllRef.current);
     }
-
     return () => {
       if (sectionRef.current) {
         observer.unobserve(sectionRef.current);
@@ -41,13 +36,10 @@ const AllProjectsSection = ({ filters }) => {
       }
     };
   }, []);
-
   useEffect(() => {
     const filterProjects = () => {
       let filtered = projects;
-
       const activeFilters = Object.keys(filters).filter(key => filters[key]);
-
       if (activeFilters.length > 0) {
         filtered = projects.filter(project => {
           const matchesDescription = activeFilters.some(filter => 
@@ -59,13 +51,10 @@ const AllProjectsSection = ({ filters }) => {
           return matchesDescription || matchesTechnologies;
         });
       }
-
       setFilteredProjects(filtered);
     };
-
     filterProjects();
   }, [filters]);
-
   const handleSeeAllClick = () => {
     navigate("/contact");
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -102,6 +91,7 @@ const AllProjectsSection = ({ filters }) => {
     return (
       <div
         key={project.name}
+        className={`flex ${isEven ? 'flex-row-reverse' : ''} projectCard items-start justify-start my-6 p-4`}
         data-index={index}
         className={`flex ${isEven ? 'flex-row-reverse' : ''} projectCard items-start justify-start my-6 p-4 content`}
         style={{ marginLeft: '4rem', marginBottom: '2rem', marginRight: "4rem" }}
@@ -117,7 +107,6 @@ const AllProjectsSection = ({ filters }) => {
           <div className='mt-4 mr-8 border-heading border-solid border-2 dark:border-heading'></div>
           <h3 className='mt-10 text-[2.5rem] font-cF dark:text-white'>{project.name}</h3>
           <p className='mt-4 text-[1.5rem] font-cL dark:text-slate-300 mb-20'>{project.description}</p>
-
           <div className='mr-8 border-heading border-solid border-2 dark:border-heading'></div>
           <div className="mt-10 mb-10 flex items-center space-x-1 font-cL justify-center text-[2.5rem] dark:text-white cursor-pointer">
             <div className="projectItem animate-bounce">
@@ -136,7 +125,6 @@ const AllProjectsSection = ({ filters }) => {
       </div>
     );
   };
-
   return (
     <div className='theme-bg flex flex-col items-center justify-center mb-20 mt-20 gap-12' id='section'>
       <div
@@ -168,5 +156,4 @@ const AllProjectsSection = ({ filters }) => {
     </div>
   );
 };
-
 export default AllProjectsSection;
