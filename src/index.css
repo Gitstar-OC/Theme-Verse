@@ -768,12 +768,3 @@ height: 40px;
 .inputItem:focus {
   box-shadow: 0px 10px 20px -10px #1A3DF8;
 }
-
-/* .profile {
-  transition: transform 0.5s;
-} */
-
-/* .profile:hover {
-  transform: scale(1.05);
-  
-} */
