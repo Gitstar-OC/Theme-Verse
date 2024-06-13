@@ -10,38 +10,92 @@ import * as Yup from 'yup';
 // import "../index.css"; // Ensure you import the CSS file
 
 const CustomInput = ({ icon: Icon, placeholder, type, name, isFocused, setIsFocused, hasError }) => (
-  <div className="relative w-full mb-2 flex-1">
+  <div className="relative w-full mb-4 flex-1">
     <Field
       name={name}
       type={type}
       placeholder={placeholder}
-      className="inputItem input100 w-full h-[3rem] bg-gray-200 text-black text-[1.25rem] rounded-[10px] pl-[2.5rem] pr-[30px] font-cL placeholder:font-cL placeholder:text-[20px] placeholder:text-slate-800"
+      className="inputItem input100 w-full h-[3.5rem] bg-gray-200 text-black text-[1.5rem] rounded-[10px] pl-[3rem] pr-[30px] font-cL placeholder:font-cL placeholder:text-[1.5rem] placeholder:text-slate-600"
       onFocus={() => setIsFocused(name)}
       onBlur={() => setIsFocused('')}
     />
-    <ErrorMessage name={name} component="div" className="text-red-600" />
-    <span className={`symbol-input100 absolute left-0 bottom-0 h-full flex items-center pl-2 pointer-events-none transition-all duration-200 ${hasError ? "text-[#FF3333]" : isFocused ? "text-[#1A3DF8]" : "text-slate-800"}`}>
-      <Icon />
+    <ErrorMessage name={name} component="div" className="text-red-600 mt-2" />
+    <span className={`symbol-input100 absolute left-2 bottom-2 h-full flex items-center transition-all duration-200 ${hasError ? "text-[#FF3333]" : isFocused ? "text-[#1A3DF8]" : "text-slate-800"}`}>
+      <Icon className="text-[2rem]" />
     </span>
   </div>
 );
 
 const CustomTextarea = ({ name, placeholder, isFocused, setIsFocused, hasError }) => (
-  <div className="relative w-full mb-2 flex-1">
+  <div className="relative w-full mb-4 flex-1">
     <Field
       as="textarea"
       name={name}
       placeholder={placeholder}
-      className="inputItem input100 w-full h-[10rem] bg-gray-200 text-black text-[1.25rem] rounded-[10px] pl-[2.5rem] pr-[30px] pt-[1.5rem] font-cL placeholder:font-cL placeholder:text-[20px] placeholder:text-slate-800"
+      className="inputItem input100 w-full h-[10rem] bg-gray-200 text-black text-[1.5rem] rounded-[10px] pl-[3rem] pr-[30px] pt-[2rem] font-cL placeholder:font-cL placeholder:text-[1.5rem] placeholder:text-slate-600"
       onFocus={() => setIsFocused(name)}
       onBlur={() => setIsFocused('')}
     />
-    <ErrorMessage name={name} component="div" className="text-red-600" />
-    <span className={`symbol-input100 absolute left-0 top-0 h-full flex items-center pl-2 pt-[1.5rem] pointer-events-none transition-all duration-200 ${hasError ? "text-[#FF3333]" : isFocused ? "text-[#1A3DF8]" : "text-slate-800"}`}>
-      <IoIosChatboxes />
+    <ErrorMessage name={name} component="div" className="text-red-600 mt-2" />
+    <span className={`symbol-input100 absolute left-2 top-2 h-full flex items-start pt-[1.5rem] transition-all duration-200 ${hasError ? "text-[#FF3333]" : isFocused ? "text-[#1A3DF8]" : "text-slate-800"}`}>
+      <IoIosChatboxes className="text-[2rem]" />
     </span>
   </div>
 );
+
+const SocialMediaInput = ({ platform, setPlatform, name, isFocused, setIsFocused, hasError }) => {
+  const platformIcons = {
+    instagram: FaInstagram,
+    linkedin: FaLinkedin,
+    twitter: FaTwitter,
+    github: FaGithub,
+  };
+
+  const platformPlaceholders = {
+    instagram: "https://www.instagram.com/",
+    linkedin: "https://www.linkedin.com/in/",
+    twitter: "https://x.com/",
+    github: "https://github.com/",
+  };
+
+  const Icon = platformIcons[platform];
+
+  return (
+    <div className="relative w-full mb-4 flex-1">
+      <div className="flex items-center">
+        <select
+          value={platform}
+          onChange={(e) => setPlatform(e.target.value)}
+          className="bg-gray-200 text-black text-[1.5rem] rounded-[10px] h-[3.5rem] mr-4 pl-2"
+        >
+          <option value="" disabled>Select Platform</option>
+          <option value="instagram">Instagram</option>
+          <option value="linkedin">LinkedIn</option>
+          <option value="twitter">Twitter</option>
+          <option value="github">GitHub</option>
+        </select>
+        <div className="relative flex-1">
+          <Field
+            name={name}
+            type="text"
+            placeholder="username"
+            className="inputItem input100 w-full h-[3.5rem] bg-gray-200 text-black text-[1.5rem] rounded-[10px] pl-[8rem] pr-[30px] font-cL placeholder:font-cL placeholder:text-[1.5rem] placeholder:text-slate-600"
+            onFocus={() => setIsFocused(name)}
+            onBlur={() => setIsFocused('')}
+            style={{ paddingLeft: platform ? `${platformPlaceholders[platform].length + 8}rem` : '3rem' }}
+          />
+          <span className="absolute left-2 top-1/2 transform -translate-y-1/2 text-[1.2rem] text-gray-500">{platformPlaceholders[platform]}</span>
+        </div>
+      </div>
+      <ErrorMessage name={name} component="div" className="text-red-600 mt-2" />
+      {Icon && (
+        <span className={`symbol-input100 absolute left-2 bottom-2 h-full flex items-center transition-all duration-200 ${hasError ? "text-[#FF3333]" : isFocused ? "text-[#1A3DF8]" : "text-slate-800"}`}>
+          <Icon className="text-[2rem]" />
+        </span>
+      )}
+    </div>
+  );
+};
 
 const validationSchema = Yup.object({
   name: Yup.string()
@@ -51,6 +105,7 @@ const validationSchema = Yup.object({
   email: Yup.string()
     .email('Invalid email address')
     .required('Email is required'),
+  socialMedia: Yup.string().required('Social media username is required'),
   position: Yup.string()
     .required('Position is required'),
   company: Yup.string()
@@ -59,7 +114,7 @@ const validationSchema = Yup.object({
     .url('Invalid URL')
     .required('Figma link is required'),
   message: Yup.string()
-    .min(40, 'Message must be at least 40 words')
+    .min(40, 'Message must be at least 40 characters')
     .required('Message is required'),
 });
 
@@ -68,6 +123,7 @@ const ContactForm = () => {
   const seeAllRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
   const [isFocused, setIsFocused] = useState('');
+  const [platform, setPlatform] = useState('');
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -101,7 +157,7 @@ const ContactForm = () => {
   }, []);
 
   return (
-    <div className="theme-bg  flex flex-col items-center justify-start mb-20 mt-20" id="section">
+    <div className="theme-bg flex flex-col items-center justify-start mb-20 mt-20" id="section">
       <div className="backgroundAnim backgroundAnim1"></div>
       <div className="backgroundAnim backgroundAnim2"></div>
       <div className="backgroundAnim backgroundAnim3"></div>
@@ -111,59 +167,66 @@ const ContactForm = () => {
         <div className="projectItem text-[3rem] text-center font-cF">Contact</div>
       </div>
 
-      <div className="flex space-x-10">
+      <div className="flex space-x-10 mt-10">
         <div className="shadow-lg rounded-l-[25px] bg-gray-800 bg-opacity-20 relative p-10 w-[711px] flex flex-col space-y-8 contactDiv">
           <div className="text-[3rem] font-cF text-black dark:text-white">Get In Touch</div>
           <Formik
-            initialValues={{ name: '', email: '', position: '', company: '', figmaLink: '', message: '' }}
+            initialValues={{ name: '', email: '', socialMedia: '', position: '', company: '', figmaLink: '', message: '' }}
             validationSchema={validationSchema}
-            onSubmit={(values) => {
-              console.log('Form data', values);
-              // Handle form submission
+            onSubmit={(values, { setSubmitting, resetForm }) => {
+              setTimeout(() => {
+                console.log(JSON.stringify(values, null, 2));
+                setSubmitting(false);
+                resetForm();
+              }, 400);
             }}
           >
             {({ isSubmitting, errors, touched }) => (
-              <Form className="flex flex-col space-y-6">
-                <div className="flex space-x-6">
-                  <CustomInput
-                    icon={IoMdPerson}
-                    placeholder="Name"
-                    type="text"
-                    name="name"
-                    isFocused={isFocused === 'name'}
-                    setIsFocused={setIsFocused}
-                    hasError={errors.name && touched.name}
-                  />
-                  <CustomInput
-                    icon={IoMail}
-                    placeholder="Email"
-                    type="email"
-                    name="email"
-                    isFocused={isFocused === 'email'}
-                    setIsFocused={setIsFocused}
-                    hasError={errors.email && touched.email}
-                  />
-                </div>
-                <div className="flex space-x-6">
-                  <CustomInput
-                    icon={FaPersonCircleQuestion}
-                    placeholder="Position"
-                    type="text"
-                    name="position"
-                    isFocused={isFocused === 'position'}
-                    setIsFocused={setIsFocused}
-                    hasError={errors.position && touched.position}
-                  />
-                  <CustomInput
-                    icon={FaRegBuilding}
-                    placeholder="Company"
-                    type="text"
-                    name="company"
-                    isFocused={isFocused === 'company'}
-                    setIsFocused={setIsFocused}
-                    hasError={errors.company && touched.company}
-                  />
-                </div>
+              <Form className="flex flex-col space-y-4">
+                <CustomInput
+                  icon={IoMdPerson}
+                  placeholder="Name"
+                  type="text"
+                  name="name"
+                  isFocused={isFocused === 'name'}
+                  setIsFocused={setIsFocused}
+                  hasError={errors.name && touched.name}
+                />
+                <CustomInput
+                  icon={IoMail}
+                  placeholder="Email"
+                  type="email"
+                  name="email"
+                  isFocused={isFocused === 'email'}
+                  setIsFocused={setIsFocused}
+                  hasError={errors.email && touched.email}
+                />
+                <SocialMediaInput
+                  platform={platform}
+                  setPlatform={setPlatform}
+                  name="socialMedia"
+                  isFocused={isFocused === 'socialMedia'}
+                  setIsFocused={setIsFocused}
+                  hasError={errors.socialMedia && touched.socialMedia}
+                />
+                <CustomInput
+                  icon={FaPersonCircleQuestion}
+                  placeholder="Position"
+                  type="text"
+                  name="position"
+                  isFocused={isFocused === 'position'}
+                  setIsFocused={setIsFocused}
+                  hasError={errors.position && touched.position}
+                />
+                <CustomInput
+                  icon={FaRegBuilding}
+                  placeholder="Company"
+                  type="text"
+                  name="company"
+                  isFocused={isFocused === 'company'}
+                  setIsFocused={setIsFocused}
+                  hasError={errors.company && touched.company}
+                />
                 <CustomInput
                   icon={IoIosLink}
                   placeholder="https://www.figma.com/"
@@ -184,7 +247,7 @@ const ContactForm = () => {
                   type="submit"
                   className="flex items-center justify-center rounded-[15px] p-2 border-2 cursor-pointer border-[#0f94b2] bg-[#a6d2ea] dark:border-[#a6d2ea] dark:bg-[#000000] mx-40"
                   id="send"
-                  disabled={isSubmitting}
+                  // disabled={isSubmitting || Object.keys(errors).length > 0}
                 >
                   <div className="projectItem animate-bounce">
                     <BsFillSendFill className="mr-2 mb-3 text-[2rem]" />
