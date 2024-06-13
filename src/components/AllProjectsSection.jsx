@@ -103,24 +103,24 @@ const AllProjectsSection = ({ filters }) => {
             className='projectIframe border-heading border-2 dark:border-heading'
           />
         </div>
-        <div className='ml-20 mt-4 max-w-160 mr-20'>
-          <div className='mt-4 mr-8 border-heading border-solid border-2 dark:border-heading'></div>
-          <h3 className='mt-10 text-[2.5rem] font-cF dark:text-white'>{project.name}</h3>
-          <p className='mt-4 text-[1.5rem] font-cL dark:text-slate-300 mb-20'>{project.description}</p>
-          <div className='mr-8 border-heading border-solid border-2 dark:border-heading'></div>
-          <div className="mt-10 mb-10 flex items-center space-x-1 font-cL justify-center text-[2.5rem] dark:text-white cursor-pointer">
+        <div className='ml-8 mt-2 max-w-160 mr-20'>
+          <div className=' mr-2 border-heading border-solid border-2 dark:border-heading'></div>
+          <h3 className='mt-2 text-[2rem] font-cF dark:text-white'>{project.name}</h3>
+          <p className='mt-2 text-[1.5rem] font-cL dark:text-slate-300 mb-4'>{project.description}</p>
+          <div className='mr-2 border-heading border-solid border-2 dark:border-heading'></div>
+          <div className="mt-8 mb-2 flex items-center space-x-1 font-cL justify-center text-[2.5rem] dark:text-white cursor-pointer">
             <div className="projectItem animate-bounce">
               <FaRegEye className='mb-3' />
               <span className=""> See Preview</span>
             </div>
           </div>
-          <div className="mt-10 mb-10 flex items-center space-x-1 font-cL text-[2.5rem] justify-center cursor-pointer dark:text-white">
+          <div className="mt-4 mb-10 flex items-center space-x-1 font-cL text-[2.5rem] justify-center cursor-pointer dark:text-white">
             <div className="projectItem animate-bounce">
               <FaOpencart className=' mb-3' />
               <span className="">Add to Cart</span>
             </div>
           </div>
-          <div className='mr-8  justify-end border-heading border-solid border-2 dark:border-heading'></div>
+          <div className='mr-2  justify-end border-heading border-solid border-2 dark:border-heading'></div>
         </div>
       </div>
     );
