@@ -6,10 +6,32 @@ import { FaGithub, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { BsFillSendFill } from "react-icons/bs";
 // import "../index.css"; // Ensure you import the CSS file
 
+const CustomInput = ({ isFocused, setIsFocused }) => (
+  <div className="relative w-full mb-2 flex-1">
+    <input
+      className={`inputItem input100 w-full h-[45px] bg-gray-200 text-black text-[1.25rem] rounded-[10px] pl-[60px] pr-[30px] font-['Inter'] placeholder:font-cL placeholder:text-[18px]`}
+      type="text"
+      name="name"
+      placeholder="Name"
+      onFocus={() => setIsFocused(true)}
+      onBlur={() => setIsFocused(false)}
+    />
+    <span
+      className={`symbol-input100 icon-bounce absolute left-0 bottom-0 h-full flex items-center pl-7 pointer-events-none transition-all duration-400 ${
+        isFocused ? "text-[#1A3DF8] pl-5" : "text-gray-400"
+      }`}
+      style={{ fontSize: isFocused ? "1.75rem" : "1.5rem" }}
+    >
+      <IoMdPerson />
+    </span>
+  </div>
+);
+
 const ContactForm = () => {
   const sectionRef = useRef(null);
   const seeAllRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [isFocused, setIsFocused] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -69,11 +91,7 @@ const ContactForm = () => {
             Get In Touch
           </div>
           <div className="flex space-x-6">
-            <div className="bg-gray-300 rounded-[10px] p-4 flex-1">
-              <span className="font-['Inter'] text-[16px] text-black">
-                Name
-              </span>
-            </div>
+            <CustomInput isFocused={isFocused} setIsFocused={setIsFocused} />
             <div className="bg-gray-300 rounded-[10px] p-4 flex-1">
               <span className="font-['Inter'] text-[16px] text-black">
                 Email
@@ -115,9 +133,9 @@ const ContactForm = () => {
             className="flex items-center justify-center rounded-[15px] p-2 border-2 cursor-pointer border-[#0f94b2] bg-[#a6d2ea] dark:border-[#a6d2ea] dark:bg-[#000000] mx-40"
             id="send"
           >
-            <div className="projectItem">
+            <div className="projectItem animate-bounce">
               <BsFillSendFill className="mr-2 mb-3 text-[2rem]" />
-              <span className="projectItem text-[2.5rem] text-center font-cL">
+              <span className="projectItem text-[2.5rem] text-center font-cL ">
                 Send
               </span>
             </div>
@@ -125,7 +143,7 @@ const ContactForm = () => {
         </div>
 
         <div className="shadow-[0px_10px_15px_-3px_#1A3DF8] rounded-r-[25px] bg-[rgba(74,74,74,0.2)] relative flex flex-col p-8 w-[361px]">
-          <div className="self-center w-[200px] h-[196.5px] flex items-center justify-center">
+          <div className="self-center w-[200px] h-[196.5px] flex items-center justify-center ">
             <Profile size="small" />
           </div>
           <div className="bg-[#1A3DF8] my-8 w-full h-[1px]"></div>

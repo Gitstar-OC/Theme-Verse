@@ -60,7 +60,7 @@ const Footer = ({ theme }) => {
             </div>
           </Link>
         </div>
-        <img src={FooterLogo} alt="Footer Logo" className={`w-48 h-48 rounded-2xl border-3 border-[#A6D2EA] ${isVisible ? 'animate-bounce' : 'opacity-0'}`} />
+        <img src={FooterLogo} alt="Footer Logo" className={`w-48 h-48 rounded-2xl border-3 border-[#A6D2EA] ${isVisible ? 'icon-bounce' : 'opacity-0'}`} />
       </div>
       <div className="w-full border-b-[3px] navItem mb-4"></div>
       <div className="flex flex-row justify-between items-center w-full max-w-screen-xl mx-auto">
@@ -68,16 +68,16 @@ const Footer = ({ theme }) => {
           © 2024 Om Chandankar. All rights reserved
         </div>
         <div className="flex space-x-4">
-          <a href="https://github.com/Gitstar-OC" className={`w-10 h-10 icon icon-bounce hover:text-[#09FFB5] navItem ${isVisible ? 'animate-bounce' : 'opacity-0'}`}>
+          <a href="https://github.com/Gitstar-OC" className={`w-10 h-10 icon icon-bounce hover:text-[#09FFB5] navItem ${isVisible ? 'icon-bounce' : 'opacity-0'}`}>
             <FaGithubSquare className="w-full h-full" />
           </a>
-          <a href="https://www.instagram.com/oc__coder/" className={`w-10 h-10 icon icon-bounce hover:text-[#09FFB5] navItem ${isVisible ? 'animate-bounce' : 'opacity-0'}`}>
+          <a href="https://www.instagram.com/oc__coder/" className={`w-10 h-10 icon icon-bounce hover:text-[#09FFB5] navItem ${isVisible ? 'icon-bounce' : 'opacity-0'}`}>
             <FaInstagram className="w-full h-full" />
           </a>
-          <a href="https://www.linkedin.com/in/om-chandankar/" className={`w-10 h-10 icon icon-bounce hover:text-[#09FFB5] navItem ${isVisible ? 'animate-bounce' : 'opacity-0'}`}>
+          <a href="https://www.linkedin.com/in/om-chandankar/" className={`w-10 h-10 icon icon-bounce hover:text-[#09FFB5] navItem ${isVisible ? 'icon-bounce' : 'opacity-0'}`}>
             <FaLinkedin className="w-full h-full" />
           </a>
-          <a href="https://x.com/Om_Chandankar" className={`w-10 h-10 icon icon-bounce hover:text-[#09FFB5] navItem ${isVisible ? 'animate-bounce' : 'opacity-0'}`}>
+          <a href="https://x.com/Om_Chandankar" className={`w-10 h-10 icon icon-bounce hover:text-[#09FFB5] navItem ${isVisible ? 'icon-bounce' : 'opacity-0'}`}>
             <FaSquareXTwitter className="w-full h-full" />
           </a>
         </div>

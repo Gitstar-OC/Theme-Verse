@@ -1,3 +1,5 @@
+// main.js or main.jsx
+// import 'bootstrap/dist/css/bootstrap.min.css';s
 import { BrowserRouter } from 'react-router-dom'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
