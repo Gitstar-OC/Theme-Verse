@@ -763,8 +763,11 @@ height: 40px;
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
 }
 
-.inputItem:hover,
+.inputItem:hover  {
+  box-shadow: 0px 10px 20px -10px #1A3DF8;
+}
+
 .inputItem:active,
 .inputItem:focus {
-  box-shadow: 0px 10px 20px -10px #1A3DF8;
+  box-shadow: 0px 10px 20px -10px #1A3DF8, 0px -10px 20px -10px #1A3DF8;
 }

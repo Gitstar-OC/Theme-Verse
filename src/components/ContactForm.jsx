@@ -5,34 +5,34 @@ import { IoMdPerson, IoIosLink, IoIosChatboxes } from "react-icons/io";
 import { IoMail } from "react-icons/io5";
 import { FaGithub, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { BsFillSendFill } from "react-icons/bs";
-import { Formik, Field, Form, ErrorMessage } from 'formik';
+import { Formik, Field, Form, ErrorMessage, useField, useFormikContext } from 'formik';
 import * as Yup from 'yup';
 // import "../index.css"; // Ensure you import the CSS file
 
 const CustomInput = ({ icon: Icon, placeholder, type, name, isFocused, setIsFocused, hasError }) => (
-  <div className="relative w-full mb-4 flex-1">
+  <div className="relative w-full  mb-2 flex-1">
     <Field
       name={name}
       type={type}
       placeholder={placeholder}
-      className="inputItem input100 w-full h-[3.5rem] bg-gray-200 text-black text-[1.5rem] rounded-[10px] pl-[3rem] pr-[30px] font-cL placeholder:font-cL placeholder:text-[1.5rem] placeholder:text-slate-600"
+      className="inputItem w-full h-[3.5rem] bg-gray-200 text-black text-[1.5rem] rounded-[10px] pl-[3rem] pr-[30px] font-cL placeholder:font-cL placeholder:text-[1.5rem] placeholder:text-slate-400"
       onFocus={() => setIsFocused(name)}
       onBlur={() => setIsFocused('')}
     />
     <ErrorMessage name={name} component="div" className="text-red-600 mt-2" />
-    <span className={`symbol-input100 absolute left-2 bottom-2 h-full flex items-center transition-all duration-200 ${hasError ? "text-[#FF3333]" : isFocused ? "text-[#1A3DF8]" : "text-slate-800"}`}>
+    <span className={`absolute left-2 bottom-2 h-full flex items-center transition-all duration-200 ${hasError ? "text-[#FF3333]" : isFocused ? "text-[#1A3DF8]" : "text-slate-800"}`}>
       <Icon className="text-[2rem]" />
     </span>
   </div>
 );
 
 const CustomTextarea = ({ name, placeholder, isFocused, setIsFocused, hasError }) => (
-  <div className="relative w-full mb-4 flex-1">
+  <div className="relative w-full mb-2 flex-1">
     <Field
       as="textarea"
       name={name}
       placeholder={placeholder}
-      className="inputItem input100 w-full h-[10rem] bg-gray-200 text-black text-[1.5rem] rounded-[10px] pl-[3rem] pr-[30px] pt-[2rem] font-cL placeholder:font-cL placeholder:text-[1.5rem] placeholder:text-slate-600"
+      className="inputItem  w-full h-[10rem] bg-gray-200 text-black text-[1.5rem] rounded-[10px] pl-[3rem] pr-[30px] pt-[2rem] font-cL placeholder:font-cL placeholder:text-[1.5rem] placeholder:text-slate-400"
       onFocus={() => setIsFocused(name)}
       onBlur={() => setIsFocused('')}
     />
@@ -60,13 +60,28 @@ const SocialMediaInput = ({ platform, setPlatform, name, isFocused, setIsFocused
 
   const Icon = platformIcons[platform];
 
+  const inputRef = useRef(null);
+  const { setFieldValue } = useFormikContext();
+  const [field] = useField(name);
+
+  useEffect(() => {
+    if (platform && inputRef.current) {
+      const link = platformPlaceholders[platform];
+      setFieldValue(name, link);
+      setTimeout(() => {
+        inputRef.current.setSelectionRange(link.length, link.length);
+        inputRef.current.focus();
+      }, 0);
+    }
+  }, [platform, setFieldValue, name]);
+
   return (
-    <div className="relative w-full mb-4 flex-1">
+    <div className="relative w-full mb-4 flex-1 overflow-hidden">
       <div className="flex items-center">
         <select
           value={platform}
           onChange={(e) => setPlatform(e.target.value)}
-          className="bg-gray-200 text-black text-[1.5rem] rounded-[10px] h-[3.5rem] mr-4 pl-2"
+          className="bg-gray-200 text-black text-[1.5rem] rounded-[10px] h-[3rem] mr-2 font-cL"
         >
           <option value="" disabled>Select Platform</option>
           <option value="instagram">Instagram</option>
@@ -75,27 +90,26 @@ const SocialMediaInput = ({ platform, setPlatform, name, isFocused, setIsFocused
           <option value="github">GitHub</option>
         </select>
         <div className="relative flex-1">
-          <Field
-            name={name}
+          <input
+            {...field}
+            ref={inputRef}
             type="text"
-            placeholder="username"
-            className="inputItem input100 w-full h-[3.5rem] bg-gray-200 text-black text-[1.5rem] rounded-[10px] pl-[8rem] pr-[30px] font-cL placeholder:font-cL placeholder:text-[1.5rem] placeholder:text-slate-600"
+            className="inputItem input100 h-[3rem] w-full bg-gray-200 text-black text-[1.25rem]  rounded-[10px] pl-[10px] font-cL"
             onFocus={() => setIsFocused(name)}
             onBlur={() => setIsFocused('')}
-            style={{ paddingLeft: platform ? `${platformPlaceholders[platform].length + 8}rem` : '3rem' }}
           />
-          <span className="absolute left-2 top-1/2 transform -translate-y-1/2 text-[1.2rem] text-gray-500">{platformPlaceholders[platform]}</span>
         </div>
       </div>
       <ErrorMessage name={name} component="div" className="text-red-600 mt-2" />
       {Icon && (
-        <span className={`symbol-input100 absolute left-2 bottom-2 h-full flex items-center transition-all duration-200 ${hasError ? "text-[#FF3333]" : isFocused ? "text-[#1A3DF8]" : "text-slate-800"}`}>
-          <Icon className="text-[2rem]" />
+        <span className={`symbol-input100 absolute left-28 bottom-1 h-full flex items-center transition-all duration-200 ${hasError ? "text-[#FF3333]" : isFocused ? "text-[#1A3DF8]" : "text-slate-800"}`}>
+          <Icon className="text-[1.5rem]" />
         </span>
       )}
     </div>
   );
 };
+
 
 const validationSchema = Yup.object({
   name: Yup.string()

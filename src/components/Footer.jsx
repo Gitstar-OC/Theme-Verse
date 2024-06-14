@@ -40,7 +40,7 @@ const Footer = ({ theme }) => {
   return (
     <footer
       ref={footerRef}
-      className="relative  justify-end items-center flex flex-col  p-10 w-full bg-footer bg-cover bg-fixed transition-opacity duration-300 ease-in-out"
+      className="relative  justify-end items-center flex flex-col   p-10 w-full bg-footer bg-cover bg-fixed transition-opacity duration-300 ease-in-out"
     >
       <div className="flex flex-row justify-between w-full max-w-screen-xl mx-auto mb-8">
         <div className={`flex flex-col items-center space-y-8 ${isVisible ? 'animate-slideUpFadeIn' : 'opacity-0'}`}>
