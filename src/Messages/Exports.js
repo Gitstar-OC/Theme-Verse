@@ -1,2 +1,2 @@
 export {default as PageInConstruction} from "./PageInConstruction"
-export {default as Successful} from "./SuccessfulMessage"
+export {default as SuccessfulMessage} from "./SuccessfulMessage"

@@ -1,10 +1,12 @@
 import { useState, useRef, useEffect } from "react";
 import { Profile } from "./Exports";
+import { FaGithub, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { FaPersonCircleQuestion, FaRegBuilding } from "react-icons/fa6";
 import { IoMdPerson, IoIosLink, IoIosChatboxes } from "react-icons/io";
-import { IoMail } from "react-icons/io5";
-import { FaGithub, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
+
 import { BsFillSendFill } from "react-icons/bs";
+import SuccessfulMessage from "../Messages/SuccessfulMessage"; // Corrected import statement
+import { IoMail } from "react-icons/io5"
 import {
   Formik,
   Field,
@@ -14,7 +16,6 @@ import {
   useFormikContext,
 } from "formik";
 import * as Yup from "yup";
-// import "../index.css"; // Ensure you import the CSS file
 
 const CustomInput = ({
   icon: Icon,
@@ -183,10 +184,14 @@ const validationSchema = Yup.object({
 
 const ContactForm = () => {
   const sectionRef = useRef(null);
-  const seeAllRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
   const [isFocused, setIsFocused] = useState("");
   const [platform, setPlatform] = useState("");
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+
+  const handleSuccessClose = () => {
+    setShowSuccessMessage(false);
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -205,25 +210,15 @@ const ContactForm = () => {
       observer.observe(sectionRef.current);
     }
 
-    if (seeAllRef.current) {
-      observer.observe(seeAllRef.current);
-    }
-
     return () => {
       if (sectionRef.current) {
         observer.unobserve(sectionRef.current);
-      }
-      if (seeAllRef.current) {
-        observer.unobserve(seeAllRef.current);
       }
     };
   }, []);
 
   return (
-    <div
-      className="theme-bg flex flex-col items-center justify-start mb-20 mt-20"
-      id="section"
-    >
+    <div className="theme-bg flex flex-col items-center justify-start mb-20 mt-20" id="section">
       <div className="backgroundAnim backgroundAnim1"></div>
       <div className="backgroundAnim backgroundAnim2"></div>
       <div className="backgroundAnim backgroundAnim3"></div>
@@ -235,16 +230,12 @@ const ContactForm = () => {
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         } mb-8 mt-8 flex items-center justify-center`}
       >
-        <div className="projectItem text-[3rem] text-center font-cF">
-          Contact
-        </div>
+        <div className="projectItem text-[3rem] text-center font-cF">Contact</div>
       </div>
 
       <div className="flex space-x-10 mt-10">
         <div className="shadow-lg rounded-l-[25px] bg-gray-800 bg-opacity-20 relative p-10 w-[711px] flex flex-col space-y-8 contactDiv  content-slide-in">
-          <div className="text-[3rem] font-cF text-black dark:text-white">
-            Get In Touch
-          </div>
+          <div className="text-[3rem] font-cF text-black dark:text-white">Get In Touch</div>
           <Formik
             initialValues={{
               name: "",
@@ -260,11 +251,12 @@ const ContactForm = () => {
               setTimeout(() => {
                 console.log(JSON.stringify(values, null, 2));
                 setSubmitting(false);
+                setShowSuccessMessage(true);
                 resetForm();
               }, 400);
             }}
           >
-            {({ isSubmitting, errors, touched }) => (
+            {({ errors, touched }) => (
               <Form className="flex flex-col space-y-4">
                 <CustomInput
                   icon={IoMdPerson}
@@ -334,9 +326,7 @@ const ContactForm = () => {
                 >
                   <div className="projectItem icon-bounce">
                     <BsFillSendFill className="mr-2 mb-3 text-[2rem]" />
-                    <span className="projectItem text-[2.5rem] text-center font-cL">
-                      Send
-                    </span>
+                    <span className="projectItem text-[2.5rem] text-center font-cL">Send</span>
                   </div>
                 </button>
               </Form>
@@ -354,16 +344,12 @@ const ContactForm = () => {
               <IoMail className="mr-2" /> <span>Mail Me</span>
             </div>
             <div className="flex items-center text-black dark:text-white">
-              <h3 style={{ fontSize: "1.5rem" }} className="font-cL">
-                chandankarom07@gmail.com
-              </h3>
+              <h3 style={{ fontSize: "1.5rem" }} className="font-cL">chandankarom07@gmail.com</h3>
             </div>
           </div>
           <div className="bg-[#1A3DF8] my-8 w-full h-[1px]"></div>
           <div className="flex flex-col">
-            <div className="mb-4 font-cF text-[1.75rem] text-black dark:text-white">
-              Follow On Github
-            </div>
+            <div className="mb-4 font-cF text-[1.75rem] text-black dark:text-white">Follow On Github</div>
             <a
               href="https://github.com/Gitstar-OC"
               className="flex items-center text-[1.5rem] font-cL text-black dark:text-white cursor-pointer"
@@ -373,9 +359,7 @@ const ContactForm = () => {
           </div>
           <div className="bg-[#1A3DF8] my-8 w-full h-[1px]"></div>
           <div className="flex flex-col">
-            <div className="mb-4 font-cF text-[1.75rem] text-black dark:text-white">
-              Reach me on Social Media
-            </div>
+            <div className="mb-4 font-cF text-[1.75rem] text-black dark:text-white">Reach me on Social Media</div>
             <a
               href="https://www.instagram.com/chandankar_om/"
               className="flex items-center text-[1.5rem] font-cL text-black dark:text-white cursor-pointer"
@@ -397,6 +381,7 @@ const ContactForm = () => {
           </div>
         </div>
       </div>
+      {showSuccessMessage && <SuccessfulMessage onClose={handleSuccessClose} />}
     </div>
   );
 };
