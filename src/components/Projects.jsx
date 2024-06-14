@@ -1,14 +1,14 @@
 import { useEffect, useRef, useState } from "react";
+import {Link} from "react-router-dom"
 import { FaArrowCircleRight } from "react-icons/fa";
 import { projects } from "../Constants/index";
-import { useNavigate } from "react-router-dom";
 import { FaOpencart, FaRegEye } from 'react-icons/fa';
 
 const Projects = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
   const seeAllRef = useRef(null);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -68,10 +68,10 @@ const Projects = () => {
     };
   }, []);
 
-  const handleSeeAllClick = () => {
-    navigate("/themes");
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+  // const handleSeeAllClick = () => {
+  //   navigate("/themes");
+  //   window.scrollTo({ top: 0, behavior: "smooth" });
+  // };
 
   const renderProject = (project, index) => {
     const isEven = index % 2 === 1;
@@ -131,14 +131,14 @@ const Projects = () => {
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         } flex items-center justify-center`}
       >
-        <div
+        <Link to="/themes"> <div
           className={`projectItem text-[40px] cursor-pointer ${
             isVisible ? "animate-bounce" : ""
           }`}
-          onClick={handleSeeAllClick}
         >
           See all <FaArrowCircleRight className="ml-4" />
-        </div>
+        </div></Link>
+        
       </div>
     </div>
   );

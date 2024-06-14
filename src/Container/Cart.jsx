@@ -1,10 +1,11 @@
-// import React from 'react'
-import { Navigation, Footer } from '../components/Exports'
+// import React from 'react'j
+import { Navigation, Footer, CartComponent } from '../components/Exports'
 
 const Cart = () => {
   return (
     <>
       <Navigation />
+      <CartComponent /> 
       <Footer />
     </>
   )

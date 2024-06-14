@@ -1,8 +1,9 @@
-import { useEffect, useState, useRef } from 'react';
-import { projects } from '../Constants/index';
-import { useNavigate } from 'react-router-dom';
+import { useEffect, useState, useRef } from "react";
+import { projects } from "../Constants/index";
+import { useNavigate } from "react-router-dom";
 import { IoMdMail } from "react-icons/io";
-import { FaOpencart, FaRegEye } from 'react-icons/fa';
+import { FaOpencart, FaRegEye } from "react-icons/fa";
+
 const AllProjectsSection = ({ filters }) => {
   const sectionRef = useRef(null);
   const seeAllRef = useRef(null);
@@ -39,13 +40,13 @@ const AllProjectsSection = ({ filters }) => {
   useEffect(() => {
     const filterProjects = () => {
       let filtered = projects;
-      const activeFilters = Object.keys(filters).filter(key => filters[key]);
+      const activeFilters = Object.keys(filters).filter((key) => filters[key]);
       if (activeFilters.length > 0) {
-        filtered = projects.filter(project => {
-          const matchesDescription = activeFilters.some(filter => 
+        filtered = projects.filter((project) => {
+          const matchesDescription = activeFilters.some((filter) =>
             project.description.toLowerCase().includes(filter.toLowerCase())
           );
-          const matchesTechnologies = activeFilters.some(filter => 
+          const matchesTechnologies = activeFilters.some((filter) =>
             project.technologies.includes(filter)
           );
           return matchesDescription || matchesTechnologies;
@@ -66,7 +67,9 @@ const AllProjectsSection = ({ filters }) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add(
-              entry.target.dataset.index % 2 === 0 ? 'slide-in-right' : 'slide-in-left'
+              entry.target.dataset.index % 2 === 0
+                ? "slide-in-right"
+                : "slide-in-left"
             );
           }
         });
@@ -74,7 +77,7 @@ const AllProjectsSection = ({ filters }) => {
       { threshold: 0.5 }
     );
 
-    const contentElements = document.querySelectorAll('.content');
+    const contentElements = document.querySelectorAll(".content");
     contentElements.forEach((element) => {
       observer.observe(element);
     });
@@ -91,42 +94,54 @@ const AllProjectsSection = ({ filters }) => {
     return (
       <div
         key={project.name}
-        className={`flex ${isEven ? 'flex-row-reverse' : ''} projectCard items-start justify-start my-6 p-4`}
         data-index={index}
-        className={`flex ${isEven ? 'flex-row-reverse' : ''} projectCard items-start justify-start my-6 p-4 content`}
-        style={{ marginLeft: '4rem', marginBottom: '2rem', marginRight: "4rem" }}
+        className={`flex ${
+          isEven ? "flex-row-reverse" : ""
+        } projectCard items-start justify-start my-6 p-4 content`}
+        style={{
+          marginLeft: "4rem",
+          marginBottom: "2rem",
+          marginRight: "4rem",
+        }}
       >
-        <div className='projectIframeContainer'>
+        <div className="projectIframeContainer">
           <iframe
             src={project.url}
             title={project.name}
-            className='projectIframe border-heading border-2 dark:border-heading'
+            className="projectIframe border-heading border-2 dark:border-heading"
           />
         </div>
-        <div className='ml-8 mt-2 max-w-160 mr-20'>
-          <div className=' mr-2 border-heading border-solid border-2 dark:border-heading'></div>
-          <h3 className='mt-2 text-[2rem] font-cF dark:text-white'>{project.name}</h3>
-          <p className='mt-2 text-[1.5rem] font-cL dark:text-slate-300 mb-4'>{project.description}</p>
-          <div className='mr-2 border-heading border-solid border-2 dark:border-heading'></div>
+        <div className="ml-8 mt-2 max-w-160 mr-20">
+          <div className=" mr-2 border-heading border-solid border-2 dark:border-heading"></div>
+          <h3 className="mt-2 text-[2rem] font-cF dark:text-white">
+            {project.name}
+          </h3>
+          <p className="mt-2 text-[1.5rem] font-cL dark:text-slate-300 mb-4">
+            {project.description}
+          </p>
+          <div className="mr-2 border-heading border-solid border-2 dark:border-heading"></div>
           <div className="mt-8 mb-2 flex items-center space-x-1 font-cL justify-center text-[2.5rem] dark:text-white cursor-pointer">
             <div className="projectItem animate-bounce">
-              <FaRegEye className='mb-3' />
+              <FaRegEye className="mb-3" />
               <span className=""> See Preview</span>
             </div>
           </div>
           <div className="mt-4 mb-10 flex items-center space-x-1 font-cL text-[2.5rem] justify-center cursor-pointer dark:text-white">
             <div className="projectItem animate-bounce">
-              <FaOpencart className=' mb-3' />
+              <FaOpencart className=" mb-3" />
               <span className="">Add to Cart</span>
             </div>
           </div>
-          <div className='mr-2  justify-end border-heading border-solid border-2 dark:border-heading'></div>
+          <div className="mr-2  justify-end border-heading border-solid border-2 dark:border-heading"></div>
         </div>
       </div>
     );
   };
   return (
-    <div className='theme-bg flex flex-col items-center justify-center mb-20 mt-20 gap-12' id='section'>
+    <div
+      className="theme-bg flex flex-col items-center justify-center mb-20 mt-20 gap-12"
+      id="section"
+    >
       <div
         ref={sectionRef}
         className={`rectangleDiv transition-all duration-1000 transform ${
@@ -135,8 +150,10 @@ const AllProjectsSection = ({ filters }) => {
       >
         <div className="projectItem text-[3rem] text-center">Themes</div>
       </div>
-      <div className='flex flex-col items-start space-y-10  w-full'>
-        {filteredProjects.slice(0, 8).map((project, index) => renderProject(project, index))}
+      <div className="flex flex-col items-start space-y-10  w-full">
+        {filteredProjects
+          .slice(0, 8)
+          .map((project, index) => renderProject(project, index))}
       </div>
       <div
         ref={seeAllRef}

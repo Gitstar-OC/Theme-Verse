@@ -5,11 +5,26 @@ import { IoMdPerson, IoIosLink, IoIosChatboxes } from "react-icons/io";
 import { IoMail } from "react-icons/io5";
 import { FaGithub, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { BsFillSendFill } from "react-icons/bs";
-import { Formik, Field, Form, ErrorMessage, useField, useFormikContext } from 'formik';
-import * as Yup from 'yup';
+import {
+  Formik,
+  Field,
+  Form,
+  ErrorMessage,
+  useField,
+  useFormikContext,
+} from "formik";
+import * as Yup from "yup";
 // import "../index.css"; // Ensure you import the CSS file
 
-const CustomInput = ({ icon: Icon, placeholder, type, name, isFocused, setIsFocused, hasError }) => (
+const CustomInput = ({
+  icon: Icon,
+  placeholder,
+  type,
+  name,
+  isFocused,
+  setIsFocused,
+  hasError,
+}) => (
   <div className="relative w-full  mb-2 flex-1">
     <Field
       name={name}
@@ -17,16 +32,30 @@ const CustomInput = ({ icon: Icon, placeholder, type, name, isFocused, setIsFocu
       placeholder={placeholder}
       className="inputItem w-full h-[3.5rem] bg-gray-200 text-black text-[1.5rem] rounded-[10px] pl-[3rem] pr-[30px] font-cL placeholder:font-cL placeholder:text-[1.5rem] placeholder:text-slate-400"
       onFocus={() => setIsFocused(name)}
-      onBlur={() => setIsFocused('')}
+      onBlur={() => setIsFocused("")}
     />
     <ErrorMessage name={name} component="div" className="text-red-600 mt-2" />
-    <span className={`absolute left-2 bottom-2 h-full flex items-center transition-all duration-200 ${hasError ? "text-[#FF3333]" : isFocused ? "text-[#1A3DF8]" : "text-slate-800"}`}>
+    <span
+      className={`absolute left-2 bottom-2 h-full flex items-center transition-all duration-200 ${
+        hasError
+          ? "text-[#FF3333]"
+          : isFocused
+          ? "text-[#1A3DF8]"
+          : "text-slate-800"
+      }`}
+    >
       <Icon className="text-[2rem]" />
     </span>
   </div>
 );
 
-const CustomTextarea = ({ name, placeholder, isFocused, setIsFocused, hasError }) => (
+const CustomTextarea = ({
+  name,
+  placeholder,
+  isFocused,
+  setIsFocused,
+  hasError,
+}) => (
   <div className="relative w-full mb-2 flex-1">
     <Field
       as="textarea"
@@ -34,16 +63,31 @@ const CustomTextarea = ({ name, placeholder, isFocused, setIsFocused, hasError }
       placeholder={placeholder}
       className="inputItem  w-full h-[10rem] bg-gray-200 text-black text-[1.5rem] rounded-[10px] pl-[3rem] pr-[30px] pt-[2rem] font-cL placeholder:font-cL placeholder:text-[1.5rem] placeholder:text-slate-400"
       onFocus={() => setIsFocused(name)}
-      onBlur={() => setIsFocused('')}
+      onBlur={() => setIsFocused("")}
     />
     <ErrorMessage name={name} component="div" className="text-red-600 mt-2" />
-    <span className={`symbol-input100 absolute left-2 top-2 h-full flex items-start pt-[1.5rem] transition-all duration-200 ${hasError ? "text-[#FF3333]" : isFocused ? "text-[#1A3DF8]" : "text-slate-800"}`}>
+    <span
+      className={`symbol-input100 absolute left-2 top-2 h-full flex items-start pt-[1.5rem] transition-all duration-200 ${
+        hasError
+          ? "text-[#FF3333]"
+          : isFocused
+          ? "text-[#1A3DF8]"
+          : "text-slate-800"
+      }`}
+    >
       <IoIosChatboxes className="text-[2rem]" />
     </span>
   </div>
 );
 
-const SocialMediaInput = ({ platform, setPlatform, name, isFocused, setIsFocused, hasError }) => {
+const SocialMediaInput = ({
+  platform,
+  setPlatform,
+  name,
+  isFocused,
+  setIsFocused,
+  hasError,
+}) => {
   const platformIcons = {
     instagram: FaInstagram,
     linkedin: FaLinkedin,
@@ -83,7 +127,9 @@ const SocialMediaInput = ({ platform, setPlatform, name, isFocused, setIsFocused
           onChange={(e) => setPlatform(e.target.value)}
           className="bg-gray-200 text-black text-[1.5rem] rounded-[10px] h-[3rem] mr-2 font-cL"
         >
-          <option value="" disabled>Select Platform</option>
+          <option value="" disabled>
+            Select Platform
+          </option>
           <option value="instagram">Instagram</option>
           <option value="linkedin">LinkedIn</option>
           <option value="twitter">Twitter</option>
@@ -96,13 +142,21 @@ const SocialMediaInput = ({ platform, setPlatform, name, isFocused, setIsFocused
             type="text"
             className="inputItem input100 h-[3rem] w-full bg-gray-200 text-black text-[1.25rem]  rounded-[10px] pl-[10px] font-cL"
             onFocus={() => setIsFocused(name)}
-            onBlur={() => setIsFocused('')}
+            onBlur={() => setIsFocused("")}
           />
         </div>
       </div>
       <ErrorMessage name={name} component="div" className="text-red-600 mt-2" />
       {Icon && (
-        <span className={`symbol-input100 absolute left-28 bottom-1 h-full flex items-center transition-all duration-200 ${hasError ? "text-[#FF3333]" : isFocused ? "text-[#1A3DF8]" : "text-slate-800"}`}>
+        <span
+          className={`symbol-input100 absolute left-28 bottom-1 h-full flex items-center transition-all duration-200 ${
+            hasError
+              ? "text-[#FF3333]"
+              : isFocused
+              ? "text-[#1A3DF8]"
+              : "text-slate-800"
+          }`}
+        >
           <Icon className="text-[1.5rem]" />
         </span>
       )}
@@ -110,34 +164,29 @@ const SocialMediaInput = ({ platform, setPlatform, name, isFocused, setIsFocused
   );
 };
 
-
 const validationSchema = Yup.object({
   name: Yup.string()
-    .required('Name is required')
-    .min(3, 'Name must be at least 3 characters')
-    .max(25, 'Name must be less than 25 characters'),
+    .required("Name is required")
+    .min(3, "Name must be at least 3 characters")
+    .max(25, "Name must be less than 25 characters"),
   email: Yup.string()
-    .email('Invalid email address')
-    .required('Email is required'),
-  socialMedia: Yup.string().required('Social media username is required'),
-  position: Yup.string()
-    .required('Position is required'),
-  company: Yup.string()
-    .required('Company is required'),
-  figmaLink: Yup.string()
-    .url('Invalid URL')
-    .required('Figma link is required'),
+    .email("Invalid email address")
+    .required("Email is required"),
+  socialMedia: Yup.string().required("Social media username is required"),
+  position: Yup.string().required("Position is required"),
+  company: Yup.string().required("Company is required"),
+  figmaLink: Yup.string().url("Invalid URL").required("Figma link is required"),
   message: Yup.string()
-    .min(40, 'Message must be at least 40 characters')
-    .required('Message is required'),
+    .min(40, "Message must be at least 40 characters")
+    .required("Message is required"),
 });
 
 const ContactForm = () => {
   const sectionRef = useRef(null);
   const seeAllRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
-  const [isFocused, setIsFocused] = useState('');
-  const [platform, setPlatform] = useState('');
+  const [isFocused, setIsFocused] = useState("");
+  const [platform, setPlatform] = useState("");
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -171,21 +220,41 @@ const ContactForm = () => {
   }, []);
 
   return (
-    <div className="theme-bg flex flex-col items-center justify-start mb-20 mt-20" id="section">
+    <div
+      className="theme-bg flex flex-col items-center justify-start mb-20 mt-20"
+      id="section"
+    >
       <div className="backgroundAnim backgroundAnim1"></div>
       <div className="backgroundAnim backgroundAnim2"></div>
       <div className="backgroundAnim backgroundAnim3"></div>
       <div className="backgroundAnim backgroundAnim4"></div>
       <div className="backgroundAnim backgroundAnim5"></div>
-      <div ref={sectionRef} className={`rectangleDiv transition-all duration-1000 transform ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"} mb-8 mt-8 flex items-center justify-center`}>
-        <div className="projectItem text-[3rem] text-center font-cF">Contact</div>
+      <div
+        ref={sectionRef}
+        className={`rectangleDiv transition-all duration-1000 transform ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        } mb-8 mt-8 flex items-center justify-center`}
+      >
+        <div className="projectItem text-[3rem] text-center font-cF">
+          Contact
+        </div>
       </div>
 
       <div className="flex space-x-10 mt-10">
         <div className="shadow-lg rounded-l-[25px] bg-gray-800 bg-opacity-20 relative p-10 w-[711px] flex flex-col space-y-8 contactDiv  content-slide-in">
-          <div className="text-[3rem] font-cF text-black dark:text-white">Get In Touch</div>
+          <div className="text-[3rem] font-cF text-black dark:text-white">
+            Get In Touch
+          </div>
           <Formik
-            initialValues={{ name: '', email: '', socialMedia: '', position: '', company: '', figmaLink: '', message: '' }}
+            initialValues={{
+              name: "",
+              email: "",
+              socialMedia: "",
+              position: "",
+              company: "",
+              figmaLink: "",
+              message: "",
+            }}
             validationSchema={validationSchema}
             onSubmit={(values, { setSubmitting, resetForm }) => {
               setTimeout(() => {
@@ -202,7 +271,7 @@ const ContactForm = () => {
                   placeholder="Name"
                   type="text"
                   name="name"
-                  isFocused={isFocused === 'name'}
+                  isFocused={isFocused === "name"}
                   setIsFocused={setIsFocused}
                   hasError={errors.name && touched.name}
                 />
@@ -211,7 +280,7 @@ const ContactForm = () => {
                   placeholder="Email"
                   type="email"
                   name="email"
-                  isFocused={isFocused === 'email'}
+                  isFocused={isFocused === "email"}
                   setIsFocused={setIsFocused}
                   hasError={errors.email && touched.email}
                 />
@@ -219,7 +288,7 @@ const ContactForm = () => {
                   platform={platform}
                   setPlatform={setPlatform}
                   name="socialMedia"
-                  isFocused={isFocused === 'socialMedia'}
+                  isFocused={isFocused === "socialMedia"}
                   setIsFocused={setIsFocused}
                   hasError={errors.socialMedia && touched.socialMedia}
                 />
@@ -228,7 +297,7 @@ const ContactForm = () => {
                   placeholder="Position"
                   type="text"
                   name="position"
-                  isFocused={isFocused === 'position'}
+                  isFocused={isFocused === "position"}
                   setIsFocused={setIsFocused}
                   hasError={errors.position && touched.position}
                 />
@@ -237,7 +306,7 @@ const ContactForm = () => {
                   placeholder="Company"
                   type="text"
                   name="company"
-                  isFocused={isFocused === 'company'}
+                  isFocused={isFocused === "company"}
                   setIsFocused={setIsFocused}
                   hasError={errors.company && touched.company}
                 />
@@ -246,14 +315,14 @@ const ContactForm = () => {
                   placeholder="https://www.figma.com/"
                   type="text"
                   name="figmaLink"
-                  isFocused={isFocused === 'figmaLink'}
+                  isFocused={isFocused === "figmaLink"}
                   setIsFocused={setIsFocused}
                   hasError={errors.figmaLink && touched.figmaLink}
                 />
                 <CustomTextarea
                   name="message"
                   placeholder="Message"
-                  isFocused={isFocused === 'message'}
+                  isFocused={isFocused === "message"}
                   setIsFocused={setIsFocused}
                   hasError={errors.message && touched.message}
                 />
@@ -265,7 +334,9 @@ const ContactForm = () => {
                 >
                   <div className="projectItem icon-bounce">
                     <BsFillSendFill className="mr-2 mb-3 text-[2rem]" />
-                    <span className="projectItem text-[2.5rem] text-center font-cL">Send</span>
+                    <span className="projectItem text-[2.5rem] text-center font-cL">
+                      Send
+                    </span>
                   </div>
                 </button>
               </Form>
@@ -283,26 +354,44 @@ const ContactForm = () => {
               <IoMail className="mr-2" /> <span>Mail Me</span>
             </div>
             <div className="flex items-center text-black dark:text-white">
-              <h3 style={{ fontSize: "1.5rem" }} className="font-cL">chandankarom07@gmail.com</h3>
+              <h3 style={{ fontSize: "1.5rem" }} className="font-cL">
+                chandankarom07@gmail.com
+              </h3>
             </div>
           </div>
           <div className="bg-[#1A3DF8] my-8 w-full h-[1px]"></div>
           <div className="flex flex-col">
-            <div className="mb-4 font-cF text-[1.75rem] text-black dark:text-white">Follow On Github</div>
-            <a href="https://github.com/Gitstar-OC" className="flex items-center text-[1.5rem] font-cL text-black dark:text-white cursor-pointer">
+            <div className="mb-4 font-cF text-[1.75rem] text-black dark:text-white">
+              Follow On Github
+            </div>
+            <a
+              href="https://github.com/Gitstar-OC"
+              className="flex items-center text-[1.5rem] font-cL text-black dark:text-white cursor-pointer"
+            >
               <FaGithub className="mr-2 mb-3" /> Gitstar-OC
             </a>
           </div>
           <div className="bg-[#1A3DF8] my-8 w-full h-[1px]"></div>
           <div className="flex flex-col">
-            <div className="mb-4 font-cF text-[1.75rem] text-black dark:text-white">Reach me on Social Media</div>
-            <a href="https://www.instagram.com/chandankar_om/" className="flex items-center text-[1.5rem] font-cL text-black dark:text-white cursor-pointer">
+            <div className="mb-4 font-cF text-[1.75rem] text-black dark:text-white">
+              Reach me on Social Media
+            </div>
+            <a
+              href="https://www.instagram.com/chandankar_om/"
+              className="flex items-center text-[1.5rem] font-cL text-black dark:text-white cursor-pointer"
+            >
               <FaInstagram className="mr-2 mb-3" /> Instagram
             </a>
-            <a href="https://www.linkedin.com/in/om-chandankar" className="flex items-center mt-2 text-[1.5rem] font-cL text-black dark:text-white cursor-pointer">
+            <a
+              href="https://www.linkedin.com/in/om-chandankar"
+              className="flex items-center mt-2 text-[1.5rem] font-cL text-black dark:text-white cursor-pointer"
+            >
               <FaLinkedin className="mr-2 mb-3" /> LinkedIn
             </a>
-            <a href="https://x.com/Om_Chandankar" className="flex items-center mt-2 text-[1.5rem] font-cL text-black dark:text-white cursor-pointer">
+            <a
+              href="https://x.com/Om_Chandankar"
+              className="flex items-center mt-2 text-[1.5rem] font-cL text-black dark:text-white cursor-pointer"
+            >
               <FaTwitter className="mr-2 mb-3" /> Twitter
             </a>
           </div>
