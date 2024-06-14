@@ -182,7 +182,7 @@ const ContactForm = () => {
       </div>
 
       <div className="flex space-x-10 mt-10">
-        <div className="shadow-lg rounded-l-[25px] bg-gray-800 bg-opacity-20 relative p-10 w-[711px] flex flex-col space-y-8 contactDiv">
+        <div className="shadow-lg rounded-l-[25px] bg-gray-800 bg-opacity-20 relative p-10 w-[711px] flex flex-col space-y-8 contactDiv  content-slide-in">
           <div className="text-[3rem] font-cF text-black dark:text-white">Get In Touch</div>
           <Formik
             initialValues={{ name: '', email: '', socialMedia: '', position: '', company: '', figmaLink: '', message: '' }}
@@ -263,7 +263,7 @@ const ContactForm = () => {
                   id="send"
                   // disabled={isSubmitting || Object.keys(errors).length > 0}
                 >
-                  <div className="projectItem animate-bounce">
+                  <div className="projectItem icon-bounce">
                     <BsFillSendFill className="mr-2 mb-3 text-[2rem]" />
                     <span className="projectItem text-[2.5rem] text-center font-cL">Send</span>
                   </div>
@@ -273,7 +273,7 @@ const ContactForm = () => {
           </Formik>
         </div>
 
-        <div className="shadow-[0px_10px_15px_-3px_#1A3DF8] rounded-r-[25px] bg-[rgba(74,74,74,0.2)] relative flex flex-col p-8 w-[361px]">
+        <div className="shadow-[0px_10px_15px_-3px_#1A3DF8] rounded-r-[25px] bg-[rgba(74,74,74,0.2)] relative flex flex-col p-8 w-[361px] image-slide-in">
           <div className="self-center w-[200px] h-[196.5px] flex items-center justify-center">
             <Profile size="small" />
           </div>
