@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { PageInConstruction, PlatformFee } from "../Messages/Exports"; // Corrected import statement
 import { projects } from "../Constants/index";
-import { CiDollar } from "react-icons/ci";
 import { HiQuestionMarkCircle } from "react-icons/hi2";
 import EmptyCart from "./EmptyCart";
 
@@ -82,14 +81,14 @@ const CartComponent = () => {
           />
         </div>
         <div className="ml-20 mr-10 mt-2 max-w-160 flex-grow">
-          <div className="flex justify-between items-center">
+          <div className="flex justify-between items-center mb-2">
             <h3 className="text-[2.25rem] font-cF dark:text-white">
               {project.name}
             </h3>
-            <div className="flex items-center ">
-              <CiDollar className="text-[2.25rem] font-cL dark:text-white mb-4" />
-              <span className="text-[2.25rem] font-cL dark:text-white">
-                {project.price}
+            <div className="flex items-center">
+              {/* <CiDollar className="text-[2.25rem] font-cL dark:text-white mb-4" /> */}
+              <span className="text-[2.25rem] font-cL dark:text-white bg-border p- rounded-md">
+               ${project.price}
               </span>
             </div>
           </div>
@@ -126,7 +125,7 @@ const CartComponent = () => {
         </div>
       </div>
       <div className="flex mt-10">
-        <div className="flex rounded-[25px] flex-col items-start bg-gray-800 bg-opacity-20 p-2 mr-20 mrrounded-[25px] space-y-2 flex-grow">
+        <div className="flex rounded-[25px] flex-col items-start bg-gray-800 bg-opacity-20 p-2 mr-20 space-y-2 flex-grow">
           {cartItems.length === 0 ? (
             <EmptyCart />
           ) : (
