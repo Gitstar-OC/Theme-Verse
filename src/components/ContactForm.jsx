@@ -352,7 +352,7 @@ const ContactForm = () => {
             <div className="mb-4 font-cF text-[1.75rem] text-black dark:text-white">Follow On Github</div>
             <a
               href="https://github.com/Gitstar-OC"
-              className="flex items-center text-[1.5rem] font-cL text-black dark:text-white cursor-pointer"
+              className="flex items-center text-[1.5rem] font-cL text-black dark:text-white cursor-pointer hover:underline dark:hover:text-secondary "
             >
               <FaGithub className="mr-2 mb-3" /> Gitstar-OC
             </a>
@@ -362,19 +362,19 @@ const ContactForm = () => {
             <div className="mb-4 font-cF text-[1.75rem] text-black dark:text-white">Reach me on Social Media</div>
             <a
               href="https://www.instagram.com/chandankar_om/"
-              className="flex items-center text-[1.5rem] font-cL text-black dark:text-white cursor-pointer"
+              className="flex items-center text-[1.5rem] font-cL text-black dark:text-white cursor-pointer hover:underline dark:hover:text-secondary"
             >
               <FaInstagram className="mr-2 mb-3" /> Instagram
             </a>
             <a
               href="https://www.linkedin.com/in/om-chandankar"
-              className="flex items-center mt-2 text-[1.5rem] font-cL text-black dark:text-white cursor-pointer"
+              className="flex items-center mt-2 text-[1.5rem] font-cL text-black dark:text-white cursor-pointer hover:underline dark:hover:text-secondary"
             >
               <FaLinkedin className="mr-2 mb-3" /> LinkedIn
             </a>
             <a
               href="https://x.com/Om_Chandankar"
-              className="flex items-center mt-2 text-[1.5rem] font-cL text-black dark:text-white cursor-pointer"
+              className="flex items-center mt-2 text-[1.5rem] font-cL text-black dark:text-white cursor-pointer hover:underline dark:hover:text-secondary"
             >
               <FaTwitter className="mr-2 mb-3" /> Twitter
             </a>
