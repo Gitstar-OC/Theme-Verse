@@ -46,7 +46,7 @@ const EmptyCart = () => {
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       } `}
     >
-      <div className="shadow-lg rounded-[25px] bg-gray-800 bg-opacity-10 relative p-10 w-[711px] flex flex-col space-y-8 contactDiv">
+      <div className=" rounded-[25px] bg-gray-800 bg-opacity-0 relative p-10 w-[711px] flex flex-col space-y-8 ">
         <div className="text-[3rem] font-cF text-black dark:text-white mb-20">
           <img
             src={CartIcon}

@@ -1,14 +1,15 @@
-// import React from 'react'j
-import { Navigation, Footer, CartComponent } from '../components/Exports'
+import { useContext } from 'react';
+import CartComponent from '../components/CartComponent';
+import { CartContext } from '../MainLayout';
 
 const Cart = () => {
+  const { cartItems, removeFromCart } = useContext(CartContext);
+
   return (
     <>
-      <Navigation />
-      <CartComponent /> 
-      <Footer />
+      <CartComponent cartItems={cartItems} removeFromCart={removeFromCart} />
     </>
-  )
+  );
 }
 
-export default Cart
+export default Cart;

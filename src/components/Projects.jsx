@@ -1,14 +1,13 @@
 import { useEffect, useRef, useState } from "react";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
 import { FaArrowCircleRight } from "react-icons/fa";
 import { projects } from "../Constants/index";
-import { FaOpencart, FaRegEye } from 'react-icons/fa';
+import { FaOpencart, FaRegEye } from "react-icons/fa";
 
-const Projects = () => {
+const Projects = ({ addToCart }) => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
   const seeAllRef = useRef(null);
-  // const navigate = useNavigate();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -68,11 +67,6 @@ const Projects = () => {
     };
   }, []);
 
-  // const handleSeeAllClick = () => {
-  //   navigate("/themes");
-  //   window.scrollTo({ top: 0, behavior: "smooth" });
-  // };
-
   const renderProject = (project, index) => {
     const isEven = index % 2 === 1;
     return (
@@ -100,7 +94,7 @@ const Projects = () => {
               <span className=""> See Preview</span>
             </div>
           </div>
-          <div className="mt-4 mb-10 flex items-center space-x-1 font-cL text-[2.5rem] justify-center cursor-pointer dark:text-white">
+          <div className="mt-4 mb-10 flex items-center space-x-1 font-cL text-[2.5rem] justify-center cursor-pointer dark:text-white" onClick={() => addToCart(project.id)}>
             <div className="projectItem animate-bounce">
               <FaOpencart className=' mb-3' />
               <span className="">Add to Cart</span>

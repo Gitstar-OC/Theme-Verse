@@ -1,7 +1,9 @@
-import { useState } from 'react';
-import { FilterSidebar, Navigation, Footer, AllProjectSection } from '../components/Exports';
+import { useState, useContext } from 'react';
+import { FilterSidebar, AllProjectSection } from '../components/Exports';
+import { CartContext } from '../MainLayout';
 
 const Themes = () => {
+  const { addToCart } = useContext(CartContext);
   const [filters, setFilters] = useState({
     'Payment Website': false,
     'AI Website': false,
@@ -19,14 +21,12 @@ const Themes = () => {
 
   return (
     <>
-      <Navigation />
       <div className="flex mt-16">
         <FilterSidebar onFilterChange={handleFilterChange} />
         <div className="flex-1 p-4">
-          <AllProjectSection filters={filters} />
+          <AllProjectSection filters={filters} addToCart={addToCart} />
         </div>
       </div>
-      <Footer />
     </>
   );
 }

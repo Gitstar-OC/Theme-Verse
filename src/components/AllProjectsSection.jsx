@@ -1,15 +1,21 @@
 import { useEffect, useState, useRef } from "react";
 import { projects } from "../Constants/index";
-import { useNavigate } from "react-router-dom";
-import { IoMdMail } from "react-icons/io";
+import { Link } from "react-router-dom";
 import { FaOpencart, FaRegEye } from "react-icons/fa";
+import { AddToCart, DoubleAdd } from "../Messages/Exports";
+import { IoMdMail } from "react-icons/io";
 
-const AllProjectsSection = ({ filters }) => {
+const AllProjectsSection = ({ filters, addToCart }) => {
   const sectionRef = useRef(null);
   const seeAllRef = useRef(null);
-  const navigate = useNavigate();
   const [isVisible, setIsVisible] = useState(false);
   const [filteredProjects, setFilteredProjects] = useState(projects);
+  const [showAddToCart, setShowAddToCart] = useState(false);
+  const [showDoubleAdd, setShowDoubleAdd] = useState(false);
+  const [cart, setCart] = useState(() => {
+    return JSON.parse(localStorage.getItem("cart")) || [];
+  });
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -22,12 +28,14 @@ const AllProjectsSection = ({ filters }) => {
       },
       { threshold: 0.5 }
     );
+
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
     }
     if (seeAllRef.current) {
       observer.observe(seeAllRef.current);
     }
+
     return () => {
       if (sectionRef.current) {
         observer.unobserve(sectionRef.current);
@@ -37,6 +45,7 @@ const AllProjectsSection = ({ filters }) => {
       }
     };
   }, []);
+
   useEffect(() => {
     const filterProjects = () => {
       let filtered = projects;
@@ -56,9 +65,25 @@ const AllProjectsSection = ({ filters }) => {
     };
     filterProjects();
   }, [filters]);
-  const handleSeeAllClick = () => {
-    navigate("/contact");
-    window.scrollTo({ top: 0, behavior: "smooth" });
+
+  const handleAddToCart = (projectId) => {
+    if (cart.includes(projectId)) {
+      setShowDoubleAdd(true);
+    } else {
+      const newCart = [...cart, projectId];
+      setCart(newCart);
+      localStorage.setItem("cart", JSON.stringify(newCart));
+      addToCart(projectId);
+      setShowAddToCart(true);
+    }
+  };
+
+  const handleAddToCartClose = () => {
+    setShowAddToCart(false);
+  };
+
+  const handleDoubleAddClose = () => {
+    setShowDoubleAdd(false);
   };
 
   useEffect(() => {
@@ -95,9 +120,7 @@ const AllProjectsSection = ({ filters }) => {
       <div
         key={project.name}
         data-index={index}
-        className={`flex ${
-          isEven ? "flex-row-reverse" : ""
-        } projectCard items-start justify-start my-6 p-4 content`}
+        className={`flex ${isEven ? "flex-row-reverse" : ""} projectCard items-start justify-start my-6 p-4 content`}
         style={{
           marginLeft: "4rem",
           marginBottom: "2rem",
@@ -121,13 +144,16 @@ const AllProjectsSection = ({ filters }) => {
           </p>
           <div className="mr-2 border-heading border-solid border-2 dark:border-heading"></div>
           <div className="mt-8 mb-2 flex items-center space-x-1 font-cL justify-center text-[2.5rem] dark:text-white cursor-pointer">
-            <div onClick="" className="projectItem animate-bounce">
+            <div className="projectItem animate-bounce">
               <FaRegEye className="mb-3" />
-              <span className=""> See Preview</span>
+              <span className="">See Preview</span>
             </div>
           </div>
-          <div className="mt-4 mb-10 flex items-center space-x-1 font-cL text-[2.5rem] justify-center cursor-pointer dark:text-white">
-            <div onClick="" className="projectItem animate-bounce">
+          <div
+            className="mt-4 mb-10 flex items-center space-x-1 font-cL text-[2.5rem] justify-center cursor-pointer dark"
+            onClick={() => handleAddToCart(project.id)}
+          >
+            <div className="projectItem animate-bounce">
               <FaOpencart className=" mb-3" />
               <span className="">Add to Cart</span>
             </div>
@@ -137,6 +163,7 @@ const AllProjectsSection = ({ filters }) => {
       </div>
     );
   };
+
   return (
     <div
       className="theme-bg flex flex-col items-center justify-center mb-20 mt-20 gap-12"
@@ -144,9 +171,7 @@ const AllProjectsSection = ({ filters }) => {
     >
       <div
         ref={sectionRef}
-        className={`rectangleDiv transition-all duration-1000 transform ${
-          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-        } mb-8 flex items-center justify-center`}
+        className={`rectangleDiv transition-all duration-1000 transform ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"} mb-8 flex items-center justify-center`}
       >
         <div className="projectItem text-[3rem] text-center">Themes</div>
       </div>
@@ -155,22 +180,22 @@ const AllProjectsSection = ({ filters }) => {
           .slice(0, 8)
           .map((project, index) => renderProject(project, index))}
       </div>
-      <div
-        ref={seeAllRef}
-        className={`smallDiv transition-all duration-1000 transform ${
-          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-        } flex items-center justify-center`}
-      >
+      <Link to="/contact">
         <div
-          className={`projectItem text-[40px] cursor-pointer ${
-            isVisible ? "animate-bounce" : ""
-          }`}
-          onClick={handleSeeAllClick}
+          ref={seeAllRef}
+          className={`smallDiv transition-all duration-1000 transform ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"} flex items-center justify-center`}
         >
-          <IoMdMail className="mr-4" /> Contact Us
+          <div
+            className={`projectItem text-[40px] cursor-pointer ${isVisible ? "animate-bounce" : ""}`}
+          >
+            <IoMdMail className="mr-4" /> Contact Us
+          </div>
         </div>
-      </div>
+      </Link>
+      {showAddToCart && <AddToCart onClose={handleAddToCartClose} />}
+      {showDoubleAdd && <DoubleAdd onClose={handleDoubleAddClose} />}
     </div>
   );
 };
+
 export default AllProjectsSection;

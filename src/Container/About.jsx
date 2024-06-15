@@ -4,9 +4,9 @@ import { Navigation, Footer, AboutSection } from '../components/Exports'
 const About = () => {
   return (
     <div>
-      <Navigation />
+      {/* <Navigation /> */}
       <AboutSection />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   )
 }

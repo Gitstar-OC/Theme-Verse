@@ -4,9 +4,9 @@ import { Navigation, Footer, ContactForm } from '../components/Exports'
 const Contact = () => {
   return (
     <>
-      <Navigation />
+      {/* <Navigation /> */}
       <ContactForm />
-      <Footer />
+      {/* <Footer /> */}
     </>
   )
 }

@@ -4,11 +4,11 @@ import { Navigation, Projects, Main, Footer } from '../components/Exports'
 const Home = () => {
   return (
     <>
-      <Navigation />
+      {/* <Navigation /> */}
       <Main />
       <Projects />
       <span>
-      <Footer />
+      {/* <Footer /> */}
       </span>
       
     </>
