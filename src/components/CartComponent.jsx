@@ -63,6 +63,7 @@ const CartComponent = () => {
 
       <div>
         <EmptyCart />
+
       </div>
     </div>
   );

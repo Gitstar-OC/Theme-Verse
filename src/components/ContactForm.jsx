@@ -219,7 +219,7 @@ const ContactForm = () => {
   }, []);
 
   return (
-    <div className="theme-bg flex flex-col items-center justify-start mb-20 mt-20" id="section">
+    <div className="theme-bg flex flex-col items-center justify-start pb-20 mt-20" id="section">
       <div className="backgroundAnim backgroundAnim1"></div>
       <div className="backgroundAnim backgroundAnim2"></div>
       <div className="backgroundAnim backgroundAnim3"></div>
