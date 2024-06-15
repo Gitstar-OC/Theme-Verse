@@ -3,7 +3,7 @@ import ProfileImage from '../assets/Profile.jpeg'; // Import the profile image
 
 const Profile = ({ size }) => {
   // Calculate dimensions based on the size prop
-  const dimensions = size === 'small' ? 'w-48 h-48' : 'w-96 h-96';
+  const dimensions = size === 'small' ? 'w-48 h-48' : 'w-80 h-80';
 
   return (
     <div className="flex items-center justify-center h-screen bg-background">
