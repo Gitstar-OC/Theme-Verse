@@ -5,7 +5,7 @@ import { FaPersonCircleQuestion, FaRegBuilding } from "react-icons/fa6";
 import { IoMdPerson, IoIosLink, IoIosChatboxes } from "react-icons/io";
 
 import { BsFillSendFill } from "react-icons/bs";
-import SuccessfulMessage from "../Messages/SuccessfulMessage"; // Corrected import statement
+import { SuccessfulMessage } from "../Messages/Exports"; // Corrected import statement
 import { IoMail } from "react-icons/io5"
 import {
   Formik,
@@ -183,6 +183,7 @@ const validationSchema = Yup.object({
 });
 
 const ContactForm = () => {
+  // existing state and refs
   const sectionRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
   const [isFocused, setIsFocused] = useState("");
@@ -234,7 +235,7 @@ const ContactForm = () => {
       </div>
 
       <div className="flex space-x-10 mt-10">
-        <div className="shadow-lg rounded-l-[25px] bg-gray-800 bg-opacity-20 relative p-10 w-[711px] flex flex-col space-y-8 contactDiv  content-slide-in">
+        <div className="shadow-lg rounded-l-[25px] bg-gray-800 bg-opacity-20 relative p-10 w-[711px] flex flex-col space-y-8 contactDiv content-slide-in">
           <div className="text-[3rem] font-cF text-black dark:text-white">Get In Touch</div>
           <Formik
             initialValues={{
@@ -322,7 +323,6 @@ const ContactForm = () => {
                   type="submit"
                   className="flex items-center justify-center rounded-[15px] p-2 border-2 cursor-pointer border-[#0f94b2] bg-[#a6d2ea] dark:border-[#a6d2ea] dark:bg-[#000000] mx-40"
                   id="send"
-                  // disabled={isSubmitting || Object.keys(errors).length > 0}
                 >
                   <div className="projectItem icon-bounce">
                     <BsFillSendFill className="mr-2 mb-3 text-[2rem]" />

@@ -793,3 +793,21 @@ height: 40px;
 .cartItem:hover {
   box-shadow: 0px 10px 20px -10px #1A3DF8, 0px -10px 20px -10px #1A3DF8;
 }
+
+/* Add this to your CSS file */
+.message-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; 
+  background: rgba(0, 0, 0, 0.25); /*semi-transparent background*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it overlays other elements */
+}
+
+.message-animation {
+  animation: slideUp 0.5s ease-in-out;
+}
