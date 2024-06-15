@@ -125,7 +125,7 @@ const CartComponent = () => {
         </div>
       </div>
       <div className="flex mt-10">
-        <div className="flex rounded-[25px] flex-col items-start bg-gray-800 bg-opacity-20 p-2 mr-20 space-y-2 flex-grow">
+        <div className="inputItem flex rounded-[25px] flex-col items-start bg-gray-800 bg-opacity-20 p-2 mr-20 space-y-2 flex-grow">
           {cartItems.length === 0 ? (
             <EmptyCart />
           ) : (
@@ -140,7 +140,7 @@ const CartComponent = () => {
           )}
         </div>
 
-        <div className="rounded-[25px] bg-slate-800 bg-opacity-20 flex-col p-8 mb-60 sticky top-20 self-start">
+        <div className="rounded-[25px] bg-slate-800 bg-opacity-20 flex-col p-8 mb-60 sticky top-20 self-start cartItem">
           <div className="flex font-cF text-[2.5rem] text-black dark:text-white mb-2">
             Summary
           </div>
@@ -175,9 +175,9 @@ const CartComponent = () => {
           <p className="font-cF text-[2.25rem] text-black dark:text-white mt-2">
             Total Amount: <span>{finalPrice.toFixed(2)}</span>
           </p>
-          <div className="rounded-[15px] bg-[#a6d2ea] border-[#0f94b2] dark:border-[#a6d2ea] dark:bg-black border-[3px] h-[5rem] w-[300px] flex justify-center items-center cursor-pointer mt-4" onClick={handleCheckoutClick}>
+          <div className="rounded-[15px] cartItem bg-[#a6d2ea] border-[#0f94b2] dark:border-[#a6d2ea] dark:bg-black border-[3px] h-[5rem] w-[300px] flex justify-center items-center cursor-pointer mt-4" onClick={handleCheckoutClick}>
             <div className="projectItem">
-              <span className="font-cL text-[2.25rem] animate-bounce">
+              <span className="font-cL text-[2.25rem] animate-bounce ">
                 Checkout
               </span>
             </div>
