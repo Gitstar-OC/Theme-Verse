@@ -121,13 +121,13 @@ const AllProjectsSection = ({ filters }) => {
           </p>
           <div className="mr-2 border-heading border-solid border-2 dark:border-heading"></div>
           <div className="mt-8 mb-2 flex items-center space-x-1 font-cL justify-center text-[2.5rem] dark:text-white cursor-pointer">
-            <div className="projectItem animate-bounce">
+            <div onClick="" className="projectItem animate-bounce">
               <FaRegEye className="mb-3" />
               <span className=""> See Preview</span>
             </div>
           </div>
           <div className="mt-4 mb-10 flex items-center space-x-1 font-cL text-[2.5rem] justify-center cursor-pointer dark:text-white">
-            <div className="projectItem animate-bounce">
+            <div onClick="" className="projectItem animate-bounce">
               <FaOpencart className=" mb-3" />
               <span className="">Add to Cart</span>
             </div>
