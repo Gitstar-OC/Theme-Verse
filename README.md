@@ -3,6 +3,7 @@
 
 
 ### Tasks in progress
+- change the color of the items in cart when the cart is active
 - fix styles issues of the add to cart button
 - Add snap scrolling to the various themes!!
 - Add box shadow on hovering over the contact form, also make to make the radius round
