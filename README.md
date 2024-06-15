@@ -3,7 +3,7 @@
 
 
 ### Tasks in progress
-
+- fix styles issues of the add to cart button
 - Add snap scrolling to the various themes!!
 - Add box shadow on hovering over the contact form, also make to make the radius round
 
