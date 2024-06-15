@@ -1,8 +1,8 @@
 import { IoClose } from "react-icons/io5";
 import { useEffect } from "react";
-import { MdConstruction } from "react-icons/md";
 import { FaGithubSquare, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
+import { HiMiniQuestionMarkCircle } from "react-icons/hi2";
 
 const styles = `
   .no-scroll {
@@ -25,7 +25,7 @@ const PlatformFee = ({ onClose }) => {
     <>
       <style>{styles}</style>
       <div className="message-overlay message-animation">
-        <div className="bg-message  rounded-[25px] relative mt-32 mb-32  ml-96 mr-[25rem]">
+        <div className="bg-message  bg-fixed bg-cover rounded-[25px] relative mt-32 mb-32  ml-96 mr-[25rem]">
           <IoClose
             onClick={onClose}
             className="cursor-pointner absolute top-4 right-4 text-[#0500FF] w-[3rem] h-[3rem] hover:text-[#09FFB5] dark:hover:text-[#09FFB5]"
@@ -33,20 +33,18 @@ const PlatformFee = ({ onClose }) => {
 
           <div className=" flex flex-col ml-10 ">
             <div className="flex mt-10">
-              <MdConstruction className="w-20 h-20 mt-4  text-[#0500FF] " />
+              <HiMiniQuestionMarkCircle className="w-20 h-20 mt-4  text-[#0500FF] icon-bounce hover:text-[#09FFB5] dark:hover:text-[#09FFB5]" />
               <h1 className="font-cF text-[3rem]  ml-10 text-black dark:text-white ">
-                Page Under Construction
+                  Platform Fee
               </h1>
             </div>
             <p className="font-cL text-[2.25rem] text-black dark:text-white  mt-4 ml-28 mr-16">
-              Oops!! it looks like this page has not been created as it needs
-              back end which I am learning currently. Sorry for this
-              Inconvenience. 🙁
+              Fee levied by Theme Verse to sustain the efficient operations and continuous improvement of the platform, for a hassle-free website experience. ❤️
             </p>
 
             <div className="mt-4 mb-4">
               <p className="underline text-black dark:text-white  font-cL text-[1.5rem] ">
-                Follow on other platform
+                Have more questions? Ask me on socail media!
               </p>
               <div className="flex space-x-4 mt-4">
                 <a

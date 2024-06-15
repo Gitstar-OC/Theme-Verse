@@ -25,7 +25,7 @@ const PageInConstruction = ({ onClose }) => {
     <>
       <style>{styles}</style>
       <div className="message-overlay message-animation">
-        <div className="bg-message  rounded-[25px] relative mt-32 mb-32  ml-96 mr-[25rem]">
+        <div className="bg-message bg-cover bg-fixed  rounded-[25px] relative mt-32 mb-32  ml-96 mr-[25rem]">
           <IoClose
             onClick={onClose}
             className="cursor-pointner absolute top-4 right-4 text-[#0500FF] w-[3rem] h-[3rem] hover:text-[#09FFB5] dark:hover:text-[#09FFB5]"
@@ -33,7 +33,7 @@ const PageInConstruction = ({ onClose }) => {
 
           <div className=" flex flex-col ml-10 ">
             <div className="flex mt-10">
-              <MdConstruction className="w-20 h-20 mt-4  text-[#0500FF] " />
+              <MdConstruction className="w-20 h-20 mt-4  text-[#0500FF] hover:text-[#09FFB5] dark:hover:text-[#09FFB5]" />
               <h1 className="font-cF text-[3rem]  ml-10 text-black dark:text-white ">
                 Page Under Construction
               </h1>
