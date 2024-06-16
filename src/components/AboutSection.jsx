@@ -60,8 +60,6 @@ const AboutSection = () => {
     "for",
     "a",
     "full",
-    "or",
-    "part",
     "time",
     "job",
     ".",
