@@ -848,3 +848,20 @@ height: 40px;
 .message-animation {
   animation: slideUp 0.5s ease-in-out;
 }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.tooltip {
+  z-index: 10;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.group:hover .tooltip {
+  opacity: 1;
+}
+

@@ -93,3 +93,119 @@ export const projects = [
   }
 ];
 
+
+export const skillsData = [
+  'HTML 100',
+  'Bootstrap 100',
+  'CSS 100',
+  'Django 20',
+  'Figma 100',
+  'Flask 20',
+  'Github 100',
+  'Javascript 100',
+  'Jupyter 100',
+  'Next.js 50',
+  'NumPy 100',
+  'Python 100',
+  'PyTorch 20',
+  'React 100',
+  'Scikit-learn 40',
+  'SQLite 40',
+  'Tailwind 100',
+  'TensorFlow 50',
+  'Typescript 20',
+  'Vite.js 100'
+];
+
+import HTML from '../assets/Skills/HTML5.svg';
+import Bootstrap from '../assets/Skills/Bootstrap.svg';
+import CSS from '../assets/Skills/CSS3.svg';
+import Django from '../assets/Skills/Django.svg';
+import Figma from '../assets/Skills/Figma.svg';
+import Flask from '../assets/Skills/Flask.svg';
+import Github from '../assets/Skills/GitHub.svg';
+import JavaScript from '../assets/Skills/JavaScript.svg';
+import Jupyter from "../assets/Skills/Jupyter.png";
+import NextJS from '../assets/Skills/Next.js.svg';
+import NumPy from '../assets/Skills/NumPy.svg';
+import Python from '../assets/Skills/Python.svg';
+import PyTorch from '../assets/Skills/PyTorch.svg';
+import React from '../assets/Skills/React.svg';
+import ScikitLearn from '../assets/Skills/scikit-learn.svg';
+import SQLite from '../assets/Skills/SQLite.svg';
+import Tailwind from '../assets/Skills/Tailwind CSS.svg';
+import TensorFlow from '../assets/Skills/TensorFlow.svg';
+import TypeScript from '../assets/Skills/TypeScript.svg';
+import ViteJS from '../assets/Skills/Vite.js.svg';
+
+export const skillsImage = (skill) => {
+  const skillID = skill.toLowerCase();
+  let image;
+  switch (skillID) {
+    case 'html':
+      image = HTML;
+      break;
+    case 'bootstrap':
+      image = Bootstrap;
+      break;
+    case 'css':
+      image = CSS;
+      break;
+    case 'django':
+      image = Django;
+      break;
+    case 'figma':
+      image = Figma;
+      break;
+    case 'flask':
+      image = Flask;
+      break;
+    case 'github':
+      image = Github;
+      break;
+    case 'javascript':
+      image = JavaScript;
+      break;
+    case 'jupyter':
+      image = Jupyter;
+      break;
+    case 'next.js':
+      image = NextJS;
+      break;
+    case 'numpy':
+      image = NumPy;
+      break;
+    case 'python':
+      image = Python;
+      break;
+    case 'pytorch':
+      image = PyTorch;
+      break;
+    case 'react':
+      image = React;
+      break;
+    case 'scikit-learn':
+      image = ScikitLearn;
+      break;
+    case 'sqlite':
+      image = SQLite;
+      break;
+    case 'tailwind':
+      image = Tailwind;
+      break;
+    case 'tensorflow':
+      image = TensorFlow;
+      break;
+    case 'typescript':
+      image = TypeScript;
+      break;
+    case 'vite.js':
+      image = ViteJS;
+      break;
+    default:
+      console.log('No image found for:', skillID);  // Log if no image is found
+      break;
+  }
+  console.log(skillID, image);  // Log skillID and the resolved image path
+  return image;
+};

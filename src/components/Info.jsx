@@ -3,7 +3,7 @@ import { Profile } from "./Exports";
 import { Link } from "react-router-dom";
 import "../index.css"; // Ensure you import the CSS file
 
-const AboutSection = () => {
+const Info = () => {
   useEffect(() => {
     const onMouseMove = (e) => {
       const layers = document.querySelectorAll(".parallax-layer");
@@ -169,4 +169,4 @@ const AboutSection = () => {
   );
 };
 
-export default AboutSection;
+export default Info;

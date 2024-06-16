@@ -1,12 +1,12 @@
 // import React from 'react'
-import { Navigation, Footer, AboutSection } from '../components/Exports'
+import { Info, Skills, Certification } from '../components/Exports'
 
 const About = () => {
   return (
     <div>
-      {/* <Navigation /> */}
-      <AboutSection />
-      {/* <Footer /> */}
+      <Info />
+      <Skills />
+      <Certification />
     </div>
   )
 }
