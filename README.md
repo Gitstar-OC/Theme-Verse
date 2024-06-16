@@ -3,6 +3,7 @@
 
 
 ### Tasks in progress
+- create the resume and add it's link
 - make the skills more in square shape and remove the extra spcae
 - arrange them in order so when the user see's the page the front end technologies and the machien learning tools should be all near to each other and should not look like diverse
 - change the color of the items in cart when the cart is active
