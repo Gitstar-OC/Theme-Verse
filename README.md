@@ -3,6 +3,8 @@
 
 
 ### Tasks in progress
+- make the skills more in square shape and remove the extra spcae
+- 
 - change the color of the items in cart when the cart is active
 - fix styles issues of the add to cart button
 - Add snap scrolling to the various themes!!
