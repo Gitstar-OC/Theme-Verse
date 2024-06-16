@@ -39,13 +39,13 @@ const Skills = () => {
   return (
     <div
       id="skills"
-      className="relative z-50 border-t my-12 lg:my-24 border-[#25213b] flex flex-col items-center"
+      className="relative z-50 border-t-2 my-12 lg:my-24 border-heading  flex flex-col items-center"
     >
       <div className="backgroundAnim backgroundAnim1"></div>
-      <div className="backgroundAnim backgroundAnim2"></div>
-      <div className="backgroundAnim backgroundAnim3"></div>
-      <div className="backgroundAnim backgroundAnim4"></div>
-      <div className="backgroundAnim backgroundAnim5"></div>
+      {/* <div className="backgroundAnim backgroundAnim2"></div> */}
+      {/* <div className="backgroundAnim backgroundAnim3"></div> */}
+      {/* <div className="backgroundAnim backgroundAnim4"></div> */}
+      {/* <div className="backgroundAnim backgroundAnim5"></div> */}
 
       <div
         ref={sectionRef}

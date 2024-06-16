@@ -106,7 +106,7 @@ const Info = () => {
 
   return (
     <section
-      className="pt-[55px] h-[calc(100vh-55px)] bg-light-bg dark:bg-dark-bg flex items-center w-full max-w-screen-xl mx-auto px-4 relative mb-0"
+      className="pt-[55px] h-[calc(90vh-55px)] bg-light-bg dark:bg-dark-bg flex items-center w-full max-w-screen-xl mx-auto px-4 relative mb-0"
       id="section"
     >
       <div className="backgroundAnim backgroundAnim1"></div>
