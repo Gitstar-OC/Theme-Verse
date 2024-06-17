@@ -1,8 +1,9 @@
+import { useEffect, useState } from "react";
+import { FaMobileAlt, FaTabletAlt } from "react-icons/fa";
+import { RiComputerLine } from "react-icons/ri";
 import { IoClose } from "react-icons/io5";
-import { useEffect } from "react";
-import { FaGithubSquare, FaInstagram, FaLinkedin } from "react-icons/fa";
-import { FaSquareXTwitter } from "react-icons/fa6";
-import { HiMiniQuestionMarkCircle } from "react-icons/hi2";
+import { FiMaximize2, FiMinimize2 } from "react-icons/fi";
+import { projects } from "../Constants/index";
 
 const styles = `
   .no-scroll {
@@ -10,7 +11,11 @@ const styles = `
   }
 `;
 
-const PlatformFee = ({ onClose }) => {
+const ViewPreview = ({ projectId, onClose }) => {
+  const project = projects.find((project) => project.id === projectId);
+  const [isMaximized, setIsMaximized] = useState(false);
+  const [deviceType, setDeviceType] = useState("computer"); // "computer", "tablet", "mobile"
+
   useEffect(() => {
     // Add no-scroll class to body when component mounts
     document.body.classList.add("no-scroll");
@@ -21,63 +26,84 @@ const PlatformFee = ({ onClose }) => {
     };
   }, []);
 
+  const getIframeStyle = () => {
+    switch (deviceType) {
+      case "mobile":
+        return { width: "375px", height: "667px" }; // iPhone 6/7/8 dimensions
+      case "tablet":
+        return { width: "768px", height: "1024px" }; // iPad dimensions
+      case "computer":
+      default:
+        return { width: "1080px", height: isMaximized ? "calc(100vh - 60px)" : "75vh" };
+    }
+  };
+
+  const handleDeviceChange = (device) => {
+    setDeviceType(device);
+  };
+
+  const handleMaximizeToggle = () => {
+    if (!isMaximized) {
+      // Request full-screen
+      document.documentElement.requestFullscreen();
+    } else {
+      // Exit full-screen
+      document.exitFullscreen();
+    }
+    setIsMaximized((prev) => !prev);
+  };
+
   return (
     <>
       <style>{styles}</style>
-      <div className="message-overlay message-animation">
-        <div className="bg-message  bg-fixed bg-cover rounded-[25px] relative mt-32 mb-32  ml-96 mr-[25rem]">
-          <IoClose
-            onClick={onClose}
-            className="cursor-pointner absolute top-4 right-4 text-[#0500FF] w-[3rem] h-[3rem] hover:text-[#09FFB5] dark:hover:text-[#09FFB5]"
-          />
-
-          <div className=" flex flex-col ml-10 ">
-            <div className="flex mt-10">
-              <HiMiniQuestionMarkCircle className="w-20 h-20 mt-4  text-[#0500FF] animate-bounce hover:text-[#09FFB5] dark:hover:text-[#09FFB5]" />
-              <h1 className="font-cF text-[3rem]  ml-10 text-white ">
-                  Platform Fee
-              </h1>
+      <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div className="relative bg-white dark:bg-gray-800 rounded-lg overflow-hidden" style={getIframeStyle()}>
+          <div className="bg-gray-300 dark:bg-gray-900 w-full h-12 flex items-center justify-between px-4">
+            <div className="flex space-x-4 justify-center w-full">
+              <button
+                onClick={() => handleDeviceChange("mobile")}
+                className="text-black dark:text-white text-xl cursor-pointer"
+              >
+                <FaMobileAlt />
+              </button>
+              <button
+                onClick={() => handleDeviceChange("tablet")}
+                className="text-black dark:text-white text-xl cursor-pointer"
+              >
+                <FaTabletAlt />
+              </button>
+              <button
+                onClick={() => handleDeviceChange("computer")}
+                className="text-black dark:text-white text-xl cursor-pointer"
+              >
+                <RiComputerLine />
+              </button>
             </div>
-            <p className="font-cL text-[2.25rem] text-white  mt-4 ml-28 mr-16">
-              Fee levied by Theme Verse to sustain the efficient operations and continuous improvement of the platform, for a hassle-free website experience. ❤️
-            </p>
-
-            <div className="mt-4 mb-4">
-              <p className="underline text-white  font-cL text-[1.5rem] ">
-                Have more questions? Ask me on socail media!
-              </p>
-              <div className="flex space-x-4 mt-4">
-                <a
-                  href="https://github.com/Gitstar-OC"
-                  className=" text-white icon-bounce  w-10 h-10 hover:text-[#09FFB5] dark:hover:text-[#09FFB5] "
-                >
-                  <FaGithubSquare className="w-full h-full" />
-                </a>
-                <a
-                  href="https://www.instagram.com/oc__coder/"
-                  className=" text-white icon-bounce w-10 h-10 hover:text-[#09FFB5] dark:hover:text-[#09FFB5] "
-                >
-                  <FaInstagram className="w-full h-full" />
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/om-chandankar/"
-                  className=" text-white icon-bounce  w-10 h-10 hover:text-[#09FFB5] dark:hover:text-[#09FFB5] "
-                >
-                  <FaLinkedin className="w-full h-full" />
-                </a>
-                <a
-                  href="https://x.com/Om_Chandankar"
-                  className="text-white icon-bounce w-10 h-10 hover:text-[#09FFB5] dark:hover:text-[#09FFB5] "
-                >
-                  <FaSquareXTwitter className="w-full h-full" />
-                </a>
-              </div>
+            <div className="flex space-x-2">
+              <button
+                onClick={handleMaximizeToggle}
+                className="text-black dark:text-white text-2xl cursor-pointer"
+              >
+                {isMaximized ? <FiMinimize2 /> : <FiMaximize2 />}
+              </button>
+              <button
+                onClick={onClose}
+                className="text-blue-700 dark:text-red-500 text-2xl cursor-pointer"
+              >
+                <IoClose />
+              </button>
             </div>
           </div>
+          <iframe
+            src={project.url}
+            title={project.name}
+            className="border-1 rounded-lg"
+            style={{ width: "100%", height: "calc(100% - 48px)", borderWidth: "1px" }}
+          />
         </div>
       </div>
     </>
   );
 };
 
-export default PlatformFee;
+export default ViewPreview;

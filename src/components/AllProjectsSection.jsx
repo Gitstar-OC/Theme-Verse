@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import { projects } from "../Constants/index";
 import { Link } from "react-router-dom";
 import { FaOpencart, FaRegEye } from "react-icons/fa";
-import { AddToCart, DoubleAdd } from "../Messages/Exports";
+import { AddToCart, DoubleAdd, ErrorPreview, ViewPreview } from "../Messages/Exports";
 import { IoMdMail } from "react-icons/io";
 
 const AllProjectsSection = ({ filters, addToCart }) => {
@@ -12,6 +12,9 @@ const AllProjectsSection = ({ filters, addToCart }) => {
   const [filteredProjects, setFilteredProjects] = useState(projects);
   const [showAddToCart, setShowAddToCart] = useState(false);
   const [showDoubleAdd, setShowDoubleAdd] = useState(false);
+  const [showErrorPreview, setShowErrorPreview] = useState(false);
+  const [showViewPreview, setShowViewPreview] = useState(false);
+  const [currentProjectId, setCurrentProjectId] = useState(null);
   const [cart, setCart] = useState(() => {
     return JSON.parse(localStorage.getItem("cart")) || [];
   });
@@ -86,6 +89,15 @@ const AllProjectsSection = ({ filters, addToCart }) => {
     setShowDoubleAdd(false);
   };
 
+  const handleErrorPreviewClose = () => {
+    setShowErrorPreview(false);
+  };
+
+  const handleViewPreviewClose = () => {
+    setShowViewPreview(false);
+    setCurrentProjectId(null);
+  };
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -113,6 +125,15 @@ const AllProjectsSection = ({ filters, addToCart }) => {
       });
     };
   }, [filteredProjects]);
+
+  const handleSeePreview = (projectId) => {
+    if (window.innerWidth < 1080) {
+      setShowErrorPreview(true);
+    } else {
+      setCurrentProjectId(projectId);
+      setShowViewPreview(true);
+    }
+  };
 
   const renderProject = (project, index) => {
     const isEven = index % 2 === 1;
@@ -143,7 +164,10 @@ const AllProjectsSection = ({ filters, addToCart }) => {
             {project.description}
           </p>
           <div className="mr-2 border-heading border-solid border-2 dark:border-heading"></div>
-          <div className="mt-8 mb-2 flex items-center space-x-1 font-cL justify-center text-[2.5rem] dark:text-white cursor-pointer">
+          <div
+            className="mt-8 mb-2 flex items-center space-x-1 font-cL justify-center text-[2.5rem] dark:text-white cursor-pointer"
+            onClick={() => handleSeePreview(project.id)}
+          >
             <div className="projectItem animate-bounce">
               <FaRegEye className="mb-3" />
               <span className="">See Preview</span>
@@ -194,6 +218,8 @@ const AllProjectsSection = ({ filters, addToCart }) => {
       </Link>
       {showAddToCart && <AddToCart onClose={handleAddToCartClose} />}
       {showDoubleAdd && <DoubleAdd onClose={handleDoubleAddClose} />}
+      {showErrorPreview && <ErrorPreview onClose={handleErrorPreviewClose} />}
+      {showViewPreview && <ViewPreview projectId={currentProjectId} onClose={handleViewPreviewClose} />}
     </div>
   );
 };
