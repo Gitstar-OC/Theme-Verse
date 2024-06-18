@@ -12,23 +12,25 @@ const ViewPreview = ({ projectId, onClose }) => {
 
   useEffect(() => {
     // Disable scroll when the modal is active
-    document.body.style.overflow = isMaximized ? "hidden" : "auto";
+    document.body.style.overflow = "hidden";
 
     return () => {
       // Re-enable scroll when the modal is closed
       document.body.style.overflow = "auto";
     };
-  }, [isMaximized]);
+  }, []);
 
   const getIframeStyle = () => {
     switch (deviceType) {
       case "mobile":
         return { width: "375px", height: "667px" }; // iPhone 6/7/8 dimensions
       case "tablet":
-        return { width: "768px", height: "1024px" }; // iPad dimensions
+        return { width: "768px", height: "100vh" }; // Adjusted to not exceed 100vh
       case "computer":
       default:
-        return { width: "1080px", height: isMaximized ? "calc(100vh - 60px)" : "75vh" };
+        const width = window.innerWidth > 1440 ? "100vw" : "1440px";
+        const height = isMaximized ? "100vh" : "80vh";
+        return { width, height };
     }
   };
 
@@ -47,41 +49,49 @@ const ViewPreview = ({ projectId, onClose }) => {
     setIsMaximized((prev) => !prev);
   };
 
+  const handleClose = () => {
+    if (isMaximized) {
+      document.exitFullscreen();
+      setIsMaximized(false);
+    }
+    onClose();
+  };
+
   return (
     <>
       <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center z-50">
         <div className="relative bg-white dark:bg-gray-800" style={getIframeStyle()}>
-          <div className="bg-gray-300 dark:bg-gray-900 w-full h-12 flex items-center justify-between px-4">
+          <div className="bg-gray-300 dark:bg-gray-900 w-full h-12 flex items-center justify-center px-4">
             <div className="flex space-x-4">
               <button
                 onClick={() => handleDeviceChange("mobile")}
-                className="text-black dark:text-white text-xl cursor-pointer"
+                className="text-[#0500FF] hover:text-black dark:hover:text-[#09FFB5] text-[1.5rem] cursor-pointer"
               >
                 <FaMobileAlt />
               </button>
               <button
                 onClick={() => handleDeviceChange("tablet")}
-                className="text-black dark:text-white text-xl cursor-pointer"
+                className="text-[#0500FF] hover:text-black dark:hover:text-[#09FFB5] text-[1.5rem] cursor-pointer"
               >
                 <FaTabletAlt />
               </button>
               <button
                 onClick={() => handleDeviceChange("computer")}
-                className="text-black dark:text-white text-xl cursor-pointer"
+                className="text-[#0500FF] hover:text-black dark:hover:text-[#09FFB5] text-[1.5rem] cursor-pointer"
               >
                 <RiComputerLine />
               </button>
             </div>
-            <div className="flex space-x-2">
+            <div className="absolute right-0 flex space-x-2">
               <button
                 onClick={handleMaximizeToggle}
-                className="text-black dark:text-white text-2xl cursor-pointer"
+                className="text-[#0500FF] hover:text-black dark:hover:text-[#09FFB5] text-[2rem] cursor-pointer"
               >
                 {isMaximized ? <FiMinimize2 /> : <FiMaximize2 />}
               </button>
               <button
-                onClick={onClose}
-                className="text-blue-700 dark:text-red-500 text-2xl cursor-pointer"
+                onClick={handleClose}
+                className="text-[#0500FF] hover:text-black dark:hover:text-[#09FFB5] text-[2.5rem] cursor-pointer "
               >
                 <IoClose />
               </button>
@@ -90,7 +100,7 @@ const ViewPreview = ({ projectId, onClose }) => {
           <iframe
             src={project.url}
             title={project.name}
-            className="border-1"
+            className="border-1 rounded-[25px]"
             style={{ width: "100%", height: "calc(100% - 48px)", borderWidth: "1px" }}
           />
         </div>

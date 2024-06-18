@@ -1,11 +1,22 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { FaArrowCircleRight } from "react-icons/fa";
+import { FaArrowCircleRight, FaOpencart, FaRegEye } from "react-icons/fa";
+import { AddToCart, DoubleAdd, ErrorPreview, ViewPreview } from "../Messages/Exports";
+import { IoMdMail } from "react-icons/io";
 import { projects } from "../Constants/index";
-import { FaOpencart, FaRegEye } from "react-icons/fa";
 
 const Projects = ({ addToCart }) => {
   const [isVisible, setIsVisible] = useState(false);
+  const [filteredProjects, setFilteredProjects] = useState(projects);
+  const [showAddToCart, setShowAddToCart] = useState(false);
+  const [showDoubleAdd, setShowDoubleAdd] = useState(false);
+  const [showErrorPreview, setShowErrorPreview] = useState(false);
+  const [showViewPreview, setShowViewPreview] = useState(false);
+  const [currentProjectId, setCurrentProjectId] = useState(null);
+  const [cart, setCart] = useState(() => {
+    return JSON.parse(localStorage.getItem("cart")) || [];
+  });
+
   const sectionRef = useRef(null);
   const seeAllRef = useRef(null);
 
@@ -65,7 +76,46 @@ const Projects = ({ addToCart }) => {
         observer.unobserve(element);
       });
     };
-  }, []);
+  }, [filteredProjects]);
+
+  const handleAddToCart = (projectId) => {
+    if (cart.includes(projectId)) {
+      setShowDoubleAdd(true);
+    } else {
+      const newCart = [...cart, projectId];
+      setCart(newCart);
+      localStorage.setItem("cart", JSON.stringify(newCart));
+      addToCart(projectId);
+      setShowAddToCart(true);
+    }
+  };
+
+  const handleAddToCartClose = () => {
+    setShowAddToCart(false);
+  };
+
+  const handleDoubleAddClose = () => {
+    setShowDoubleAdd(false);
+  };
+
+  const handleErrorPreviewClose = () => {
+    setShowErrorPreview(false);
+  };
+
+  const handleViewPreviewClose = () => {
+    setShowViewPreview(false);
+    setCurrentProjectId(null);
+  };
+
+  const handleSeePreview = (projectId) => {
+    const isMobileOrTablet = window.innerWidth < 1080;
+    if (isMobileOrTablet) {
+      setShowErrorPreview(true);
+    } else {
+      setCurrentProjectId(projectId);
+      setShowViewPreview(true);
+    }
+  };
 
   const renderProject = (project, index) => {
     const isEven = index % 2 === 1;
@@ -89,12 +139,12 @@ const Projects = ({ addToCart }) => {
           <p className='mt-4 text-[1.5rem] font-cL dark:text-slate-300 mb-8'>{project.description}</p>
           <div className='mr-2 border-heading border-solid border-2 dark:border-heading'></div>
           <div className="mt-8 mb-2 flex items-center space-x-1 font-cL justify-center text-[2.5rem] dark:text-white cursor-pointer">
-            <div className="projectItem animate-bounce">
+            <div className="projectItem animate-bounce" onClick={() => handleSeePreview(project.id)}>
               <FaRegEye className='mb-3' />
               <span className=""> See Preview</span>
             </div>
           </div>
-          <div className="mt-4 mb-10 flex items-center space-x-1 font-cL text-[2.5rem] justify-center cursor-pointer dark:text-white" onClick={() => addToCart(project.id)}>
+          <div className="mt-4 mb-10 flex items-center space-x-1 font-cL text-[2.5rem] justify-center cursor-pointer dark:text-white" onClick={() => handleAddToCart(project.id)}>
             <div className="projectItem animate-bounce">
               <FaOpencart className=' mb-3' />
               <span className="">Add to Cart</span>
@@ -134,6 +184,10 @@ const Projects = ({ addToCart }) => {
         </div></Link>
         
       </div>
+      {showAddToCart && <AddToCart onClose={handleAddToCartClose} />}
+      {showDoubleAdd && <DoubleAdd onClose={handleDoubleAddClose} />}
+      {showErrorPreview && <ErrorPreview onClose={handleErrorPreviewClose} />}
+      {showViewPreview && <ViewPreview projectId={currentProjectId} onClose={handleViewPreviewClose} />}
     </div>
   );
 }

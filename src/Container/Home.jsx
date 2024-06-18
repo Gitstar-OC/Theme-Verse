@@ -1,17 +1,16 @@
-// import React from "react";
-import { Navigation, Projects, Main, Footer } from '../components/Exports'
+import  { useContext } from 'react';
+import {  Projects, Main } from '../components/Exports';
+import { CartContext } from '../MainLayout';
 
 const Home = () => {
+  const { addToCart } = useContext(CartContext);
+
   return (
     <>
-      {/* <Navigation /> */}
       <Main />
-      <Projects />
-      <span>
-      {/* <Footer /> */}
-      </span>
-      
+      <Projects addToCart={addToCart} />
     </>
   );
 };
+
 export default Home;

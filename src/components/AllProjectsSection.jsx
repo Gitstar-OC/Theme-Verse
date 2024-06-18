@@ -127,7 +127,8 @@ const AllProjectsSection = ({ filters, addToCart }) => {
   }, [filteredProjects]);
 
   const handleSeePreview = (projectId) => {
-    if (window.innerWidth < 1080) {
+    const isMobileOrTablet = window.innerWidth < 1080;
+    if (isMobileOrTablet) {
       setShowErrorPreview(true);
     } else {
       setCurrentProjectId(projectId);
