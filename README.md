@@ -1,6 +1,7 @@
 # Theme-Verse 🌌 ( Work in Progress)
 - This is a digital marketplace that provides a variety of unique themes for the main sections of your homepage, all customizable to suit your specific needs.
 
+- ## Make the whole website mobile and tablet friendly
 
 ### Tasks in progress
 - create the resume and add it's link
