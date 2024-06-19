@@ -16,6 +16,8 @@ import {
   useFormikContext,
 } from "formik";
 import * as Yup from "yup";
+import axios from 'axios';
+
 
 const CustomInput = ({
   icon: Icon,
@@ -176,7 +178,7 @@ const validationSchema = Yup.object({
   socialMedia: Yup.string().required("Social media username is required"),
   position: Yup.string().required("Position is required"),
   company: Yup.string().required("Company is required"),
-  figmaLink: Yup.string().url("Invalid URL").required("Figma link is required"),
+  figmaLink: Yup.string().url("Invalid URL"), // Figma link is optional
   message: Yup.string()
     .min(40, "Message must be at least 40 characters")
     .required("Message is required"),
@@ -249,13 +251,25 @@ const ContactForm = () => {
             }}
             validationSchema={validationSchema}
             onSubmit={(values, { setSubmitting, resetForm }) => {
-              setTimeout(() => {
-                console.log(JSON.stringify(values, null, 2));
-                setSubmitting(false);
-                setShowSuccessMessage(true);
-                resetForm();
-              }, 400);
+              axios.post('http://127.0.0.1:5000/api/contact', values)
+                .then(response => {
+                  console.log(response.data);
+                  setShowSuccessMessage(true);
+                  resetForm();
+                })
+                .catch(error => {
+                  console.error('There was an error submitting the form!', error);
+                })
+                .finally(() => {
+                  setSubmitting(false);
+                });
             }}
+              // setTimeout(() => {
+              //   console.log(JSON.stringify(values, null, 2));
+              //   setSubmitting(false);
+              //   setShowSuccessMessage(true);
+              //   resetForm();
+              // }, 400);
           >
             {({ errors, touched }) => (
               <Form className="flex flex-col space-y-4">
