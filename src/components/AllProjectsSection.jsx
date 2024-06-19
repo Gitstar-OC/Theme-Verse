@@ -2,7 +2,12 @@ import { useEffect, useState, useRef } from "react";
 import { projects } from "../Constants/index";
 import { Link } from "react-router-dom";
 import { FaOpencart, FaRegEye } from "react-icons/fa";
-import { AddToCart, DoubleAdd, ErrorPreview, ViewPreview } from "../Messages/Exports";
+import {
+  AddToCart,
+  DoubleAdd,
+  ErrorPreview,
+  ViewPreview,
+} from "../Messages/Exports";
 import { IoMdMail } from "react-icons/io";
 
 const AllProjectsSection = ({ filters, addToCart }) => {
@@ -142,7 +147,9 @@ const AllProjectsSection = ({ filters, addToCart }) => {
       <div
         key={project.name}
         data-index={index}
-        className={`flex ${isEven ? "flex-row-reverse" : ""} projectCard items-start justify-start my-6 p-4 content`}
+        className={`flex ${
+          isEven ? "flex-row-reverse" : ""
+        } projectCard items-start justify-start my-6 p-4 content`}
         style={{
           marginLeft: "4rem",
           marginBottom: "2rem",
@@ -175,7 +182,7 @@ const AllProjectsSection = ({ filters, addToCart }) => {
             </div>
           </div>
           <div
-            className="mt-4 mb-10 flex items-center space-x-1 font-cL text-[2.5rem] justify-center cursor-pointer dark"
+            className="mt-4 mb-10 flex items-center space-x-1 font-cL text-[2.5rem] justify-center cursor-pointer dark:text-white"
             onClick={() => handleAddToCart(project.id)}
           >
             <div className="projectItem animate-bounce">
@@ -196,7 +203,9 @@ const AllProjectsSection = ({ filters, addToCart }) => {
     >
       <div
         ref={sectionRef}
-        className={`rectangleDiv transition-all duration-1000 transform ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"} mb-8 flex items-center justify-center`}
+        className={`rectangleDiv transition-all duration-1000 transform ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        } mb-8 flex items-center justify-center`}
       >
         <div className="projectItem text-[3rem] text-center">Themes</div>
       </div>
@@ -208,10 +217,14 @@ const AllProjectsSection = ({ filters, addToCart }) => {
       <Link to="/contact">
         <div
           ref={seeAllRef}
-          className={`smallDiv transition-all duration-1000 transform ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"} flex items-center justify-center`}
+          className={`smallDiv transition-all duration-1000 transform ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          } flex items-center justify-center`}
         >
           <div
-            className={`projectItem text-[40px] cursor-pointer ${isVisible ? "animate-bounce" : ""}`}
+            className={`projectItem text-[40px] cursor-pointer ${
+              isVisible ? "animate-bounce" : ""
+            }`}
           >
             <IoMdMail className="mr-4" /> Contact Us
           </div>
@@ -220,7 +233,12 @@ const AllProjectsSection = ({ filters, addToCart }) => {
       {showAddToCart && <AddToCart onClose={handleAddToCartClose} />}
       {showDoubleAdd && <DoubleAdd onClose={handleDoubleAddClose} />}
       {showErrorPreview && <ErrorPreview onClose={handleErrorPreviewClose} />}
-      {showViewPreview && <ViewPreview projectId={currentProjectId} onClose={handleViewPreviewClose} />}
+      {showViewPreview && (
+        <ViewPreview
+          projectId={currentProjectId}
+          onClose={handleViewPreviewClose}
+        />
+      )}
     </div>
   );
 };
