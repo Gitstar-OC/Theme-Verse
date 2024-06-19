@@ -5,6 +5,7 @@
 - ## Complete making resume by today
 
 ### Tasks in progress
+- add animation behind the iframe
 - fix the background animation of cart
 - fix the color of the items in cart when the cart is active and not active
 - create the resume and add it's link
