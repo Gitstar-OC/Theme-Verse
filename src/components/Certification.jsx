@@ -107,7 +107,7 @@ const Certification = () => {
         </div>
       </div>
 
-      <div className="flex flex-col lg:flex-row-reverse items-center lg:items-start mb-20 w-full ">
+      <div className=" flex flex-col lg:flex-row-reverse items-center lg:items-start mb-20 w-full ">
         <div 
           ref={stanfordRef} 
           className={`flex flex-col lg:flex-row-reverse items-center lg:items-start w-full ml-20 mr-20 transition-transform duration-1000 ${

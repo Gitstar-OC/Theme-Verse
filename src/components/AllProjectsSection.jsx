@@ -209,7 +209,7 @@ const AllProjectsSection = ({ filters, addToCart }) => {
       >
         <div className="projectItem text-[3rem] text-center">Themes</div>
       </div>
-      <div className="flex flex-col items-start space-y-10  w-full">
+      <div className="flex flex-col items-start space-y-10  w-full overflow-x-hidden">
         {filteredProjects
           .slice(0, 8)
           .map((project, index) => renderProject(project, index))}

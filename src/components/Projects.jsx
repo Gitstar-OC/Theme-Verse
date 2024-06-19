@@ -166,7 +166,7 @@ const Projects = ({ addToCart }) => {
       >
         <div className="projectItem text-[3rem] text-center">Themes</div>
       </div>
-      <div className='flex flex-col items-start space-y-10 px-4 w-full'>
+      <div className='flex flex-col items-start space-y-10 px-4 w-full overflow-x-hidden'>
         {projects.slice(0, 3).map((project, index) => renderProject(project, index))}
       </div>
       <div

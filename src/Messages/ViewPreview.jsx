@@ -21,15 +21,15 @@ const ViewPreview = ({ projectId, onClose }) => {
   }, []);
 
   const getIframeStyle = () => {
+    const height = isMaximized ? "100vh" : "80vh";
     switch (deviceType) {
       case "mobile":
-        return { width: "375px", height: "667px" }; // iPhone 6/7/8 dimensions
+        return { width: "430px", height }; // iPhone 6/7/8 dimensions
       case "tablet":
-        return { width: "768px", height: "100vh" }; // Adjusted to not exceed 100vh
+        return { width: "850px", height}; // Adjusted to not exceed 100vh
       case "computer":
       default:
         const width = window.innerWidth > 1440 ? "100vw" : "1440px";
-        const height = isMaximized ? "100vh" : "80vh";
         return { width, height };
     }
   };
@@ -61,23 +61,23 @@ const ViewPreview = ({ projectId, onClose }) => {
     <>
       <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center z-50">
         <div className="relative bg-white dark:bg-gray-800" style={getIframeStyle()}>
-          <div className="bg-gray-300 dark:bg-gray-900 w-full h-12 flex items-center justify-center px-4">
+          <div className="bg-hero  bg-fixed w-full h-12 flex items-center justify-center px-4">
             <div className="flex space-x-4">
               <button
                 onClick={() => handleDeviceChange("mobile")}
-                className="text-[#0500FF] hover:text-black dark:hover:text-[#09FFB5] text-[1.5rem] cursor-pointer"
+                className="text-black dark:text-white hover:text-[#09FFB5] dark:hover:text-[#09FFB5] text-[1.75rem] cursor-pointer"
               >
                 <FaMobileAlt />
               </button>
               <button
                 onClick={() => handleDeviceChange("tablet")}
-                className="text-[#0500FF] hover:text-black dark:hover:text-[#09FFB5] text-[1.5rem] cursor-pointer"
+                className="text-black dark:text-white hover:text-[#09FFB5] dark:hover:text-[#09FFB5] text-[1.75rem] cursor-pointer"
               >
                 <FaTabletAlt />
               </button>
               <button
                 onClick={() => handleDeviceChange("computer")}
-                className="text-[#0500FF] hover:text-black dark:hover:text-[#09FFB5] text-[1.5rem] cursor-pointer"
+                className="text-black dark:text-white hover:text-[#09FFB5] dark:hover:text-[#09FFB5] text-[1.75rem] cursor-pointer"
               >
                 <RiComputerLine />
               </button>
