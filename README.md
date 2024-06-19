@@ -6,7 +6,7 @@
 
 ### Tasks in progress
 - fix the background animation of cart
-
+- fix the color of the items in cart when the cart is active and not active
 - create the resume and add it's link
 - the message is not coming on ipad pro on see preview, fix that
 - make the skills more in square shape and remove the extra spcae
