@@ -5,6 +5,8 @@
 - ## Complete making resume by today
 
 ### Tasks in progress
+- fix the background animation of cart
+
 - create the resume and add it's link
 - the message is not coming on ipad pro on see preview, fix that
 - make the skills more in square shape and remove the extra spcae
