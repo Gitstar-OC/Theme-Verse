@@ -106,12 +106,12 @@ const Navigation = () => {
           <Link to="/contact" className="navItem theme-text hover:text-[#09FFB5]" id={isActive('/contact') ? 'current-location' : undefined}>
             Contact
           </Link>
-          <Link to="/cart" className="navItem theme-text hover:text-[#09FFB5]" id={isActive('/cart') ? 'current-location' : undefined}>
+          <Link to="/cart" className="navItem theme-text hover:text-[#09FFB5] " id={isActive('/cart') ? 'current-location' : undefined}>
             <div className="flex items-center space-x-1 relative">
               <FaOpencart />
               <span>Cart</span>
               {cartItems.length > 0 && (
-                <div className="absolute  font-mono top-2 right-14 w-4 h-4 bg-heading text-black rounded-full flex items-center justify-center text-[1rem] ">
+                <div className="absolute  font-mono top-2 right-14 w-4 h-4 bg-heading hover:bg-secondary text-black dark:text-white rounded-full flex items-center justify-center text-[1rem]" id={isActive('/cart') ? 'current-location' : undefined}>
                   {cartItems.length}
                 </div>
               )}
