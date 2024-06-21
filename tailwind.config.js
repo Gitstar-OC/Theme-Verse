@@ -4,6 +4,7 @@ export default {
   content: ["./src/**/*.{html,js,jsx}"],
   darkMode: "class",
   theme: {
+    
     extend: {
       transitionProperty: {
         opacity: "opacity",
