@@ -1,6 +1,6 @@
 from config import db
 
-class Contact(db.model):
+class Contact(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     Name = db.Column(db.String(80), unique=False, nullable=False)
     Email = db.Column(db.String(80), unique=True, nullable=False)
