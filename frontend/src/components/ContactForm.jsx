@@ -190,6 +190,7 @@ const ContactForm = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isFocused, setIsFocused] = useState("");
   const [platform, setPlatform] = useState("");
+  const [formError, setFormError] = useState("");
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
   const handleSuccessClose = () => {
@@ -256,8 +257,14 @@ const ContactForm = () => {
                   console.log(response.data);
                   setShowSuccessMessage(true);
                   resetForm();
+                  setFormError("");
                 })
                 .catch(error => {
+                  if (error.response && error.response.data) {
+                    setFormError(error.response.data.error);
+                  } else {
+                    setFormError("There was an error submitting the form!");
+                  }
                   console.error('There was an error submitting the form!', error);
                 })
                 .finally(() => {
@@ -343,6 +350,9 @@ const ContactForm = () => {
                     <span className="projectItem text-[2.5rem] text-center font-cL">Send</span>
                   </div>
                 </button>
+                <div className="text-red-500">
+                  {formError} {/* Display form error */}
+                </div>
               </Form>
             )}
           </Formik>
