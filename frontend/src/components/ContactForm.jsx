@@ -264,6 +264,7 @@ const ContactForm = () => {
                     setFormError(error.response.data.error);
                   } else {
                     setFormError("There was an error submitting the form!");
+                    console.log(error)
                   }
                   console.error('There was an error submitting the form!', error);
                 })
