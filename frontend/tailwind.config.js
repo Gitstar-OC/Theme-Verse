@@ -18,7 +18,8 @@ export default {
       backgroundImage: {
         hero: "url('./assets/NavbarBackground.png')",
         footer: "url('./assets/FooterBackground.png')",
-        message: "url('./assets/MessageBackground.png')"
+        message: "url('./assets/MessageBackground.png')",
+        not: "url('./assets/NotFound.png')"
       },
       fontFamily: {
         cL: ["CL", "mono"],
