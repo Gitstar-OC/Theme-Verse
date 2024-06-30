@@ -69,7 +69,7 @@ const PageNotFound = () => {
               id="send"
             >
               <span className="projectItem text-[1.5rem] text-center font-cL flex items-center">
-                <FaHome className="mr-2 mb-1" />
+                <FaHome className="mr-2 mb-3" />
                 Go to Home Page
               </span>
             </div>

@@ -207,7 +207,7 @@ const Info = () => {
                   </div>
                 </div>
               </Link>
-              <a href="#" className="w-full sm:w-auto">
+              <a href="https://drive.google.com/file/d/12yT322aHrAUYA2PGHHEQ1dsz1iXPaIn5/edit" className="w-full sm:w-auto">
                 <div
                   className={`smallDiv transition-all duration-1000 transform ${
                     isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"

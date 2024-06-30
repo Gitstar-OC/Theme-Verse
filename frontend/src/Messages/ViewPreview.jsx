@@ -21,15 +21,15 @@ const ViewPreview = ({ projectId, onClose }) => {
   }, []);
 
   const getIframeStyle = () => {
-    const height = isMaximized ? "100vh" : "80vh";
+    const height = isMaximized ? "110vh" : "90vh";
     switch (deviceType) {
       case "mobile":
-        return { width: "430px", height }; // iPhone 6/7/8 dimensions
+        return { width: "473px", height }; // iPhone 6/7/8 dimensions
       case "tablet":
-        return { width: "850px", height}; // Adjusted to not exceed 100vh
+        return { width: "935px", height}; // Adjusted to not exceed 100vh
       case "computer":
       default:
-        const width = window.innerWidth > 1440 ? "100vw" : "1440px";
+        const width = window.innerWidth > 1440 ? "110vw" : "1440px";
         return { width, height };
     }
   };

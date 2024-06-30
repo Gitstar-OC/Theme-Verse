@@ -2,7 +2,7 @@
 
 const MobilePopUp = () => {
   return (
-    <div>MobilePopUp</div>
+    <div className="bg-message"></div>
   )
 }
 
