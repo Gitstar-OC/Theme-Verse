@@ -1,12 +1,7 @@
 # Theme-Verse 🌌 
 - This is a digital marketplace that provides a variety of unique themes for the main sections of your homepage, all customizable to suit your specific needs.
-
 - Design the pop up that will be shownn on tablet and mobile along with the video why this cannot be shown.
-- Complete making resume by today
 
-### Tasks in progress
-- create the resume and add it's link
-- the message is not coming on ipad pro on see preview, fix that
 <!--
 - Add snap scrolling to the various themes!!
 
