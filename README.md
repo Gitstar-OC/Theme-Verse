@@ -15,5 +15,3 @@
 
 - Add a random border color which will move continously across the whole iframe that is embedded to make that look cool unless remove it
 -->
-
-6. if user goes to the path that is not defined there should be a big sad emoji, that will show "ops you discovered a page that does not exist"
