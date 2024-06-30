@@ -1,8 +1,8 @@
 # from flask import Flask, request, jsonify
 import flask 
-from flask import request, jsonify, 
+# from flask import request, jsonify
 from config import app, db
-from models import Contact
+from Contact import models
 from datetime import datetime, timedelta
 
 @app.route("/contacts", methods=["GET"])
