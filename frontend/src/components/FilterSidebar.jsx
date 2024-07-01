@@ -9,8 +9,8 @@ const FilterSidebar = ({ onFilterChange }) => {
   };
 
   return (
-    <div className="filter-sidebar relative p-4 mt-16 ml-4 theme-bg text-theme flex flex-col items-center">
-      <h2 className="font-cL text-4xl justify-start theme-text mb-2">Filters</h2>
+    <div className="filter-sidebar relative mt-16 theme-bg text-theme flex flex-col items-center ">
+      <h2 className="font-cL text-[2rem] justify-start theme-text mb-2">Filters</h2>
       <div className="border-b-3 border-heading w-full my-4"></div>
       <div className="space-y-4 w-full">
         <div className="flex items-center group">

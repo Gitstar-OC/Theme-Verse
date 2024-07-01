@@ -2,6 +2,14 @@ import { useState, useContext } from 'react';
 import { FilterSidebar, AllProjectSection } from '../components/Exports';
 import { CartContext } from '../MainLayout';
 
+const styles = `
+@media (max-width: 1080px) {
+  .filter-sidebar {
+    display: none;
+  }
+  }
+`;
+
 const Themes = () => {
   const { addToCart } = useContext(CartContext);
   const [filters, setFilters] = useState({
@@ -21,9 +29,12 @@ const Themes = () => {
 
   return (
     <>
-      <div className="flex mt-16">
-        <FilterSidebar onFilterChange={handleFilterChange} />
-        <div className="flex-1 p-4">
+    <style>{styles}</style>
+      <div className="flex mt-16 left-0">
+        <div className="filter-sidebar">
+          <FilterSidebar onFilterChange={handleFilterChange} />
+        </div>
+        <div className="flex-1 p-4 md:p-0">
           <AllProjectSection filters={filters} addToCart={addToCart} />
         </div>
       </div>

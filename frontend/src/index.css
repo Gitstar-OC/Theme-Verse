@@ -432,7 +432,7 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
   margin-top: 2rem;
-  margin-left: 4rem;
+  margin-left:15px;
   margin-bottom: 1rem;
   display: flex;
   flex-direction: column;
@@ -447,7 +447,7 @@ body {
 }
 
 .filter-text {
-  @apply font-cF text-[2rem];
+  @apply font-cF text-[1.5rem];
   color: var(--text-color);
   cursor: pointer;
 }
