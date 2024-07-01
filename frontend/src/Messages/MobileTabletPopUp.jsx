@@ -54,7 +54,7 @@ const MobileTabletPopUp = () => {
     // Auto play video and start at 5 seconds
     const video = videoRef.current;
     if (video) {
-      video.currentTime = 5;
+      video.currentTime = 1;
       video.play();
     }
   }, []);
@@ -72,7 +72,7 @@ const MobileTabletPopUp = () => {
               </h1>
             </div>
             <p className="font-cL text-[2rem] text-slate-200 dark:text-white mt-4 mx-4 text-center">
-              Sorry for the inconvenience as our team is still discussing how to show preview on smaller devices as the preview of computer, tablet cannot be shown on tablet and mobile respectively. You can see the below video to know more about the issue 😃.
+              Sorry for the inconvenience as our team is still discussing how to show preview on smaller devices as the preview of computer, tablet cannot be shown on tablet ( Visible on ipad pro )and mobile respectively. You can see the below video to know more about the issue 😃.
             </p>
             <div className="video-container mt-4 mb-4">
               <div className="video-border-box">
