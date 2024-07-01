@@ -16,7 +16,7 @@ def add_contact():
     one_day_ago = datetime.now() - timedelta(days=1)
     recent_messages = Contact.query.filter(Contact.Email == email, Contact.timestamp > one_day_ago).count()
 
-    if recent_messages >= 4:
+    if recent_messages >= 3:
         return jsonify({"error": "You can only send 3 messages per day."}), 429
 
     new_contact = Contact(

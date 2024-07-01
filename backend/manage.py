@@ -1,7 +1,7 @@
 # manage.py
 from flask_script import Manager
 from flask_migrate import Migrate, MigrateCommand
-from config import app, db
+from backend.app.config import app, db
 
 migrate = Migrate(app, db)
 manager = Manager(app)
