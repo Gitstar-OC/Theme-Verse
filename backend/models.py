@@ -1,19 +1,16 @@
 from datetime import datetime
 from config import db
 
-db.create_all()
-print("Database initialized.")
-
 class Contact(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     Name = db.Column(db.String(80), unique=False, nullable=False)
     Email = db.Column(db.String(80), unique=True, nullable=False)
     Platform = db.Column(db.String(120), unique=True, nullable=False)
-    Position = db.Column(db.String(80), unique= False, nullable=False)
-    Company = db.Column(db.String(80), unique= False, nullable=False)
+    Position = db.Column(db.String(80), unique=False, nullable=False)
+    Company = db.Column(db.String(80), unique=False, nullable=False)
     Link = db.Column(db.String(200), unique=True, nullable=False)
-    Message = db.Column(db.String(150), unique= False, nullable=False)
-    timestamp = db.Column(db.DateTime, default=datetime.utcnow)
+    Message = db.Column(db.String(150), unique=False, nullable=False)
+    timestamp = db.Column(db.DateTime, default=datetime.now)
 
     def to_json(self):
         return {
@@ -27,6 +24,3 @@ class Contact(db.Model):
             "Link": self.Link,
             "timestamp": self.timestamp
         }
-        
-        
-        

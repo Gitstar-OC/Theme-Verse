@@ -175,13 +175,14 @@ const validationSchema = Yup.object({
   email: Yup.string()
     .email("Invalid email address")
     .required("Email is required"),
-  socialMedia: Yup.string().required("Social media username is required"),
-  position: Yup.string().required("Position is required"),
-  company: Yup.string().required("Company is required"),
-  figmaLink: Yup.string().url("Invalid URL"), // Figma link is optional
+  socialMedia: Yup.string().required("Social media username is required").max(45, "Username should be under 45 characters"),
+  position: Yup.string().required("Position is required").max(30, "Maximum number of characters should be 30"),
+  company: Yup.string().required("Company is required").max(30, "Maximum number of characters should be 30"),
+  figmaLink: Yup.string().url("Invalid URL").max(30, "The link is too long, try it making short using link shortner"), // Figma link is optional
   message: Yup.string()
     .min(40, "Message must be at least 40 characters")
-    .required("Message is required"),
+    .required("Message is required")
+    .max(150, "Sorry, Your message is too long!! Make it short and sweet. I will reply you back"),
 });
 
 const ContactForm = () => {
