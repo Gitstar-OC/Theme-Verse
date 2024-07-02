@@ -1,9 +1,9 @@
 import { ImSad2 } from "react-icons/im";
 import { FaGithubSquare, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 
-const videoUrl = "https://drive.google.com/file/d/1vQ6cUC4bLybjXA0hOWquSFigpoVrwWZG/view?usp=sharing";
+const iframeUrl = "https://drive.google.com/file/d/1vQ6cUC4bLybjXA0hOWquSFigpoVrwWZG/preview";
 
 const styles = `
   .no-scroll {
@@ -40,24 +40,35 @@ const styles = `
 `;
 
 const MobileTabletPopUp = () => {
-  const videoRef = useRef(null);
-
   useEffect(() => {
     // Add no-scroll class to body when component mounts
     document.body.classList.add("no-scroll");
+
+    // Example fetch request with CORS using GET
+    fetch('https://play.google.com/log?format=json&hasfast=true&authuser=0', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
+      }
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok ' + response.statusText);
+      }
+      return response.json();
+    })
+    .then(data => {
+      // handle your data here
+    })
+    .catch(error => {
+      // handle your error here
+    });
+
     // Remove no-scroll class from body when component unmounts
     return () => {
       document.body.classList.remove("no-scroll");
     };
-  }, []);
-
-  useEffect(() => {
-    // Auto play video and start at 5 seconds
-    const video = videoRef.current;
-    if (video) {
-      video.currentTime = 1;
-      video.play();
-    }
   }, []);
 
   return (
@@ -73,18 +84,15 @@ const MobileTabletPopUp = () => {
               </h1>
             </div>
             <p className="font-cL text-[2rem] text-slate-200 dark:text-white mt-4 mx-4 text-center">
-              Sorry for the inconvenience as our team is still discussing how to show preview on smaller devices as the preview of computer, tablet cannot be shown on tablet ( Visible on ipad pro )and mobile respectively. You can see the below video to know more about the issue 😃.
+              Sorry for the inconvenience as our team is still discussing how to show preview on smaller devices as the preview of computer, tablet cannot be shown on tablet (Visible on iPad Pro) and mobile respectively. You can see the below video to know more about the issue 😃.
             </p>
             <div className="video-container mt-4 mb-4">
-              <div className="video-border-box">
-                <video
-                  ref={videoRef}
-                  controls
-                  className="h-auto w-[80vw] justify-center items-center rounded-[3vw] border-[5px] border-x-[#09FFB5] border-y-border"
-                >
-                  <source src={videoUrl} type="video/mp4" />
-                </video>
-              </div>
+              <iframe
+                src={iframeUrl}
+                className="w-[100vw] h-[53vw] rounded-[3vw] border-[5px] border-x-[#09FFB5] border-y-border"
+                allow="autoplay"
+                allowFullScreen
+              ></iframe>
             </div>
             <div className="mt-4 mb-4">
               <p className="underline text-white dark:text-white font-cL text-[2rem] text-center">
