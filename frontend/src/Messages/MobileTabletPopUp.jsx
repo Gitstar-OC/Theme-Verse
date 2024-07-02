@@ -97,7 +97,7 @@ const MobileTabletPopUp = () => {
                   <FaGithubSquare className="w-full h-full" />
                 </a>
                 <a
-                  href="https://www.instagram.com/oc__coder/"
+                  href="https://www.instagram.com/chandankar_om/"
                   className="text-white dark:text-white icon-bounce w-8 h-8 hover:text-[#09FFB5] dark:hover:text-[#09FFB5]"
                 >
                   <FaInstagram className="w-full h-full" />

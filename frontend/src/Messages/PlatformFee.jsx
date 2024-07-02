@@ -51,7 +51,7 @@ const PlatformFee = ({ onClose }) => {
                   <FaGithubSquare className="w-full h-full" />
                 </a>
                 <a
-                  href="https://www.instagram.com/oc__coder/"
+                  href="https://www.instagram.com/chandankar_om/"
                   className=" text-black dark:text-white icon-bounce w-10 h-10 hover:text-[#09FFB5] dark:hover:text-[#09FFB5] "
                 >
                   <FaInstagram className="w-full h-full" />

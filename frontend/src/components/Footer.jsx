@@ -71,7 +71,7 @@ const Footer = ({ theme }) => {
           <a href="https://github.com/Gitstar-OC" className={`w-10 h-10 icon icon-bounce hover:text-[#09FFB5] navItem ${isVisible ? 'icon-bounce' : 'opacity-0'}`}>
             <FaGithubSquare className="w-full h-full" />
           </a>
-          <a href="https://www.instagram.com/oc__coder/" className={`w-10 h-10 icon icon-bounce hover:text-[#09FFB5] navItem ${isVisible ? 'icon-bounce' : 'opacity-0'}`}>
+          <a href="https://www.instagram.com/chandankar_om/" className={`w-10 h-10 icon icon-bounce hover:text-[#09FFB5] navItem ${isVisible ? 'icon-bounce' : 'opacity-0'}`}>
             <FaInstagram className="w-full h-full" />
           </a>
           <a href="https://www.linkedin.com/in/om-chandankar/" className={`w-10 h-10 icon icon-bounce hover:text-[#09FFB5] navItem ${isVisible ? 'icon-bounce' : 'opacity-0'}`}>
