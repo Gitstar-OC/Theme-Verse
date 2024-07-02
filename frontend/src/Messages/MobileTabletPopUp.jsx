@@ -2,7 +2,8 @@ import { ImSad2 } from "react-icons/im";
 import { FaGithubSquare, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { useEffect, useRef } from "react";
-import ThemeVerse from '../assets/Theme-Verse.mp4';
+
+const videoUrl = "https://drive.google.com/uc?export=download&id=1vQ6cUC4bLybjXA0hOWquSFigpoVrwWZG";
 
 const styles = `
   .no-scroll {
@@ -17,7 +18,7 @@ const styles = `
     height: 120vh;
     z-index: 1000;
     overflow: auto;
-    bottom: 0
+    bottom: 0;
   }
 
   .video-container {
@@ -27,14 +28,14 @@ const styles = `
     width: 100%;
   }
 
-@media (max-width: 768px) {
-  .font-cF {
-    font-size: 1.75rem;
-  }
+  @media (max-width: 768px) {
+    .font-cF {
+      font-size: 1.75rem;
+    }
 
-  .font-cL {
-    font-size: 1.25rem;
-  }
+    .font-cL {
+      font-size: 1.25rem;
+    }
   }
 `;
 
@@ -81,7 +82,7 @@ const MobileTabletPopUp = () => {
                   controls
                   className="h-auto w-[80vw] justify-center items-center rounded-[3vw] border-[5px] border-x-[#09FFB5] border-y-border"
                 >
-                  <source src={ThemeVerse} type="video/mp4" />
+                  <source src={videoUrl} type="video/mp4" />
                 </video>
               </div>
             </div>
