@@ -53,12 +53,12 @@ const MainLayout = () => {
           <Navigation />
           <div className="content">
             <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/themes" element={<Themes />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/cart" element={<Cart />} />
-              <Route path="*" element={<PageNotFound />} />
+              <Route exact path="/" element={<Home />} />
+              <Route exact path="/themes" element={<Themes />} />
+              <Route exact path="/about" element={<About />} />
+              <Route exact path="/contact" element={<Contact />} />
+              <Route exact path="/cart" element={<Cart />} />
+              <Route component={<PageNotFound />} />
             </Routes>
           </div>
           <Footer theme="light" />
