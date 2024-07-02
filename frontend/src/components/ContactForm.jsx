@@ -5,7 +5,7 @@ import { FaPersonCircleQuestion, FaRegBuilding } from "react-icons/fa6";
 import { IoMdPerson, IoIosLink, IoIosChatboxes } from "react-icons/io";
 
 import { BsFillSendFill } from "react-icons/bs";
-import { SuccessfulMessage } from "../Messages/Exports"; // Corrected import statement
+import { SuccessfulMessage, MessageNotSuccessful } from "../Messages/Exports"; // Corrected import statement
 import { IoMail } from "react-icons/io5"
 import {
   Formik,
@@ -193,10 +193,16 @@ const ContactForm = () => {
   const [platform, setPlatform] = useState("");
   const [formError, setFormError] = useState("");
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+  const [showErrorMessage, setShowErrorMessage] = useState(false);
+
 
   const handleSuccessClose = () => {
     setShowSuccessMessage(false);
   };
+
+  const handleErrorClose = () => {
+    setShowErrorMessage(false);
+  };  
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -263,16 +269,21 @@ const ContactForm = () => {
                 .catch(error => {
                   if (error.response && error.response.data) {
                     setFormError(error.response.data.error);
+                    setShowErrorMessage(true)
+
                   } else {
                     setFormError("There was an error submitting the form!");
                     console.log(error)
+                    setShowErrorMessage(true)
                   }
                   console.error('There was an error submitting the form!', error);
+                  setShowErrorMessage(true)
                 })
                 .finally(() => {
                   setSubmitting(false);
                 });
             }}
+            
               // setTimeout(() => {
               //   console.log(JSON.stringify(values, null, 2));
               //   setSubmitting(false);
@@ -408,6 +419,7 @@ const ContactForm = () => {
         </div>
       </div>
       {showSuccessMessage && <SuccessfulMessage onClose={handleSuccessClose} />}
+      {showErrorMessage && <MessageNotSuccessful onClose={handleErrorClose} />}
     </div>
   );
 };
