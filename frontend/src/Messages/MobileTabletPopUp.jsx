@@ -3,7 +3,7 @@ import { FaGithubSquare, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { useEffect, useRef } from "react";
 
-const videoUrl = "https://drive.google.com/uc?export=download&id=1vQ6cUC4bLybjXA0hOWquSFigpoVrwWZG";
+const videoUrl = "https://drive.google.com/file/d/1vQ6cUC4bLybjXA0hOWquSFigpoVrwWZG/view?usp=sharing";
 
 const styles = `
   .no-scroll {
