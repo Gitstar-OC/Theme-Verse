@@ -58,7 +58,7 @@ const MainLayout = () => {
               <Route exact path="/about" element={<About />} />
               <Route exact path="/contact" element={<Contact />} />
               <Route exact path="/cart" element={<Cart />} />
-              <Route component={<PageNotFound />} />
+              <Route path="*" element={<PageNotFound />} />
             </Routes>
           </div>
           <Footer theme="light" />
