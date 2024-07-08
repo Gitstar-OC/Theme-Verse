@@ -381,7 +381,7 @@ const ContactForm = () => {
               <IoMail className="mr-2" /> <span>Mail Me</span>
             </div>
             <div className="flex items-center text-black dark:text-white">
-              <h3 style={{ fontSize: "1.5rem" }} className="font-cL">oc@theme-verse.com</h3>
+              <h3 style={{ fontSize: "1.5rem" }} className="font-cL">vpchandankar75@gmail.com</h3>
             </div>
           </div>
           <div className="bg-[#1A3DF8] my-8 w-full h-[1px]"></div>
