@@ -2,6 +2,8 @@ import './index.css';
 import MainLayout from './MainLayout';
 import ScrollToTop from './components/ScrollToTop';
 import { useEffect } from 'react';
+import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 function App() {
   useEffect(() => {
@@ -13,6 +15,8 @@ function App() {
     <>
       <ScrollToTop />
       <MainLayout />
+      <SpeedInsights/>
+      <Analytics/>
     </>
   );
 }
