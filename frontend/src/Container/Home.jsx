@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <>
     <Helmet>
-        <title>About Us - Theme Verse</title>
+        <title>Home - Theme Verse</title>
     </Helmet>
       <Main />
       <Projects addToCart={addToCart} />

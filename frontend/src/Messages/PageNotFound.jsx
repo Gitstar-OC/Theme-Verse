@@ -43,7 +43,7 @@ const PageNotFound = () => {
   return (
     <>
     <Helmet>
-        <title>About Us - Theme Verse</title>
+        <title>404: Page Not Found - Theme Verse</title>
     </Helmet>
     <div
       ref={sectionRef}
