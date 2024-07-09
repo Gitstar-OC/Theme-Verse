@@ -1,12 +1,14 @@
 // import React from 'react'
-import { Navigation, Footer, ContactForm } from '../components/Exports'
+import { ContactForm } from '../components/Exports'
+import { Helmet } from 'react-helmet-async'
 
 const Contact = () => {
   return (
     <>
-      {/* <Navigation /> */}
+      <Helmet>
+        <title>Contact - Theme Verse</title>
+      </Helmet>
       <ContactForm />
-      {/* <Footer /> */}
     </>
   )
 }

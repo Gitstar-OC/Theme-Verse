@@ -1,6 +1,7 @@
 import { useState, useContext } from 'react';
 import { FilterSidebar, AllProjectSection } from '../components/Exports';
 import { CartContext } from '../MainLayout';
+import { Helmet } from 'react-helmet-async'
 
 const styles = `
 @media (max-width: 1080px) {
@@ -29,6 +30,9 @@ const Themes = () => {
 
   return (
     <>
+    <Helmet>
+        <title>Themes - Theme Verse</title>
+    </Helmet>
     <style>{styles}</style>
       <div className="flex mt-16 left-0">
         <div className="filter-sidebar">

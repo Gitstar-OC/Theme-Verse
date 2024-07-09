@@ -2,6 +2,7 @@ import { FaHome } from "react-icons/fa";
 import { BiSolidHappyBeaming } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import { useState, useRef, useEffect } from "react";
+import { Helmet } from 'react-helmet-async'
 
 const PageNotFound = () => {
   const sectionRef = useRef(null);
@@ -40,6 +41,10 @@ const PageNotFound = () => {
   }, []);
 
   return (
+    <>
+    <Helmet>
+        <title>About Us - Theme Verse</title>
+    </Helmet>
     <div
       ref={sectionRef}
       className={`flex justify-center items-center min-h-screen transition-all duration-1000 transform ${
@@ -77,6 +82,7 @@ const PageNotFound = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
