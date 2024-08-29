@@ -91,7 +91,7 @@ const Certification = () => {
           <img 
             src={Meta} 
             alt="meta certificate" 
-            className="rounded-[25px] w-[45rem] h-[30rem] transform transition-transform duration-2000 hover:scale-105 border-2 dark:border-white border-black mb-8 lg:mb-0 lg:mr-8" 
+            className="pointer-events-none rounded-[25px] w-[45rem] h-[30rem] transform transition-transform duration-2000 hover:scale-105 border-2 dark:border-white border-black mb-8 lg:mb-0 lg:mr-8" 
           />
           <div className="flex flex-col items-start justify-between h-[30rem] w-full lg:w-auto">
             <div className="text-[2.5rem] font-cF dark:text-white  mt-4">
@@ -110,7 +110,7 @@ const Certification = () => {
       <div className=" flex flex-col lg:flex-row-reverse items-center lg:items-start mb-20 w-full ">
         <div 
           ref={stanfordRef} 
-          className={`flex flex-col lg:flex-row-reverse items-center lg:items-start w-full ml-20 mr-20 transition-transform duration-1000 ${
+          className={`flex flex-col lg:flex-row-reverse items-center lg:items-start w-full ml-20 mr-20 transition-transform pointer-events-none  duration-1000 ${
             stanfordVisible ? "image-slide-in" : "translate-y-10 opacity-0"
           }`}
         >
