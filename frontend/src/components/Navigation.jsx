@@ -81,7 +81,8 @@ const Navigation = () => {
 
   return (
     <header
-      className="bg-hero w-full h-[55px] bg-cover flex items-center px-4 fixed top-0 left-0 right-0 z-50"
+      className="bg-hero w-full h-[55px] bg-cover flex items-center px-4 fixed top-0 left-0 right-0 z-999
+      "
       style={{
         transitionProperty: "transform",
         transitionDuration: ".3s",
