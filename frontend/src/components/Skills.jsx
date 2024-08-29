@@ -59,7 +59,7 @@ const Skills = () => {
       </div>
 
       <div className="w-full my-12 flex justify-center">
-        <div className="w-3/4">
+        <div className="w-3/4 pointer-events-none">
           <Marquee
             gradient={false}
             speed={80}
