@@ -90,7 +90,7 @@ const Main = () => {
         </div>
         <div id="image-container" className="w-full sm:w-1/2 flex justify-center sm:justify-end mt-4 sm:mt-0">
           <Tilt className="Tilt" options={{ max: 25 }}>
-            <div className="relative w-[300px] h-[275px] md:w-[350px] md:h-[320px] lg:w-[400px] lg:h-[360px] rounded-[25px] bg-light-image-bg dark:bg-dark-image-bg transition-colors duration-300">
+            <div className="relative w-[300px] h-[275px] md:w-[350px] md:h-[320px] lg:w-[400px] lg:h-[360px] rounded-[25px] bg-light-image-bg dark:bg-dark-image-bg transition-colors duration-300 pointer-events-none ">
               <img
                 src={HomeLogo}
                 alt="Logo"
